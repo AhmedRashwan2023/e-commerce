@@ -1,0 +1,64 @@
+{
+  "LocalSwitcher": {
+    "title": "Les meilleures offres du marché",
+    "france": "Français",
+    "arabic": "Arabe"
+  },
+  "Index": {
+    "title": "Hello world!"
+  },
+  "SearchInput": {
+    "text": "Rechercher des produits"
+  },
+  "menuCategores": {
+    "title": "Les catégories",
+    "menu1Item1": "Bois",
+    "menu1Item2": "Marqueterie",
+    "menu1Item3": "Poterie",
+    "menu1Item4": "Cuir",
+    "menu1Item5": "Tableaux artistiques",
+    "menu1Item6": "Compétition du Meilleur produit artistique et artisanale"
+  },
+  "menuMainPage": {
+    "title": "Page d'acceuil"
+  },
+  "menuMoreCategories": {
+    "title": "Plus de catégories",
+    "menu1Item1": "Bois",
+    "menu1Item2": "Marqueterie",
+    "menu1Item3": "Poterie",
+    "menu1Item4": "Cuir",
+    "menu1Item5": "Tableaux artistiques",
+    "menu1Item6": "Compétition du Meilleur produit artistique et artisanale",
+    "menu3Flex1Link1": "Meubles",
+    "menu3Flex1Link2": "Décoration de maison",
+    "menu3Flex1Link3": "Ustensiles de cuisine",
+    "menu3Flex2Link1": "Oeuvre en marqueterie",
+    "menu3Flex2Link2": "Panneaux décoratifs",
+    "menu3Flex2Link3": "Meubles en marqueterie",
+    "menu3Flex3Link1": "Vases en céramique",
+    "menu3Flex3Link2": "Bols et assiettes en poterie",
+    "menu3Flex3Link3": "Sculptures",
+    "menu3Flex4Link1": "Sacs et bourses en cuir",
+    "menu3Flex4Link2": "Portefeuilles et porte-cartes",
+    "menu3Flex4Link3": "Vestes et vétements en cuir",
+    "menu3Flex5Link1": "Peintures å l'huile",
+    "menu3Flex5Link2": "Peintures å l'aquarelle",
+    "menu3Flex5Link3": "Oeuvre de médias mixtes"
+  },
+  "menuAccount": {
+    "title": "Compte",
+    "menu4Item1": "Se connecter",
+    "menu4Item2": "S'inscrire",
+    "menu4Item3": "Mot de passe oublié",
+    "menu4Item4": "Mon compte",
+    "menu4Item4Nested1": "Commandes",
+    "menu4Item4Nested2": "Paramètres",
+    "menu4Item4Nested3": "Adresse",
+    "menu4Item4Nested4": "Mode de paiement",
+    "menu4Item4Nested5": "Notification"
+  },
+  "menuHelp": {
+    "title": "Centre d'aide"
+  }
+}
