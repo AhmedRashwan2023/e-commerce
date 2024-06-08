@@ -4,6 +4,7 @@ import Provider from "./chakraProvider";
 import { Box } from "@chakra-ui/react";
 import { bodyPadding } from "@/assets/global";
 import NavBar from "@/components/Navigator/NavBar";
+import Footer from "@/components/Footer";
 
 export default async function LocaleLayout({
   children,
@@ -21,6 +22,7 @@ export default async function LocaleLayout({
           <Provider>
             <NavBar />
             <Box px={bodyPadding}>{children}</Box>
+            <Footer />
           </Provider>
         </NextIntlClientProvider>
       </body>

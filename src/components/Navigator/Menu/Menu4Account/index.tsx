@@ -33,13 +33,13 @@ const Menu4Account = () => {
           </HStack>
         </MenuButton>
         <MenuList color={"black"} onMouseEnter={onOpen} onMouseLeave={onClose}>
-          <Link href={"/shopping-items"} onClick={onClose}>
+          <Link href={"#"} onClick={onClose}>
             <MenuItem>{t("menu4Item1")}</MenuItem>
           </Link>
-          <Link href={"/shopping-items"} onClick={onClose}>
+          <Link href={"#"} onClick={onClose}>
             <MenuItem>{t("menu4Item2")}</MenuItem>
           </Link>
-          <Link href={"/shopping-items"} onClick={onClose}>
+          <Link href={"#"} onClick={onClose}>
             <MenuItem>{t("menu4Item3")}</MenuItem>
           </Link>
           <MenuItem>

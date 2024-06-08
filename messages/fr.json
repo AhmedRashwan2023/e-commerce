@@ -60,5 +60,24 @@
   },
   "menuHelp": {
     "title": "Centre d'aide"
+  },
+  "MeetWithUs": {
+    "title": "Faites notre connaissance",
+    "about": "À propos de",
+    "blog": "Blog",
+    "helpCenter": "Help Center",
+    "ourValue": "Notre valeur"
+  },
+  "forCustomers": {
+    "title": "Pour les consommateurs",
+    "Payments": "Paiements",
+    "Shipping": "Expédition",
+    "productReturns": "Retours de produits",
+    "faq": "FAQ",
+    "paymentAtCheckout": "Paiement en caisse"
+  },
+  "CopyRightsAndSocial": {
+    "copyrights": "Copyright",
+    "followUs": "Suivez-nous sur"
   }
 }

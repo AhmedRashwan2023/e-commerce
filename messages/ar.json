@@ -60,5 +60,24 @@
   },
   "menuHelp": {
     "title": "المساعدة"
+  },
+  "MeetWithUs": {
+    "title": "قابلنا",
+    "about": "من نحن",
+    "blog": "مدونتنا",
+    "helpCenter": "مركز المساعدة",
+    "ourValue": "قيمنا"
+  },
+  "forCustomers": {
+    "title": "لعملائنا",
+    "Payments": "المدفوعات",
+    "Shipping": "الشحن",
+    "productReturns": "المرتجعات",
+    "faq": "الأسئلة الشائعة",
+    "paymentAtCheckout": "الدفع عند الإستلام"
+  },
+  "CopyRightsAndSocial": {
+    "copyrights": "جميع حقوق النشر محفوظة",
+    "followUs": "تابعنا على"
   }
 }
