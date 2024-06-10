@@ -27,7 +27,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Provider>
             <NavBar />
-            <Box px={bodyPadding}>{children}</Box>
+            {children}
             <Footer />
           </Provider>
         </NextIntlClientProvider>

@@ -79,5 +79,64 @@
   "CopyRightsAndSocial": {
     "copyrights": "Copyright",
     "followUs": "Suivez-nous sur"
+  },
+  "signInPage": {
+    "dontHaveAcc": "Vous n'avez pas de compte?",
+    "registerLink": "S'inscrire",
+    "title": "Connectez-vous à la plateforme",
+    "description": "Entrez votre e-mail pour commencer.",
+    "email": "Email",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié?",
+    "forgotPasswordLink": "Réinitialisez-le",
+    "signInButton": "Se connecter"
+  },
+  "signUpPage": {
+    "alreadyHaveAcc": "Vous avez déjà de compte?",
+    "signInLink": "Se connecter",
+    "title": "Commencez vos achats",
+    "description": "Entrez votre e-mail pour commencer.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "phone": "Numéro de téléphone",
+    "address": "Adresse",
+    "city": "Ville",
+    "postCode": "code postal",
+    "password": "Entrez le mot de passe",
+    "signUpButton": "S'inscrire",
+    "termsAndConditionText": "By continuing, you agree to our",
+    "termsOfServicesLink": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "resetPasswordPage": {
+    "dontHaveAcc": "Vous n'avez pas de compte?",
+    "registerLink": "S'inscrire",
+    "title": "Mot de passe oublié?",
+    "description": "Veuillez saisir l'adresse e-mail associée à votre compte et nous vous enverrons un lien par e-mail pour réinitialiser votre mot de passe.",
+    "email": "Email",
+    "resetPasswordButton": "Réinitialisation du mot de passe",
+    "goBack": "Retour"
+  },
+  "helpCenter": {
+    "h1Title": "Centre d'aide :",
+    "description": "NOUS SOMMES LÀ POUR VOUS ASSISTER",
+    "p": "La priorité de notre équipe est de vous proposer les meilleures offres, mais aussi de vous offrir la meilleure expérience d'achat, c'est pourquoi notre équipe de soutien est toujours heureuse de vous assister du Lundi au Dimanche de 9h00 à 19h.",
+    "card1": "Passation & suivi de commande",
+    "card2": "Annulation de commande",
+    "card3": "Retour & remboursement",
+    "card4": "Paiement & compte",
+    "question": "Avez-vous des difficultés avec votre commande ?",
+    "FAQTitle": "FAQ : CONSULTEZ LES QUESTIONS FRÉQUENTES",
+    "FAQDesc": "Insérez les questions concernant la livraison, le retour, les commandes, Gestion des commandes, Paramètres du compte et méthodes de paiement, Retours et remboursements, Politiques d'expédition, etc.",
+    "FAQInputPlaceholder": "Ecrivez votre question ici",
+    "callUsTitle": "APPELEZ-NOUS",
+    "callUsDesc": "Appelez-nous depuis tout le Maroc Du Lundi au Dimanche de 9h00 à 19h"
+  },
+  "myAccount": {
+    "myOrders": "Vos commandes",
+    "settings": "Paramètre",
+    "address": "Adresse",
+    "notifications": "Notification"
   }
 }

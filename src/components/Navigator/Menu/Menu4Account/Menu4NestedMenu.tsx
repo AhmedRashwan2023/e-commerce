@@ -8,11 +8,12 @@ import {
   PopoverContent,
   PopoverBody,
   Flex,
+  Link,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import NextLink from "next/link";
 
 const Menu4NestedMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,7 +28,7 @@ const Menu4NestedMenu = () => {
       <PopoverTrigger>
         <Box onMouseEnter={onOpen} onMouseLeave={onClose} w={"100%"}>
           <HStack justifyContent={"space-between"}>
-            <Text>{t("title")}</Text>
+            <Text>{t("menu4Item4")}</Text>
             <ArrowIcon />
           </HStack>
         </Box>
@@ -40,19 +41,28 @@ const Menu4NestedMenu = () => {
       >
         <PopoverBody>
           <Flex flexDir={"column"}>
-            <LinkItem href={"#"} onClick={onClose}>
+            <LinkItem
+              href={`/${localActive}/my-account/my-orders`}
+              onClick={onClose}
+            >
               {t("menu4Item4Nested1")}
             </LinkItem>
-            <LinkItem href={"#"} onClick={onClose}>
+            <LinkItem
+              href={`/${localActive}/my-account/account-settings`}
+              onClick={onClose}
+            >
               {t("menu4Item4Nested2")}
             </LinkItem>
-            <LinkItem href={"#"} onClick={onClose}>
+            <LinkItem
+              href={`/${localActive}/my-account/my-addresses`}
+              onClick={onClose}
+            >
               {t("menu4Item4Nested3")}
             </LinkItem>
-            <LinkItem href={"#"} onClick={onClose}>
-              {t("menu4Item4Nested4")}
-            </LinkItem>
-            <LinkItem href={"#"} onClick={onClose}>
+            <LinkItem
+              href={`/${localActive}/my-account/notification-settings`}
+              onClick={onClose}
+            >
               {t("menu4Item4Nested5")}
             </LinkItem>
           </Flex>
@@ -74,7 +84,7 @@ const LinkItem = ({
   onClick?: () => void;
 }) => {
   return (
-    <Link href={href} onClick={onClick}>
+    <Link as={NextLink} href={href} onClick={onClick} textDecoration={"none"}>
       <Box _hover={{ bg: "#EDF2F7" }} p={2}>
         {children}
       </Box>

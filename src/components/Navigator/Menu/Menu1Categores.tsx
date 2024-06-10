@@ -7,9 +7,10 @@ import {
   MenuList,
   Text,
   useDisclosure,
+  Link,
 } from "@chakra-ui/react";
 import { TbCategory } from "react-icons/tb";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
 const Menu1Categores = () => {
@@ -35,22 +36,46 @@ const Menu1Categores = () => {
           </HStack>
         </MenuButton>
         <MenuList color={"black"} onMouseEnter={onOpen} onMouseLeave={onClose}>
-          <Link href={`/${localActive}/shopping-items`} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu1Item1")}</MenuItem>
           </Link>
-          <Link href={`/${localActive}/shopping-items`} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu1Item2")}</MenuItem>
           </Link>
-          <Link href={`/${localActive}/shopping-items`} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu1Item3")}</MenuItem>
           </Link>
-          <Link href={`/${localActive}/shopping-items`} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu1Item4")}</MenuItem>
           </Link>
-          <Link href={`/${localActive}/shopping-items`} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu1Item5")}</MenuItem>
           </Link>
-          <Link href={`/${localActive}/shopping-items`} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu1Item6")}</MenuItem>
           </Link>
         </MenuList>

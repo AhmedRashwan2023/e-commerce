@@ -10,7 +10,7 @@ const Navigarot = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {pathName.includes("/shopping-items") && <LocalSwitcher />}
-      {children}
+      {!pathName.includes("/account/") && children}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { Flex, Link, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
+import NextLink from "next/link";
 import React from "react";
 
 const ForCustomers = () => {
@@ -10,6 +11,7 @@ const ForCustomers = () => {
     <Flex flexDir={"column"} alignSelf={"flex-start"} gap={3}>
       <Text fontWeight={"bold"}>{t("title")}</Text>
       <Link
+        as={NextLink}
         href="#"
         _hover={{ color: hoverColor }}
         color={linkColor}
@@ -18,6 +20,7 @@ const ForCustomers = () => {
         {t("Payments")}
       </Link>
       <Link
+        as={NextLink}
         href="#"
         _hover={{ color: hoverColor }}
         color={linkColor}
@@ -26,6 +29,7 @@ const ForCustomers = () => {
         {t("Shipping")}
       </Link>
       <Link
+        as={NextLink}
         href="#"
         _hover={{ color: hoverColor }}
         color={linkColor}
@@ -34,6 +38,7 @@ const ForCustomers = () => {
         {t("productReturns")}
       </Link>
       <Link
+        as={NextLink}
         href="#"
         _hover={{ color: hoverColor }}
         color={linkColor}
@@ -42,6 +47,7 @@ const ForCustomers = () => {
         {t("faq")}
       </Link>
       <Link
+        as={NextLink}
         href="#"
         _hover={{ color: hoverColor }}
         color={linkColor}
