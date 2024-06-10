@@ -41,10 +41,18 @@ const Menu4Account = () => {
           >
             <MenuItem>{t("menu4Item1")}</MenuItem>
           </Link>
-          <Link as={NextLink} href={"#"} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${activeLocale}/account/signup`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu4Item2")}</MenuItem>
           </Link>
-          <Link as={NextLink} href={"#"} onClick={onClose}>
+          <Link
+            as={NextLink}
+            href={`/${activeLocale}/account/reset-password`}
+            onClick={onClose}
+          >
             <MenuItem>{t("menu4Item3")}</MenuItem>
           </Link>
           <MenuItem>

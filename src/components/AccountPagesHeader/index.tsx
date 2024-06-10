@@ -2,12 +2,14 @@ import { bodyPadding } from "@/assets/global";
 import { HStack, Link, Image, Flex } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
+import { useLocale } from "next-intl";
 
 const AccountPagesHeader = ({ children }: { children: React.ReactNode }) => {
+  const localeActive = useLocale();
   return (
     <Flex gap={3} py={4} flexDir={"column"}>
       <Flex px={bodyPadding} justifyContent={"space-between"}>
-        <Link as={NextLink} href={"/"}>
+        <Link as={NextLink} href={`/${localeActive}`}>
           <HStack minW={100} w={100}>
             <Image alt="logo" src={"/images/header/RM.png"} boxSize={50} />
             <Image alt="logo" src={"/images/header/dgapr.png"} boxSize={50} />

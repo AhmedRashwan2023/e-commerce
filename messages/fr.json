@@ -137,6 +137,26 @@
     "myOrders": "Vos commandes",
     "settings": "Paramètre",
     "address": "Adresse",
-    "notifications": "Notification"
+    "notifications": "Notification",
+    "signOut": "Se déconnecter"
+  },
+  "accountSettings": {
+    "title": "Paramètre du compte",
+    "detailsTitle": "Détails du compte",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "saveDetails": "Enregistrer les détails",
+    "password": "Mot de passe",
+    "newPass": "Nouveau mot de passe",
+    "currentPass": "Mot de passe actuel",
+    "resetPassText": "Vous ne vous souvenez pas de votre mot de passe actuel? ",
+    "resetPassLink": "Réinitialisez votre mot de passe.",
+    "savePassword": "Enregistrer le mot de passe",
+    "deleteAccountTitle": "Supprimer le compte",
+    "deleteAccQuestion": "Souhaitez-vous supprimer votre compte ?",
+    "deleteAccNote1": "Ce compte contient",
+    "deleteAccNote2": "commande/s. La suppression de votre compte supprimera tous les détails de la commande qui lui sont associés.",
+    "deleteAccAction": "Je veux supprimer mon compte"
   }
 }

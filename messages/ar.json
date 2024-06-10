@@ -137,6 +137,26 @@
     "myOrders": "طلباتك",
     "settings": "إعدادات الحساب",
     "address": "العناوين",
-    "notifications": "إعدادات الإشعارات"
+    "notifications": "إعدادات الإشعارات",
+    "signOut": "تسجيل الخروج"
+  },
+  "accountSettings": {
+    "title": "إعدادات الحساب",
+    "detailsTitle": "بيانات الحساب",
+    "name": "الإسم",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "saveDetails": "حفظ البيانات",
+    "password": "تغيير كلمة المرور",
+    "newPass": "كلمة المرور الجديدة",
+    "currentPass": "كلمة المرور الحالية",
+    "resetPassText": "لا تتذكر كلمة مرورك الحالية؟",
+    "resetPassLink": "أعد تعيين كلمة المرور الخاصة بك.",
+    "savePassword": "حفظ كلمة المرور",
+    "deleteAccountTitle": "حذف الحساب",
+    "deleteAccQuestion": "هل تريد حقاً حذف حسابك؟",
+    "deleteAccNote1": "يحتوي هذا الحساب على ",
+    "deleteAccNote2": "طلبًا/طلبات. سيؤدي حذف حسابك إلى حذف جميع تفاصيل الطلب المرتبطة به.",
+    "deleteAccAction": "أريد حذف حسابي."
   }
 }

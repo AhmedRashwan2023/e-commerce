@@ -2,6 +2,7 @@
 import { bodyPadding } from "@/assets/global";
 import {
   Box,
+  Button,
   Divider,
   Flex,
   HStack,
@@ -9,7 +10,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { IconType } from "react-icons";
 import { FaShoppingBag } from "react-icons/fa";
@@ -18,10 +19,17 @@ import { useLocale, useTranslations } from "next-intl";
 import { CiSettings } from "react-icons/ci";
 import { MdLocationPin } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa";
-// import Link from "next/link";
+import { MdLogout } from "react-icons/md";
 
 const MyAccountLayout = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("myAccount");
+  const activeLocale = useLocale();
+  const router = useRouter();
+
+  const handleSignOut = () => {
+    router.push(`/${activeLocale}/`);
+  };
+
   return (
     <Flex px={bodyPadding} gap={10}>
       <Stack py={"3rem"}>
@@ -41,9 +49,26 @@ const MyAccountLayout = ({ children }: { children: React.ReactNode }) => {
           text={t("notifications")}
           icon={FaRegBell}
         />
-        <Divider />
+        <Divider my={3} />
+        <Link onClick={handleSignOut}>
+          <HStack
+            fontSize={15}
+            px={4}
+            py={2}
+            borderRadius={8}
+            w={250}
+            h={"fit-content"}
+            gap={3}
+            _hover={{ bg: "#eeeeee" }}
+          >
+            <Text>
+              <MdLogout />
+            </Text>
+            <Text>{t("signOut")}</Text>
+          </HStack>
+        </Link>
       </Stack>
-      <Box w={"1px"} backgroundColor={"#bcbcbc"}></Box>
+      <Box w={"1px"} backgroundColor={"#eef1f6"}></Box>
       <Box py={"3rem"}>{children}</Box>
     </Flex>
   );
