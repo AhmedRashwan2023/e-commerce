@@ -157,6 +157,6 @@
     "deleteAccQuestion": "هل تريد حقاً حذف حسابك؟",
     "deleteAccNote1": "يحتوي هذا الحساب على ",
     "deleteAccNote2": "طلبًا/طلبات. سيؤدي حذف حسابك إلى حذف جميع تفاصيل الطلب المرتبطة به.",
-    "deleteAccAction": "أريد حذف حسابي."
+    "deleteAccAction": "أريد حذف حسابي"
   }
 }

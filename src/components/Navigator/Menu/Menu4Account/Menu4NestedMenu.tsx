@@ -41,26 +41,20 @@ const Menu4NestedMenu = () => {
       >
         <PopoverBody>
           <Flex flexDir={"column"}>
-            <LinkItem
-              href={`/${localActive}/my-account/my-orders`}
-              onClick={onClose}
-            >
+            <LinkItem href={`/${localActive}/my-orders`} onClick={onClose}>
               {t("menu4Item4Nested1")}
             </LinkItem>
             <LinkItem
-              href={`/${localActive}/my-account/account-settings`}
+              href={`/${localActive}/account-settings`}
               onClick={onClose}
             >
               {t("menu4Item4Nested2")}
             </LinkItem>
-            <LinkItem
-              href={`/${localActive}/my-account/my-addresses`}
-              onClick={onClose}
-            >
+            <LinkItem href={`/${localActive}/my-addresses`} onClick={onClose}>
               {t("menu4Item4Nested3")}
             </LinkItem>
             <LinkItem
-              href={`/${localActive}/my-account/notification-settings`}
+              href={`/${localActive}/notification-settings`}
               onClick={onClose}
             >
               {t("menu4Item4Nested5")}
