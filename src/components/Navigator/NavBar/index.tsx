@@ -7,7 +7,10 @@ import Menu from "../Menu";
 import NextLink from "next/link";
 import { useLocale } from "next-intl";
 
-const NavBar = () => {
+export interface NavBarProps {
+  session: any;
+}
+const NavBar: React.FC<NavBarProps> = ({ session }) => {
   const localeActive = useLocale();
   return (
     <Navigarot>
@@ -21,7 +24,7 @@ const NavBar = () => {
           </Link>
           <SearchInput />
         </HStack>
-        <Menu />
+        <Menu session={session} />
       </Box>
     </Navigarot>
   );

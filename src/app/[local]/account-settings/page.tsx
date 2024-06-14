@@ -10,10 +10,10 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useLocale, useTranslations } from "next-intl";
 import React from "react";
 import NextLink from "next/link";
 import MyAccountLayout from "@/components/MyAccountLayout";
+import { useLocale, useTranslations } from "next-intl";
 
 const AccountSettings = () => {
   const t = useTranslations("accountSettings");
@@ -32,6 +32,7 @@ const AccountSettings = () => {
     "use server";
     console.log("Account Delete Actions here");
   };
+
   return (
     <MyAccountLayout>
       <Stack w={900} p={3}>

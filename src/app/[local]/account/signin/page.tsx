@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { signIn } from "@/services/auth";
+import { redirect } from "next/navigation";
 
 const SignIn = () => {
   const t = useTranslations("signInPage");
@@ -19,9 +21,8 @@ const SignIn = () => {
 
   const handleFormAction = async (formData: FormData) => {
     "use server";
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    console.log(email, password);
+    await signIn(formData);
+    redirect(`/${activeLocale}`);
   };
 
   return (
