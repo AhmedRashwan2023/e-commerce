@@ -102,7 +102,7 @@
     "phone": "Numéro de téléphone",
     "address": "Adresse",
     "city": "Ville",
-    "postCode": "code postal",
+    "postCode": "Code postal",
     "password": "Entrez le mot de passe",
     "signUpButton": "S'inscrire",
     "termsAndConditionText": "By continuing, you agree to our",
@@ -158,5 +158,25 @@
     "deleteAccNote1": "Ce compte contient",
     "deleteAccNote2": "commande/s. La suppression de votre compte supprimera tous les détails de la commande qui lui sont associés.",
     "deleteAccAction": "Je veux supprimer mon compte"
+  },
+  "myAddresses": {
+    "title": "Adresse",
+    "addNewModel": "ajouter une nouvelle adresse",
+    "modelTitle": "Nouvelle adresse de livraison",
+    "modelDesc": "Ajoutez une nouvelle adresse de livraison pour la livraison de votre commande.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "address1": "Adresse 1",
+    "address2": "Adresse 2",
+    "city": "Ville",
+    "phone": "Numéro de téléphone",
+    "postCode": "Code postal",
+    "businessName": "Nom de Ventreprise",
+    "setAsDefault": "Définir comme par défaut",
+    "saveAddress": "Enregistrer l'adresse",
+    "defaultAddress": "adresse par défaut",
+    "modify": "Modifier",
+    "delete": "supprimer",
+    "modifyModelTitle": "Modifier l'adresse"
   }
 }

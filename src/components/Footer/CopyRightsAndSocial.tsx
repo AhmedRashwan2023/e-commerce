@@ -8,6 +8,7 @@ import NextLink from "next/link";
 const CopyRightsAndSocial = () => {
   const linkColor = "#d6c94b";
   const t = useTranslations("CopyRightsAndSocial");
+
   return (
     <Flex justifyContent={"space-between"} pt={6}>
       <HStack fontWeight={"bold"}>

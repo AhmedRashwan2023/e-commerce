@@ -21,6 +21,7 @@ export default async function LocaleLayout({
 }) {
   const messages = await getMessages();
   const session = await getSession();
+
   return (
     <html lang={locale}>
       <body>

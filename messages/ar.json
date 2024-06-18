@@ -158,5 +158,25 @@
     "deleteAccNote1": "يحتوي هذا الحساب على ",
     "deleteAccNote2": "طلبًا/طلبات. سيؤدي حذف حسابك إلى حذف جميع تفاصيل الطلبات المرتبطة به.",
     "deleteAccAction": "أريد حذف حسابي"
+  },
+  "myAddresses": {
+    "title": "العناوين",
+    "addNewModel": "إضافة عنوان جديد",
+    "modelTitle": "عنوان توصيل جديد",
+    "modelDesc": "إضافة عنوان توصيل جديد خاص بك يمكن إختياره لتوصيل طلباتك.",
+    "firstName": "الإسم الأول",
+    "lastName": "الإسم الأخير",
+    "address1": "العنوان 1",
+    "address2": "العنوان 2",
+    "city": "المدينة",
+    "phone": "رقم الهاتف",
+    "postCode": "الرقم البريدي",
+    "businessName": "إسم العمل",
+    "setAsDefault": "تحديد كعنوان أساسي",
+    "saveAddress": "حفظ العنوان",
+    "defaultAddress": "محدد كعنوان أساسي",
+    "modify": "تعديل",
+    "delete": "حذف",
+    "modifyModelTitle": "تعديل العنوان"
   }
 }
