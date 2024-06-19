@@ -10,7 +10,7 @@ import { FaMoneyBills } from "react-icons/fa6";
 const ServicesCards = () => {
   const t = useTranslations("helpCenter");
   return (
-    <Flex justifyContent={"space-evenly"} pb={19}>
+    <Flex justifyContent={"space-evenly"} pb={19} flexWrap={"wrap"} gap={5}>
       <ServiceCard icon={LuTruck} text={t("card1")} />
       <ServiceCard icon={FaBox} text={t("card2")} />
       <ServiceCard icon={RiRefund2Line} text={t("card3")} />

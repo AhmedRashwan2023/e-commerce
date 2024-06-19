@@ -191,5 +191,18 @@
     "headingPrice": "1000 MAD",
     "text": "Livraison gratuite uniquement pour les nouveaux clients, après l'application des promotions et des remises.",
     "shopNowButton": "Achetez maintenan"
+  },
+  "mainPageFotter": {
+    "card1Title": "Soutenir une grande cause",
+    "card1TextPart1": "En achetant chez",
+    "card1TextPart2": "Entre Murs Galerie,",
+    "card1TextPart3": "vous soutenez vos fabricants locaux et vous contribuez à une cause plus importante",
+    "card2Title": "Meilleurs prix & offres",
+    "card2Text": "Des prix moins chers que votre supermarché local, d'excellentes offres de cashback pour couronner le tout. Obtenez les meilleurs prix et offres.",
+    "card3Title": "Large assortiment",
+    "card3Text": "Choisissez parmi plus de 5000 produits dans les catégories cuir, marquetrie, bois et autres.",
+    "card4Title": "Retours faciles",
+    "card4Text": "Pas satisfait d'un produit ? Retournez-le à la porte et obtenez un remboursement en quelques heures. Politique sans poser de questions.",
+    "card4Link": "politique."
   }
 }
