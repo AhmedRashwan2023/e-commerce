@@ -178,5 +178,18 @@
     "modify": "Modifier",
     "delete": "supprimer",
     "modifyModelTitle": "Modifier l'adresse"
+  },
+  "SlideOne": {
+    "bagde": "Remise sur la vente d'ouverture 50%",
+    "heading": "Trouver les meilleurs produits artistiques et artisanals",
+    "text": "Lancement d'un nouveau modèle artistque et artisanal en ligne et livraison à domicile pratique et rapide.",
+    "shopNowButton": "Achetez maintenan"
+  },
+  "SildeTwo": {
+    "bagde": "Livraison gratuite - commandes de plus de 1000 MAD",
+    "heading": "Livraison gratuite sur commandes supérieures à",
+    "headingPrice": "1000 MAD",
+    "text": "Livraison gratuite uniquement pour les nouveaux clients, après l'application des promotions et des remises.",
+    "shopNowButton": "Achetez maintenan"
   }
 }

@@ -34,7 +34,12 @@ const Menu4Account: React.FC<NavBarProps> = ({ session }) => {
             <FaCaretDown />
           </HStack>
         </MenuButton>
-        <MenuList color={"black"} onMouseEnter={onOpen} onMouseLeave={onClose}>
+        <MenuList
+          color={"black"}
+          onMouseEnter={onOpen}
+          onMouseLeave={onClose}
+          zIndex={1000}
+        >
           {!session && (
             <>
               <Link

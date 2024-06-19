@@ -35,7 +35,12 @@ const Menu1Categores = () => {
             <Text fontWeight={"bolder"}>{t("title")}</Text>
           </HStack>
         </MenuButton>
-        <MenuList color={"black"} onMouseEnter={onOpen} onMouseLeave={onClose}>
+        <MenuList
+          color={"black"}
+          onMouseEnter={onOpen}
+          onMouseLeave={onClose}
+          zIndex={1000}
+        >
           <Link
             as={NextLink}
             href={`/${localActive}/shopping-items`}
