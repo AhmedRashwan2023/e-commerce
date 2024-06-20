@@ -204,5 +204,11 @@
     "card4Title": "إرجاع سهل",
     "card4Text": "لست راضيًا عن منتج؟ قم بإعادته واحصل على استرداد في غضون ساعات قليلة. سياسة إرجاع بدون طرح أسئلة.",
     "card4Link": "لمعلومات أكثر."
+  },
+  "shoppingItems": {
+    "filterCategories": "الفئات",
+    "filterPrice": "السعر",
+    "currency": "درهم",
+    "filterEvaluation": "التقييم"
   }
 }

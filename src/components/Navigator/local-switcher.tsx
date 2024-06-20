@@ -2,18 +2,16 @@ import { bodyPadding } from "@/assets/global";
 import {
   Flex,
   HStack,
+  Icon,
+  Image,
   Menu,
   MenuButton,
-  Select,
-  Text,
-  Image,
-  Icon,
-  MenuList,
   MenuItem,
+  MenuList,
+  Text,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import React, { ChangeEvent } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FaCaretDown } from "react-icons/fa";
 
 const LocalSwitcher = () => {
@@ -42,6 +40,7 @@ const LangMenu = () => {
   const localActive = useLocale();
   const router = useRouter();
   const pathame = usePathname();
+  const params = useSearchParams();
   const menuButton = {
     flag:
       localActive === "ar" ? "/images/flags/ma.svg" : "/images/flags/fr.svg",
@@ -56,7 +55,11 @@ const LangMenu = () => {
 
   const handleSelectChange = () => {
     const remainingOFUrl = pathame.substring(3, pathame.length);
-    router.replace(`/${localActive === "fr" ? "ar" : "fr"}/${remainingOFUrl}`);
+    router.replace(
+      `/${
+        localActive === "fr" ? "ar" : "fr"
+      }/${remainingOFUrl}?${new URLSearchParams(params)}`
+    );
   };
 
   return (

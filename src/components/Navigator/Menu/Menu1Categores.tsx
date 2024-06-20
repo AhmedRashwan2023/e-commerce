@@ -12,6 +12,7 @@ import {
 import { TbCategory } from "react-icons/tb";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { categories } from "@/data/categories";
 
 const Menu1Categores = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,7 +42,19 @@ const Menu1Categores = () => {
           onMouseLeave={onClose}
           zIndex={1000}
         >
-          <Link
+          {categories.map((category, index) => (
+            <Link
+              key={index}
+              as={NextLink}
+              href={`/${localActive}/shopping-items?catId=${category.id}`}
+              onClick={onClose}
+            >
+              <MenuItem>
+                {localActive === "fr" ? category.fr : category.ar}
+              </MenuItem>
+            </Link>
+          ))}
+          {/* <Link
             as={NextLink}
             href={`/${localActive}/shopping-items`}
             onClick={onClose}
@@ -82,7 +95,7 @@ const Menu1Categores = () => {
             onClick={onClose}
           >
             <MenuItem>{t("menu1Item6")}</MenuItem>
-          </Link>
+          </Link> */}
         </MenuList>
       </Menu>
     </>

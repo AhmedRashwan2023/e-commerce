@@ -204,5 +204,11 @@
     "card4Title": "Retours faciles",
     "card4Text": "Pas satisfait d'un produit ? Retournez-le à la porte et obtenez un remboursement en quelques heures. Politique sans poser de questions.",
     "card4Link": "politique."
+  },
+  "shoppingItems": {
+    "filterCategories": "Les catégories",
+    "filterPrice": "Prix",
+    "currency": "MAD",
+    "filterEvaluation": "Évaluation"
   }
 }
