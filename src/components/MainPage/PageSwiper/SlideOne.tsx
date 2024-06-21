@@ -4,7 +4,7 @@ import ShopNowButton from "./ShopNowButton";
 import { useTranslations } from "next-intl";
 
 const SlideOne = () => {
-  const t = useTranslations("SlideOne");
+  const t = useTranslations("slideOne");
   return (
     <Flex
       mx={{ base: 3, md: 55 }}

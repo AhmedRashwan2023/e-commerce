@@ -37,7 +37,7 @@ const AccountSettings = () => {
     <MyAccountLayout>
       <Stack w={900} p={3}>
         <Stack gap={4} w={"fit-content"}>
-          <Heading as="h3" size="lg" fontWeight={"semibold"}>
+          <Heading as="h2" size="lg">
             {t("title")}
           </Heading>
           <Text fontSize={18} fontWeight={"semibold"}>

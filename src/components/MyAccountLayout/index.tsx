@@ -22,11 +22,7 @@ const MyAccountLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <Flex px={bodyPadding} gap={10}>
       <Stack py={"3rem"}>
-        <SideLink
-          href="my-orders"
-          text={t("myOrders")}
-          icon={"FaShoppingBag"}
-        />
+        <SideLink href="orders" text={t("myOrders")} icon={"FaShoppingBag"} />
         <SideLink
           href="account-settings"
           text={t("settings")}
@@ -64,7 +60,9 @@ const MyAccountLayout = async ({ children }: { children: React.ReactNode }) => {
         </form>
       </Stack>
       <Box w={"1px"} backgroundColor={"#eef1f6"}></Box>
-      <Box py={"3rem"}>{children}</Box>
+      <Box py={"3rem"} w={"100%"}>
+        {children}
+      </Box>
     </Flex>
   );
 };

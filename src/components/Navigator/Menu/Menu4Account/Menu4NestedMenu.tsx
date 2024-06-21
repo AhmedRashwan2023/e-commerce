@@ -41,7 +41,7 @@ const Menu4NestedMenu = () => {
       >
         <PopoverBody>
           <Flex flexDir={"column"}>
-            <LinkItem href={`/${localActive}/my-orders`} onClick={onClose}>
+            <LinkItem href={`/${localActive}/orders`} onClick={onClose}>
               {t("menu4Item4Nested1")}
             </LinkItem>
             <LinkItem

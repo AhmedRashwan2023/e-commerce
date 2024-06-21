@@ -6,6 +6,7 @@ import AddNewAddressModal from "./AddNewAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
 import AddressCard from "./AddressCard";
 import { addresses } from "@/data/addresses";
+
 const MyAddresses = async () => {
   const t = await getTranslations("myAddresses");
   return (
