@@ -10,7 +10,7 @@ const CopyRightsAndSocial = () => {
   const t = useTranslations("CopyRightsAndSocial");
 
   return (
-    <Flex justifyContent={"space-between"} pt={6}>
+    <Flex justifyContent={"space-between"} pt={6} flexWrap={"wrap"}>
       <HStack fontWeight={"bold"}>
         <Text>
           {t("copyrights")} {new Date().getFullYear()}

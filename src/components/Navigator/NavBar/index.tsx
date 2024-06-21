@@ -1,6 +1,6 @@
 import React from "react";
 import Navigarot from "..";
-import { Box, HStack, Link, Image } from "@chakra-ui/react";
+import { Box, HStack, Link, Image, Show } from "@chakra-ui/react";
 import { bodyPadding } from "@/assets/global";
 import SearchInput from "./search-input";
 import Menu from "../Menu";
@@ -22,9 +22,13 @@ const NavBar: React.FC<NavBarProps> = ({ session }) => {
               <Image alt="logo" src={"/images/header/dgapr.png"} boxSize={50} />
             </HStack>
           </Link>
-          <SearchInput />
+          <Show above="lg">
+            <SearchInput />
+          </Show>
         </HStack>
-        <Menu session={session} />
+        <Show above="lg">
+          <Menu session={session} />
+        </Show>
       </Box>
     </Navigarot>
   );

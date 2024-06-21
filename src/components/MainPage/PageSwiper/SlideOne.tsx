@@ -7,15 +7,21 @@ const SlideOne = () => {
   const t = useTranslations("SlideOne");
   return (
     <Flex
-      mx={55}
-      my={130}
-      justifyContent={"space-between"}
-      wrap={"wrap-reverse"}
+      mx={{ base: 3, md: 55 }}
+      my={{ base: 3, md: 130 }}
+      justifyContent={{ base: "center", sm: "space-between" }}
+      // justifyContent={"space-between"}
+      wrap={{ base: "wrap-reverse", md: "nowrap" }}
+      overflow={"hidden"}
       gap={3}
     >
-      <Stack w={450} gap={5}>
+      <Stack
+        // minW={400}
+        w={450}
+        gap={5}
+      >
         <LabelBagde>{t("bagde")}</LabelBagde>
-        <Heading as="h2" size="2xl">
+        <Heading as="h2" size={{ base: "xl", lg: "2xl" }}>
           {t("heading")}
         </Heading>
         <Text fontSize={20} fontWeight={"semibold"}>
@@ -23,7 +29,11 @@ const SlideOne = () => {
         </Text>
         <ShopNowButton>{t("shopNowButton")}</ShopNowButton>
       </Stack>
-      <Image alt={""} src="/images/slider/slideOne.png" boxSize={570} />
+      <Image
+        alt={""}
+        src="/images/slider/slideOne.png"
+        boxSize={{ base: 300, md: 350, "2xl": 570 }}
+      />
     </Flex>
   );
 };

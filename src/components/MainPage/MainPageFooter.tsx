@@ -12,7 +12,7 @@ const MainPageFooter = () => {
   const activeLocale = useLocale();
   const t = useTranslations("mainPageFotter");
   return (
-    <Flex py={20} gap={5} justifyContent={"space-between"}>
+    <Flex py={20} gap={5} justifyContent={"space-between"} flexWrap={"wrap"}>
       <Card icon={BsClock} title={t("card1Title")}>
         <Text>
           {t("card1TextPart1")}
