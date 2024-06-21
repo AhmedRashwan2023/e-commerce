@@ -13,10 +13,12 @@ import { TbCategory } from "react-icons/tb";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { categories } from "@/data/categories";
+import { useRouter } from "next/navigation";
 
 const Menu1Categores = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("menuCategores");
+  const router = useRouter();
   const localActive = useLocale();
   return (
     <>
@@ -30,6 +32,7 @@ const Menu1Categores = () => {
           backgroundColor={"#eac102"}
           onMouseEnter={onOpen}
           onMouseLeave={onClose}
+          onClick={() => router.push(`/${localActive}/shopping-items/`)}
         >
           <HStack>
             <TbCategory />

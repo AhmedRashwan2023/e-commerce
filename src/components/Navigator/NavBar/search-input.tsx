@@ -5,6 +5,7 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
+import { redirect } from "next/navigation";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 
@@ -15,7 +16,7 @@ const SearchInput = () => {
   const handleSearch = async (formData: FormData) => {
     "use server";
     const searchValue = formData.get("search");
-    console.log(searchValue);
+    redirect(`/${localActive}/shopping-items?name=${searchValue as string}`);
   };
 
   return (

@@ -1,5 +1,6 @@
 import { bodyPadding } from "@/assets/global";
-import PriceRangeSlider from "@/components/shoppingItems/PriceRangeSlider";
+import Evaluation from "@/components/ShoppingItems/Evaluation";
+import PriceRangeSlider from "@/components/ShoppingItems/PriceRangeSlider";
 import { categories } from "@/data/categories";
 import { Box, Flex, Link, Show, Stack, Text } from "@chakra-ui/react";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -16,7 +17,7 @@ const ShoppingItems = async ({
   const priceFrom = searchParams.priceFrom || 0;
   const priceTo = searchParams.priceTo || 1000000;
   const evaluation = searchParams.evaluation || 5;
-  const itemName = searchParams.itemName || "";
+  const name = searchParams.name || "";
 
   const setSearchParams = (name: string, value: string) => {
     let params = {};
@@ -27,8 +28,7 @@ const ShoppingItems = async ({
       params = { ...params, priceTo: searchParams.priceTo };
     if (searchParams.evaluation)
       params = { ...params, evaluation: searchParams.evaluation };
-    if (searchParams.itemName)
-      params = { ...params, itemName: searchParams.itemName };
+    if (searchParams.name) params = { ...params, name: searchParams.name };
     params = { ...params, [name]: value };
     return new URLSearchParams(params);
   };
@@ -61,6 +61,12 @@ const ShoppingItems = async ({
               {t("filterPrice")}
             </Text>
             <PriceRangeSlider />
+          </Stack>
+          <Stack>
+            <Text fontSize={19} fontWeight={"semibold"}>
+              {t("filterEvaluation")}
+            </Text>
+            <Evaluation />
           </Stack>
         </Stack>
       </Show>
