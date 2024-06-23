@@ -215,7 +215,9 @@
     "sortByFeatured": "الترتيب حسب: مميز",
     "sortByPriceLower": "السعر: من الأدنى إلى الأعلى",
     "sortByPriceHigher": "السعر: من الأعلى إلى الأدنى",
-    "sortByDate": "تاريخ الإصدار"
+    "sortByDate": "تاريخ الإصدار",
+    "onSale": "تخفيض",
+    "addToCard": "إضافة"
   },
   "orders": {
     "title": "طلباتك",

@@ -215,7 +215,9 @@
     "sortByFeatured": "Trier par : En vedette",
     "sortByPriceLower": "Prix : du plus bas au plus élevé",
     "sortByPriceHigher": "Prix : du plus élevé au plus bas",
-    "sortByDate": "Date de sortie"
+    "sortByDate": "Date de sortie",
+    "onSale": "En solde",
+    "addToCard": "Ajouter"
   },
   "orders": {
     "title": "Vos commandes",

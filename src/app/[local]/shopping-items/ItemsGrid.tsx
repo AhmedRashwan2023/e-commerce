@@ -1,7 +1,9 @@
 import ItemCard from "@/components/ShoppingItems/ItemCard";
+import ItemCardContainer from "@/components/ShoppingItems/ItemCardContainer";
 import ItemsDisplayAndOrder from "@/components/ShoppingItems/ItemsDisplayAndOrder";
 import { categories } from "@/data/categories";
-import { Box, Flex, HStack, Stack, Text } from "@chakra-ui/react";
+import { products } from "@/data/products";
+import { Box, Flex, HStack, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 interface Props {
@@ -79,21 +81,18 @@ const ItemsGrid = async ({ initialSearchParams }: Props) => {
         </HStack>
         <ItemsDisplayAndOrder />
       </Flex>
-      <Flex
-        wrap={
-          validSearchParams.view === "list"
-            ? "wrap"
-            : { base: "wrap", md: "nowrap" }
-        }
-        gap={2}
-        justifyContent={
-          validSearchParams.view === "list" ? "start" : "space-between"
-        }
-      >
-        <ItemCard view={validSearchParams.view} />
-        <ItemCard view={validSearchParams.view} />
-        <ItemCard view={validSearchParams.view} />
-      </Flex>
+      {/* <Flex wrap={"wrap"} gap={2}>
+        {products.map((product, index) => (
+          // <ItemCard view={validSearchParams.view} item={product} key={index} />
+        ))}
+      </Flex> */}
+      <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={6}>
+        {products.map((product, index) => (
+          <ItemCardContainer key={index}>
+            <ItemCard item={product} />
+          </ItemCardContainer>
+        ))}
+      </SimpleGrid>
     </Stack>
   );
 };
