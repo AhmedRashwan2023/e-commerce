@@ -209,7 +209,13 @@
     "filterCategories": "الفئات",
     "filterPrice": "السعر",
     "currency": "درهم",
-    "filterEvaluation": "التقييم"
+    "filterEvaluation": "التقييم",
+    "productsFound": "منتج معروض",
+    "display": "إظهار",
+    "sortByFeatured": "الترتيب حسب: مميز",
+    "sortByPriceLower": "السعر: من الأدنى إلى الأعلى",
+    "sortByPriceHigher": "السعر: من الأعلى إلى الأدنى",
+    "sortByDate": "تاريخ الإصدار"
   },
   "orders": {
     "title": "طلباتك",

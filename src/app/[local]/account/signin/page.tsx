@@ -53,7 +53,7 @@ const SignIn = () => {
           </Flex>
           <form action={handleFormAction}>
             <Input
-              name="email"
+              name="username"
               type="email"
               placeholder={t("email")}
               size="md"

@@ -29,14 +29,14 @@ const OrdersTable = ({ orders }: Props) => {
       <Table variant="simple">
         <Thead>
           <Tr backgroundColor={"#eeeeee"}>
-            <Th></Th> {/* img */}
-            <Th>{t("products")}</Th> {/* name */}
-            <Th>{t("orderId")}</Th> {/* id */}
-            <Th>{t("date")}</Th> {/* date */}
-            <Th>{t("qty")}</Th> {/* qty */}
-            <Th>{t("status")}</Th> {/* state */}
-            <Th>{t("price")}</Th> {/* price */}
-            <Th></Th> {/* View */}
+            <Th></Th>
+            <Th>{t("products")}</Th>
+            <Th>{t("orderId")}</Th>
+            <Th>{t("date")}</Th>
+            <Th>{t("qty")}</Th>
+            <Th>{t("status")}</Th>
+            <Th>{t("price")}</Th>
+            <Th></Th>
           </Tr>
         </Thead>
         <Tbody>

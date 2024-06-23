@@ -1,3 +1,4 @@
+"use client";
 import {
   Input,
   InputGroup,
@@ -5,25 +6,30 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import { redirect } from "next/navigation";
-import React from "react";
+import { redirect, useRouter, useSearchParams } from "next/navigation";
+import React, { useRef, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
 const SearchInput = () => {
   const localActive = useLocale();
   const t = useTranslations("SearchInput");
-
-  const handleSearch = async (formData: FormData) => {
-    "use server";
-    const searchValue = formData.get("search");
-    redirect(`/${localActive}/shopping-items?name=${searchValue as string}`);
-  };
+  const [value, setValue] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   return (
-    <form action={handleSearch}>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        const params = new URLSearchParams(searchParams);
+        params.set("name", value);
+        router.push(`?${params.toString()}`);
+      }}
+    >
       <InputGroup w={"35vw"}>
         <Input
           name="search"
+          value={value}
           backgroundColor={"#1f275d"}
           borderColor={"#1f275d"}
           borderRadius={7}
@@ -31,6 +37,7 @@ const SearchInput = () => {
           variant="outline"
           color={"white"}
           _focus={{ bg: "white", color: "#1f275d" }}
+          onChange={(e) => setValue(e.target.value)}
         />
         {localActive === "ar" ? (
           <InputLeftElement color={"#5e6c75"}>

@@ -2,9 +2,11 @@ import { bodyPadding } from "@/assets/global";
 import Evaluation from "@/components/ShoppingItems/Evaluation";
 import PriceRangeSlider from "@/components/ShoppingItems/PriceRangeSlider";
 import { categories } from "@/data/categories";
-import { Box, Flex, Link, Show, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Link, Show, Stack, Text } from "@chakra-ui/react";
 import { getLocale, getTranslations } from "next-intl/server";
 import NextLink from "next/link";
+import ItemsGrid from "./ItemsGrid";
+import { setSearchParams } from "@/services/shoppingItems";
 
 const ShoppingItems = async ({
   searchParams,
@@ -13,24 +15,16 @@ const ShoppingItems = async ({
 }) => {
   const localeActive = await getLocale();
   const t = await getTranslations("shoppingItems");
-  const catId = searchParams.catId || null;
-  const priceFrom = searchParams.priceFrom || 0;
-  const priceTo = searchParams.priceTo || 1000000;
-  const evaluation = searchParams.evaluation || 5;
-  const name = searchParams.name || "";
 
-  const setSearchParams = (name: string, value: string) => {
-    let params = {};
-    if (searchParams.catId) params = { ...params, catId: searchParams.catId };
-    if (searchParams.priceFrom)
-      params = { ...params, priceFrom: searchParams.priceFrom };
-    if (searchParams.priceTo)
-      params = { ...params, priceTo: searchParams.priceTo };
-    if (searchParams.evaluation)
-      params = { ...params, evaluation: searchParams.evaluation };
-    if (searchParams.name) params = { ...params, name: searchParams.name };
-    params = { ...params, [name]: value };
-    return new URLSearchParams(params);
+  const initialSearchParams = {
+    catId: (searchParams.catId || 0) as number,
+    priceFrom: (searchParams.priceFrom || 0) as number,
+    priceTo: (searchParams.priceTo || 300) as number,
+    evaluation: (searchParams.evaluation || 5) as number,
+    name: (searchParams.name || "") as string,
+    view: (searchParams.view || "grid") as string,
+    display: (searchParams.display || 50) as number,
+    orderBy: (searchParams.orderBy || "featured") as string,
   };
 
   return (
@@ -45,7 +39,11 @@ const ShoppingItems = async ({
               <Link
                 key={index}
                 as={NextLink}
-                href={`?${setSearchParams("catId", category.id.toString())}`}
+                href={`?${setSearchParams(
+                  searchParams,
+                  "catId",
+                  category.id.toString()
+                )}`}
                 _hover={{ color: "#048414", fontWeight: "semibold" }}
                 fontSize={14}
                 borderBottomColor={"#b0b0b0"}
@@ -70,7 +68,7 @@ const ShoppingItems = async ({
           </Stack>
         </Stack>
       </Show>
-      <Box>Items</Box>
+      <ItemsGrid initialSearchParams={initialSearchParams} />
     </Flex>
   );
 };

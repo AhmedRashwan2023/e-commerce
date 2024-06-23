@@ -19,8 +19,19 @@ const PriceRangeSlider = () => {
   const priceFromString = searchParams.get("priceFrom");
   const priceToString = searchParams.get("priceTo");
 
-  const initialPriceFrom = priceFromString ? parseInt(priceFromString) : 0;
-  const initialPriceTo = priceToString ? parseInt(priceToString) : 300;
+  const initialPriceFrom = priceFromString
+    ? parseInt(priceFromString) >= 6 &&
+      parseInt(priceFromString) < parseInt(priceToString!)
+      ? parseInt(priceFromString)
+      : 6
+    : 6;
+
+  const initialPriceTo = priceToString
+    ? parseInt(priceToString) <= 300 &&
+      parseInt(priceToString) > parseInt(priceFromString!)
+      ? parseInt(priceToString)
+      : 300
+    : 300;
 
   const [minPrice, setMin] = React.useState(initialPriceFrom);
   const [maxPrice, setMax] = React.useState(initialPriceTo);

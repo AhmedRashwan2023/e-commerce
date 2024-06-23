@@ -209,7 +209,13 @@
     "filterCategories": "Les catégories",
     "filterPrice": "Prix",
     "currency": "MAD",
-    "filterEvaluation": "Évaluation"
+    "filterEvaluation": "Évaluation",
+    "productsFound": "Produits trouvés",
+    "display": "Afficher",
+    "sortByFeatured": "Trier par : En vedette",
+    "sortByPriceLower": "Prix : du plus bas au plus élevé",
+    "sortByPriceHigher": "Prix : du plus élevé au plus bas",
+    "sortByDate": "Date de sortie"
   },
   "orders": {
     "title": "Vos commandes",
