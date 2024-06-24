@@ -7,9 +7,12 @@ import {
   ModalHeader,
   ModalOverlay,
   useDisclosure,
+  Text,
+  Flex,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { ReactNode } from "react";
+import { IoMdClose } from "react-icons/io";
 
 const ModifyAddressModal = ({ children }: { children: ReactNode }) => {
   const t = useTranslations("myAddresses");
@@ -24,7 +27,15 @@ const ModifyAddressModal = ({ children }: { children: ReactNode }) => {
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent dir={localeActive === "ar" ? "rtl" : "ltr"}>
-          <ModalHeader>{t("modifyModelTitle")}</ModalHeader>
+          {/* <ModalHeader>{t("modifyModelTitle")}</ModalHeader> */}
+          <ModalHeader dir={localeActive === "ar" ? "rtl" : "ltr"}>
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
+              <Text>{t("modifyModelTitle")}</Text>
+              <Link onClick={onClose} color={"#000000"}>
+                <IoMdClose />
+              </Link>
+            </Flex>
+          </ModalHeader>
           <ModalBody>{children}</ModalBody>
         </ModalContent>
       </Modal>

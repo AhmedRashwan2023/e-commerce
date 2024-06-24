@@ -3,17 +3,22 @@ import {
   Box,
   Drawer,
   DrawerBody,
-  DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
   useDisclosure,
+  Text,
+  Flex,
+  Link,
 } from "@chakra-ui/react";
+import { useLocale } from "next-intl";
 import { FaCartArrowDown } from "react-icons/fa6";
 import CountBadge from "../CountBadge";
+import { IoMdClose } from "react-icons/io";
 
 const CartDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const localeActive = useLocale();
 
   return (
     <CountBadge count={2}>
@@ -28,8 +33,14 @@ const CartDrawer = () => {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>{`Cart`}</DrawerHeader>
+          <DrawerHeader dir={localeActive === "ar" ? "rtl" : "ltr"}>
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
+              <Text>{`Cart`}</Text>
+              <Link onClick={onClose} color={"#000000"}>
+                <IoMdClose />
+              </Link>
+            </Flex>
+          </DrawerHeader>
           <DrawerBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

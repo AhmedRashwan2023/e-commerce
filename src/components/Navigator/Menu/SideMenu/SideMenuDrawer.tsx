@@ -4,20 +4,33 @@ import {
   Box,
   Drawer,
   DrawerBody,
-  DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
   useDisclosure,
+  Text,
+  Link,
 } from "@chakra-ui/react";
+import { useLocale, useTranslations } from "next-intl";
 import { AiOutlineMenuFold } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 
 const SideMenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const t = useTranslations("Index");
+  const localeActive = useLocale();
   return (
     <>
-      <Box fontSize={23} onClick={onOpen} color={"#f1c232"} cursor={"pointer"}>
+      <Box
+        fontSize={25}
+        onClick={onOpen}
+        color={"#f1c232"}
+        cursor={"pointer"}
+        transform={
+          localeActive === "ar" ? "translateX(10px)" : "translateX(-10px)"
+        }
+      >
         <AiOutlineMenuFold />
       </Box>
       <Drawer
@@ -28,8 +41,17 @@ const SideMenuDrawer = () => {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>{`Side Menu`}</DrawerHeader>
+          <DrawerHeader
+            color={"green"}
+            dir={localeActive === "ar" ? "rtl" : "ltr"}
+          >
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
+              <Text>{t("title")}</Text>
+              <Link onClick={onClose} color={"#000000"}>
+                <IoMdClose />
+              </Link>
+            </Flex>
+          </DrawerHeader>
           <DrawerBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
