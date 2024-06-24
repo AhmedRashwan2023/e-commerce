@@ -9,8 +9,9 @@ import { useLocale, useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { MenuLocationProps } from "../Menu";
 
-const SearchInput = () => {
+const SearchInput = ({ menuLocation }: MenuLocationProps) => {
   const localActive = useLocale();
   const t = useTranslations("SearchInput");
   const [value, setValue] = useState("");
@@ -26,17 +27,17 @@ const SearchInput = () => {
         router.push(`/${localActive}/shopping-items?${params.toString()}`);
       }}
     >
-      <InputGroup w={"35vw"}>
+      <InputGroup w={menuLocation ? "100%" : "35vw"}>
         <Input
           name="search"
           value={value}
-          backgroundColor={"#1f275d"}
-          borderColor={"#1f275d"}
+          backgroundColor={menuLocation ? "#ffffff" : "#1f275d"}
+          borderColor={menuLocation ? "#bcbcbc" : "#1f275d"}
           borderRadius={7}
           placeholder={t("text")}
           variant="outline"
-          color={"white"}
-          _focus={{ bg: "white", color: "#1f275d" }}
+          color={menuLocation ? "#1f275d" : "#ffffff"}
+          _focus={{ bg: "#ffffff", color: "#1f275d" }}
           onChange={(e) => setValue(e.target.value)}
         />
         {localActive === "ar" ? (

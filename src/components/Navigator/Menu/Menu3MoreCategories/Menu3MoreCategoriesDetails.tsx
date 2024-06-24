@@ -1,13 +1,22 @@
 import { Box, Flex, HStack, Text, Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
+import { MenuLocationProps } from "..";
 
-const Menu3MoreCategoriesDetails = () => {
+const Menu3MoreCategoriesDetails = ({ closeDrawer }: MenuLocationProps) => {
   const t = useTranslations("menuMoreCategories");
   const localActive = useLocale();
 
   return (
-    <HStack w={800} flexWrap={"wrap"} p={3}>
+    <HStack
+      w={800}
+      flexWrap={"wrap"}
+      p={3}
+      color={"#000000"}
+      onClick={() => {
+        if (closeDrawer) closeDrawer();
+      }}
+    >
       <Flex flexDir={"column"} w={250} alignSelf={"flex-start"}>
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item1")}

@@ -8,18 +8,23 @@ import {
   Text,
   useDisclosure,
   Link,
+  Box,
+  Stack,
 } from "@chakra-ui/react";
 import { TbCategory } from "react-icons/tb";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { categories } from "@/data/categories";
 import { useRouter } from "next/navigation";
+import { MenuLocationProps } from ".";
+import { useState } from "react";
 
-const Menu1Categores = () => {
+const Menu1Categores = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("menuCategores");
   const router = useRouter();
   const localActive = useLocale();
+  const [showLinks, setShowLinks] = useState(false);
   return (
     <>
       <Menu isOpen={isOpen}>
@@ -30,11 +35,16 @@ const Menu1Categores = () => {
           borderRadius="md"
           color={"#09104c"}
           backgroundColor={"#eac102"}
-          onMouseEnter={onOpen}
+          onMouseEnter={() => {
+            if (!menuLocation) onOpen();
+          }}
           onMouseLeave={onClose}
-          onClick={() => router.push(`/${localActive}/shopping-items/`)}
+          onClick={() => {
+            if (menuLocation) setShowLinks(!showLinks);
+          }}
+          w={menuLocation === "side" ? "100%" : "inherit"}
         >
-          <HStack>
+          <HStack justifyContent={"center"}>
             <TbCategory />
             <Text fontWeight={"bolder"}>{t("title")}</Text>
           </HStack>
@@ -57,50 +67,36 @@ const Menu1Categores = () => {
               </MenuItem>
             </Link>
           ))}
-          {/* <Link
-            as={NextLink}
-            href={`/${localActive}/shopping-items`}
-            onClick={onClose}
-          >
-            <MenuItem>{t("menu1Item1")}</MenuItem>
-          </Link>
-          <Link
-            as={NextLink}
-            href={`/${localActive}/shopping-items`}
-            onClick={onClose}
-          >
-            <MenuItem>{t("menu1Item2")}</MenuItem>
-          </Link>
-          <Link
-            as={NextLink}
-            href={`/${localActive}/shopping-items`}
-            onClick={onClose}
-          >
-            <MenuItem>{t("menu1Item3")}</MenuItem>
-          </Link>
-          <Link
-            as={NextLink}
-            href={`/${localActive}/shopping-items`}
-            onClick={onClose}
-          >
-            <MenuItem>{t("menu1Item4")}</MenuItem>
-          </Link>
-          <Link
-            as={NextLink}
-            href={`/${localActive}/shopping-items`}
-            onClick={onClose}
-          >
-            <MenuItem>{t("menu1Item5")}</MenuItem>
-          </Link>
-          <Link
-            as={NextLink}
-            href={`/${localActive}/shopping-items`}
-            onClick={onClose}
-          >
-            <MenuItem>{t("menu1Item6")}</MenuItem>
-          </Link> */}
         </MenuList>
       </Menu>
+      {showLinks && (
+        <Stack
+          px={3}
+          py={2}
+          color={"#000000"}
+          w={"100%"}
+          borderRadius={8}
+          borderWidth={1}
+          borderColor={"#bcbcbc"}
+        >
+          {categories.map((category, index) => (
+            <Link
+              py={1}
+              px={2}
+              borderRadius={5}
+              key={index}
+              as={NextLink}
+              href={`/${localActive}/shopping-items?catId=${category.id}`}
+              onClick={() => {
+                if (closeDrawer) closeDrawer();
+              }}
+              _hover={{ bg: "#eeeeee" }}
+            >
+              {localActive === "fr" ? category.fr : category.ar}
+            </Link>
+          ))}
+        </Stack>
+      )}
     </>
   );
 };

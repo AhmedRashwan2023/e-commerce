@@ -11,12 +11,16 @@ import {
   useDisclosure,
   Text,
   Link,
+  Stack,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
+import { ReactNode } from "react";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
+import SearchInput from "../../NavBar/SearchInput";
+import Menu from "..";
 
-const SideMenuDrawer = () => {
+const SideMenuDrawer = ({ session }: { session: any }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("Index");
   const localeActive = useLocale();
@@ -53,15 +57,14 @@ const SideMenuDrawer = () => {
             </Flex>
           </DrawerHeader>
           <DrawerBody>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Consequat nisl vel pretium lectus quam id. Semper quis lectus
-              nulla at volutpat diam ut venenatis. Dolor morbi non arcu risus
-              quis varius quam quisque. Massa ultricies mi quis hendrerit dolor
-              magna eget est lorem. Erat imperdiet sed euismod nisi porta.
-              Lectus vestibulum mattis ullamcorper velit.
-            </p>
+            <Stack gap={4} dir={localeActive === "ar" ? "rtl" : "ltr"}>
+              <SearchInput menuLocation={"side"} />
+              <Menu
+                session={session}
+                menuLocation={"side"}
+                closeDrawer={onClose}
+              />
+            </Stack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
