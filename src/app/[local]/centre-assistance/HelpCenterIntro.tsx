@@ -1,7 +1,6 @@
 import { bodyPadding } from "@/assets/global";
 import { Box, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import React from "react";
 
 const HelpCenterIntro = () => {
   const t = useTranslations("helpCenter");

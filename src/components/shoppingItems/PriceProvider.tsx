@@ -1,6 +1,5 @@
 import { HStack, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import React from "react";
 
 const PriceProvider = ({
   sellingPrice,

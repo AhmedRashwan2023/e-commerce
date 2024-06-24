@@ -1,7 +1,6 @@
 "use client";
 import { RadioGroup, Stack, Radio, Flex } from "@chakra-ui/react";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
 import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
 
 const Evaluation = () => {

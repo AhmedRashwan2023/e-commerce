@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
+import { ReactNode } from "react";
 
-const LabelBagde = ({ children }: { children: React.ReactNode }) => {
+const LabelBagde = ({ children }: { children: ReactNode }) => {
   return (
     <Box
       fontWeight={"bold"}

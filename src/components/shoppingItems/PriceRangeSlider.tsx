@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import { useState } from "react";
 
 const PriceRangeSlider = () => {
   const t = useTranslations("shoppingItems");
@@ -33,8 +33,8 @@ const PriceRangeSlider = () => {
       : 300
     : 300;
 
-  const [minPrice, setMin] = React.useState(initialPriceFrom);
-  const [maxPrice, setMax] = React.useState(initialPriceTo);
+  const [minPrice, setMin] = useState(initialPriceFrom);
+  const [maxPrice, setMax] = useState(initialPriceTo);
 
   const setSearchParams = (priceFrom: string, priceTo: string) => {
     const params = new URLSearchParams(searchParams);

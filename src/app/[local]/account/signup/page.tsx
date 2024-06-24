@@ -13,7 +13,6 @@ import {
 import NextLink from "next/link";
 
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
 
 const SignUp = () => {
   const t = useTranslations("signUpPage");

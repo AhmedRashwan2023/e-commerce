@@ -2,7 +2,7 @@
 
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
-import React from "react";
+import { ReactNode } from "react";
 
 const breakpoints = {
   base: "0em",
@@ -18,7 +18,7 @@ const theme = extendTheme({
   breakpoints,
 });
 
-const Provider = ({ children }: { children: React.ReactNode }) => {
+const Provider = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
 
   return (

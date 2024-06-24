@@ -1,20 +1,20 @@
 "use client";
 import {
-  Button,
   Link,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalHeader,
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useTranslations } from "next-intl";
-import React from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { ReactNode } from "react";
 
-const ModifyAddressModal = ({ children }: { children: React.ReactNode }) => {
+const ModifyAddressModal = ({ children }: { children: ReactNode }) => {
   const t = useTranslations("myAddresses");
+  const localeActive = useLocale();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -23,9 +23,8 @@ const ModifyAddressModal = ({ children }: { children: React.ReactNode }) => {
       </Link>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent dir={localeActive === "ar" ? "rtl" : "ltr"}>
           <ModalHeader>{t("modifyModelTitle")}</ModalHeader>
-          <ModalCloseButton />
           <ModalBody>{children}</ModalBody>
         </ModalContent>
       </Modal>

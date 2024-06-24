@@ -6,13 +6,13 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
+import { useState } from "react";
 import { FaEye, FaEyeLowVision } from "react-icons/fa6";
 
 const InputPassword = () => {
   const t = useTranslations("signInPage");
   const activeLocale = useLocale();
-  const [showPass, setShowPass] = React.useState(false);
+  const [showPass, setShowPass] = useState(false);
   const ShowPassIcon = !showPass ? FaEye : FaEyeLowVision;
 
   const handleShowPass = () => {

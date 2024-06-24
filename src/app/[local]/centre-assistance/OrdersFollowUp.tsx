@@ -1,7 +1,6 @@
 import { Flex, HStack, Heading, Input, Stack, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { FaQuestionCircle } from "react-icons/fa";
-import React from "react";
 import { MdOutlineHeadsetMic } from "react-icons/md";
 
 const OrdersFollowUp = () => {

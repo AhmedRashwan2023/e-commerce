@@ -1,6 +1,5 @@
 import { Flex, HStack, Link, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import React from "react";
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { LiaCopyrightSolid } from "react-icons/lia";
 import NextLink from "next/link";

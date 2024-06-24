@@ -1,5 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-import React from "react";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 
 const ItemEvaluationProvider = ({ starsNumber }: { starsNumber: number }) => {

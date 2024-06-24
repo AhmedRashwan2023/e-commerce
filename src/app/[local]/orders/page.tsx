@@ -1,7 +1,6 @@
 import MyAccountLayout from "@/components/MyAccountLayout";
 import { Heading, Stack } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
-import React from "react";
 import OrdersTable from "./OrdersTable";
 import { orders } from "@/data/orders";
 

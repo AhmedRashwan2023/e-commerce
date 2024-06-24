@@ -1,14 +1,12 @@
 "use client";
 import { HStack, Link, Text } from "@chakra-ui/react";
-import React from "react";
-import { IconType } from "react-icons";
+import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import { useLocale } from "next-intl";
 import { CiSettings } from "react-icons/ci";
-import { MdLocationPin } from "react-icons/md";
-import { FaRegBell } from "react-icons/fa6";
 import { FaShoppingBag } from "react-icons/fa";
+import { FaRegBell } from "react-icons/fa6";
+import { MdLocationPin } from "react-icons/md";
 
 const SideLink = ({
   icon,

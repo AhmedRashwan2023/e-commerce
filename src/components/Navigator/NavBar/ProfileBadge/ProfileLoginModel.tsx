@@ -1,9 +1,9 @@
 "use client";
+
 import {
-  Button,
+  Link,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalHeader,
   ModalOverlay,
@@ -11,26 +11,22 @@ import {
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { ReactNode } from "react";
+import { IoPerson } from "react-icons/io5";
 
-const AddNewAddressModal = ({ children }: { children: ReactNode }) => {
-  const t = useTranslations("myAddresses");
-  const localeActive = useLocale();
+const ProfileLoginModel = ({ children }: { children: ReactNode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const t = useTranslations("signInPage");
+  const localeActive = useLocale();
+
   return (
     <>
-      <Button
-        onClick={onOpen}
-        backgroundColor={"white"}
-        borderColor={"black"}
-        borderWidth={1}
-        _hover={{ bg: "#01114d", color: "white" }}
-      >
-        {t("addNewModel")}
-      </Button>
+      <Link onClick={onOpen} fontSize={20}>
+        <IoPerson />
+      </Link>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent dir={localeActive === "ar" ? "rtl" : "ltr"}>
-          <ModalHeader>{t("modelTitle")}</ModalHeader>
+          <ModalHeader>{t("signInButton")}</ModalHeader>
           <ModalBody>{children}</ModalBody>
         </ModalContent>
       </Modal>
@@ -38,4 +34,4 @@ const AddNewAddressModal = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default AddNewAddressModal;
+export default ProfileLoginModel;

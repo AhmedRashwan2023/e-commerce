@@ -1,6 +1,5 @@
 import { bodyPadding } from "@/assets/global";
 import { Box, HStack } from "@chakra-ui/react";
-import React from "react";
 import MeetWithUs from "./MeetWithUs";
 import ForCustomers from "./ForCustomers";
 import CopyRightsAndSocial from "./CopyRightsAndSocial";

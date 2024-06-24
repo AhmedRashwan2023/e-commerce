@@ -1,4 +1,3 @@
-import React from "react";
 import { HStack } from "@chakra-ui/react";
 import Menu1Categores from "./Menu1Categores";
 import Menu2MainPage from "./Menu2MainPage";

@@ -6,8 +6,8 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import { redirect, useRouter, useSearchParams } from "next/navigation";
-import React, { useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
 const SearchInput = () => {
@@ -23,7 +23,7 @@ const SearchInput = () => {
         event.preventDefault();
         const params = new URLSearchParams(searchParams);
         params.set("name", value);
-        router.push(`?${params.toString()}`);
+        router.push(`/${localActive}/shopping-items?${params.toString()}`);
       }}
     >
       <InputGroup w={"35vw"}>

@@ -1,6 +1,6 @@
 "use client";
 import { Checkbox } from "@chakra-ui/react";
-import React from "react";
+import { useState } from "react";
 
 interface Props {
   value: boolean;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const AddressFormCheckbox = ({ value, text }: Props) => {
-  const [inputValue, setValue] = React.useState(value);
+  const [inputValue, setValue] = useState(value);
 
   return (
     <Checkbox

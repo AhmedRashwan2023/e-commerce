@@ -1,7 +1,6 @@
 import { Flex, Link, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import NextLink from "next/link";
-import React from "react";
 
 const MeetWithUs = () => {
   const t = useTranslations("MeetWithUs");

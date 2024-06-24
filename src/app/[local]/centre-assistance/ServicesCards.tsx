@@ -1,6 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import React from "react";
 import { IconType } from "react-icons";
 import { LuTruck } from "react-icons/lu";
 import { FaBox } from "react-icons/fa6";

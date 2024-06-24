@@ -1,32 +1,19 @@
 "use client";
 
-import { HStack, Icon, Select } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChangeEvent, useState } from "react";
-import { BsGrid } from "react-icons/bs";
-import { MdFormatListBulleted } from "react-icons/md";
+import { ChangeEvent } from "react";
 
 const ItemsDisplayAndOrder = () => {
   const t = useTranslations("shoppingItems");
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const initialView = searchParams.get("view") ?? "grid";
   const displayString = searchParams.get("display");
   const initialDisplay = displayString ? parseInt(displayString) : 50;
   const initialOrderBy = searchParams.get("orderBy") ?? "featured";
 
-  const changeViewToList = () => {
-    const params = new URLSearchParams(searchParams);
-    params.set("view", "list");
-    router.push(`?${params.toString()}`);
-  };
-  const changeViewToGrid = () => {
-    const params = new URLSearchParams(searchParams);
-    params.set("view", "grid");
-    router.push(`?${params.toString()}`);
-  };
   const changeDisplay = (event: ChangeEvent<HTMLSelectElement>) => {
     const params = new URLSearchParams(searchParams);
     params.set("display", event.target.value);
@@ -40,20 +27,6 @@ const ItemsDisplayAndOrder = () => {
 
   return (
     <HStack wrap={"wrap"}>
-      <Icon
-        as={MdFormatListBulleted}
-        boxSize={5}
-        color={initialView === "list" ? "#38761d" : "#bcbcbc"}
-        cursor={"pointer"}
-        onClick={() => changeViewToList()}
-      />
-      <Icon
-        as={BsGrid}
-        boxSize={5}
-        color={initialView === "grid" ? "#38761d" : "#bcbcbc"}
-        cursor={"pointer"}
-        onClick={() => changeViewToGrid()}
-      />
       <select
         style={selectStyle}
         onChange={changeDisplay}

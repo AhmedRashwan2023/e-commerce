@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
-import React from "react";
 import { FaCaretDown } from "react-icons/fa";
 import Menu4NestedMenu from "./Menu4NestedMenu";
 import { NavBarProps } from "../../NavBar";

@@ -1,6 +1,5 @@
 import { Box, Flex, HStack, Text, Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
 import NextLink from "next/link";
 
 const Menu3MoreCategoriesDetails = () => {

@@ -1,7 +1,6 @@
 import MyAccountLayout from "@/components/MyAccountLayout";
 import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
-import React from "react";
 import AddNewAddressModal from "./AddNewAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
 import AddressCard from "./AddressCard";

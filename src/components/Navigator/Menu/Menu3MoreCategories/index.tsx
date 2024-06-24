@@ -9,7 +9,6 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
 import { FaCaretDown } from "react-icons/fa";
 import Menu3MoreCategoriesDetails from "./Menu3MoreCategoriesDetails";
 import { useTranslations } from "next-intl";

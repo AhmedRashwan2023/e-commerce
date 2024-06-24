@@ -1,6 +1,6 @@
 "use client";
 import { Input } from "@chakra-ui/react";
-import React from "react";
+import { useRef, useState } from "react";
 
 interface Props {
   value?: string | number;
@@ -9,8 +9,8 @@ interface Props {
   required?: boolean;
 }
 const AddressFormInput = ({ value, name, placeholder, required }: Props) => {
-  const [inputValue, setValue] = React.useState(value);
-  const ref = React.useRef<HTMLInputElement>(null);
+  const [inputValue, setValue] = useState(value);
+  const ref = useRef<HTMLInputElement>(null);
 
   return (
     <Input

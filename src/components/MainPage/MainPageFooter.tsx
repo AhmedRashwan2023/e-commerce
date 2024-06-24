@@ -1,7 +1,6 @@
 import { Box, Flex, Link, Stack, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
-import React from "react";
 import { IconType } from "react-icons";
 import { BsClock } from "react-icons/bs";
 import { FaBoxOpen } from "react-icons/fa6";

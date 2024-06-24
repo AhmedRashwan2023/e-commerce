@@ -22,7 +22,6 @@ const ShoppingItems = async ({
     priceTo: (searchParams.priceTo || 300) as number,
     evaluation: (searchParams.evaluation || 5) as number,
     name: (searchParams.name || "") as string,
-    view: (searchParams.view || "grid") as string,
     display: (searchParams.display || 50) as number,
     orderBy: (searchParams.orderBy || "featured") as string,
   };

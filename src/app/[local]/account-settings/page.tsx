@@ -10,7 +10,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
 import NextLink from "next/link";
 import MyAccountLayout from "@/components/MyAccountLayout";
 import { useLocale, useTranslations } from "next-intl";

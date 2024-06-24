@@ -1,6 +1,5 @@
 import { Box, Button, Flex, Show, Stack, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import React from "react";
 import ModifyAddressModal from "./ModifyAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
 

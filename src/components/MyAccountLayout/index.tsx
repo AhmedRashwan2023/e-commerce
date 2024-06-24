@@ -10,12 +10,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { redirect } from "next/navigation";
-import React from "react";
+import { ReactNode } from "react";
 import { MdLogout } from "react-icons/md";
 import SideLink from "./SideLink";
 import { getLocale, getTranslations } from "next-intl/server";
 
-const MyAccountLayout = async ({ children }: { children: React.ReactNode }) => {
+const MyAccountLayout = async ({ children }: { children: ReactNode }) => {
   const t = await getTranslations("myAccount");
   const activeLocale = await getLocale();
   const session = await getSession();

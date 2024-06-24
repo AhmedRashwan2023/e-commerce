@@ -13,7 +13,6 @@ interface Props {
     priceTo: number;
     evaluation: number;
     name: string;
-    view: string;
     display: number;
     orderBy: string;
   };
@@ -41,10 +40,6 @@ const ItemsGrid = async ({ initialSearchParams }: Props) => {
         ? initialSearchParams.evaluation
         : 5,
     name: initialSearchParams.name,
-    view:
-      initialSearchParams.view !== "list" && initialSearchParams.view !== "grid"
-        ? "grid"
-        : initialSearchParams.view,
     display: !displayOptions.includes(initialSearchParams.display)
       ? 50
       : initialSearchParams.display,

@@ -11,7 +11,6 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import NextLink from "next/link";
 

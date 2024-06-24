@@ -1,6 +1,5 @@
 import { Button, Checkbox, Flex, Input, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
 import AddressFormInput from "./AddressFormInput";
 import AddressFormCheckbox from "./AddressFormCheckbox";
 
