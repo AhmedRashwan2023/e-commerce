@@ -1,16 +1,17 @@
 import MyAccountLayout from "@/components/MyAccountLayout";
-import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
 import AddNewAddressModal from "./AddNewAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
 import AddressCard from "./AddressCard";
 import { addresses } from "@/data/addresses";
+import AddressCardContainer from "./AddressCardContainer";
 
 const MyAddresses = async () => {
   const t = await getTranslations("myAddresses");
   return (
     <MyAccountLayout>
-      <Box w={"40vw"}>
+      <Box>
         <Flex justifyContent={"space-between"} pb={10}>
           <Heading as="h2" size="lg">
             {t("title")}
@@ -19,11 +20,13 @@ const MyAddresses = async () => {
             <AddressForm />
           </AddNewAddressModal>
         </Flex>
-        <Flex flexWrap={"wrap"} gap={3}>
+        <SimpleGrid columns={{ sm: 1, md: 2, "2xl": 3 }} spacing={6}>
           {addresses.map((address, index) => (
-            <AddressCard key={index} data={address} />
+            <AddressCardContainer key={index}>
+              <AddressCard data={address} />
+            </AddressCardContainer>
           ))}
-        </Flex>
+        </SimpleGrid>
       </Box>
     </MyAccountLayout>
   );

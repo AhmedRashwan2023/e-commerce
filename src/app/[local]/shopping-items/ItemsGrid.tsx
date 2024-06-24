@@ -76,11 +76,7 @@ const ItemsGrid = async ({ initialSearchParams }: Props) => {
         </HStack>
         <ItemsDisplayAndOrder />
       </Flex>
-      {/* <Flex wrap={"wrap"} gap={2}>
-        {products.map((product, index) => (
-          // <ItemCard view={validSearchParams.view} item={product} key={index} />
-        ))}
-      </Flex> */}
+
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={6}>
         {products.map((product, index) => (
           <ItemCardContainer key={index}>
