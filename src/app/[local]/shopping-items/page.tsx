@@ -2,11 +2,11 @@ import { bodyPadding } from "@/assets/global";
 import Evaluation from "@/components/ShoppingItems/Evaluation";
 import PriceRangeSlider from "@/components/ShoppingItems/PriceRangeSlider";
 import { categories } from "@/data/categories";
-import { Box, Flex, HStack, Link, Show, Stack, Text } from "@chakra-ui/react";
+import { setSearchParams } from "@/services/shoppingItems";
+import { Flex, Link, Show, Stack, Text } from "@chakra-ui/react";
 import { getLocale, getTranslations } from "next-intl/server";
 import NextLink from "next/link";
 import ItemsGrid from "./ItemsGrid";
-import { setSearchParams } from "@/services/shoppingItems";
 
 const ShoppingItems = async ({
   searchParams,

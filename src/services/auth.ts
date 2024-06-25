@@ -34,28 +34,30 @@ export async function decrypt(input: string): Promise<any> {
 export async function signIn(formData: FormData) {
   // Verify credentials && get the user
 
-  // const user = {
-  //   username: formData.get("username"),
-  //   password: formData.get("password"),
-  // };
+  const user = {
+    username: formData.get("username"),
+    password: formData.get("password"),
+  };
 
   try {
-    // const res = await fetch("https://srv14.optimgov.com/authenticate", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(user),
-    // });
+    const res = await fetch("https://srv14.optimgov.com/authenticate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
 
-    // const data = await res.json();
+    const data = await res.json();
 
-    const user = { username: "ahmed" };
+    // const user = { username: "ahmed" };
 
     // Create the session
     const expires = new Date(Date.now() + 60 * 60 * 24 * 1000);
-    const session = await encrypt({ user, expires });
+    const session = await encrypt({ data, expires });
 
     // Save the session in a cookie
     cookies().set("session", session, { expires, httpOnly: true });
+
+    return session;
   } catch (error) {
     return { error };
   }

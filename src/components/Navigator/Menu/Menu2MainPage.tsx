@@ -1,3 +1,4 @@
+"use client";
 import { Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
@@ -11,9 +12,9 @@ const Menu2MainPage = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
       as={NextLink}
       href={`/${localActive}`}
       w={menuLocation === "side" ? "100%" : "inherit"}
-      // onClick={() => {
-      //   if (closeDrawer) closeDrawer();
-      // }}
+      onClick={() => {
+        if (closeDrawer) closeDrawer();
+      }}
     >
       {t("title")}
     </Link>
