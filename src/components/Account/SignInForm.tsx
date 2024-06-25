@@ -1,20 +1,31 @@
-import { signIn } from "@/services/auth";
-import { Button, HStack, Input, Link, Text } from "@chakra-ui/react";
+"use client";
+import { Button, HStack, Input, Link, Text, useToast } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import { redirect } from "next/navigation";
-import InputPassword from "../FormControl/InputPassword";
 import NextLink from "next/link";
+import InputPassword from "../FormControl/InputPassword";
+import { handleSignIn } from "./action";
+import { useRouter } from "next/navigation";
 
 const SignInForm = ({ specialURL }: { specialURL?: string }) => {
   const activeLocale = useLocale();
   const t = useTranslations("signInPage");
-
+  const toast = useToast();
+  const router = useRouter();
   const handleFormAction = async (formData: FormData) => {
-    "use server";
-    await signIn(formData);
-
-    if (specialURL) redirect(specialURL);
-    else redirect(`/${activeLocale}`);
+    const data = await handleSignIn(formData);
+    if (data?.error) {
+      toast({
+        title: "Error",
+        description: t("signInError"),
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+      return;
+    } else {
+      if (specialURL) router.push(specialURL);
+      else router.push(`/${activeLocale}`);
+    }
   };
 
   return (
@@ -29,7 +40,7 @@ const SignInForm = ({ specialURL }: { specialURL?: string }) => {
         borderWidth={1}
         mb={3}
       />
-      <InputPassword />
+      <InputPassword isRequired />
       <HStack fontWeight={"semibold"}>
         <Text color={"#818181"}>{t("forgotPassword")}</Text>
         <Link

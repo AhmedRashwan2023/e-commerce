@@ -89,7 +89,8 @@
     "password": "كلمة المرور",
     "forgotPassword": "نسيت كلمة السر؟",
     "forgotPasswordLink": "إعادة تعيينها",
-    "signInButton": "تسجيل الدخول"
+    "signInButton": "تسجيل الدخول",
+    "signInError": "البريد الإلكتروني أو الكلمة المرور غير صحيحة، يرجى مراجعة بيانات الاعتماد الخاصة بك والمحاولة مرة أخرى."
   },
   "signUpPage": {
     "alreadyHaveAcc": "لديك حساب بالفعل؟",

@@ -89,7 +89,8 @@
     "password": "Mot de passe",
     "forgotPassword": "Mot de passe oublié?",
     "forgotPasswordLink": "Réinitialisez-le",
-    "signInButton": "Se connecter"
+    "signInButton": "Se connecter",
+    "signInError": "Invalide email ou mot de passe, veuillez vérifier vos identifiants et réessayer."
   },
   "signUpPage": {
     "alreadyHaveAcc": "Vous avez déjà de compte?",

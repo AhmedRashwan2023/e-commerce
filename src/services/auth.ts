@@ -57,9 +57,9 @@ export async function signIn(formData: FormData) {
     // Save the session in a cookie
     cookies().set("session", session, { expires, httpOnly: true });
 
-    return session;
+    return data;
   } catch (error) {
-    return { error };
+    return { error: true };
   }
 }
 
