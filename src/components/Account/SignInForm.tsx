@@ -15,8 +15,8 @@ const SignInForm = ({ specialURL }: { specialURL?: string }) => {
     const data = await handleSignIn(formData);
     if (data?.error) {
       toast({
-        title: "Error",
         description: t("signInError"),
+        position: activeLocale === "ar" ? "top-left" : "top-right",
         status: "error",
         duration: 4000,
         isClosable: true,
