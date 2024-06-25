@@ -5,14 +5,16 @@ import { redirect } from "next/navigation";
 import InputPassword from "../FormControl/InputPassword";
 import NextLink from "next/link";
 
-const SignInForm = () => {
+const SignInForm = ({ specialURL }: { specialURL?: string }) => {
   const activeLocale = useLocale();
   const t = useTranslations("signInPage");
 
   const handleFormAction = async (formData: FormData) => {
     "use server";
     await signIn(formData);
-    redirect(`/${activeLocale}`);
+
+    if (specialURL) redirect(specialURL);
+    else redirect(`/${activeLocale}`);
   };
 
   return (

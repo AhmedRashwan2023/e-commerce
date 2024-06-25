@@ -47,7 +47,7 @@ const NavBar: React.FC<NavBarProps> = ({ session }) => {
           </HStack>
           <HStack gap={5}>
             <Show above="lg">
-              <WishListBadge />
+              <WishListBadge session={session} />
             </Show>
             <CartDrawer />
             <ProfileBadge session={session} />
