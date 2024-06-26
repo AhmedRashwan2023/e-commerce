@@ -228,5 +228,21 @@
     "qty": "Articles",
     "status": "Statut",
     "price": "Montant"
+  },
+  "shoppingCart": {
+    "drawerTitle": "Chariot De Courses",
+    "currency": "MAD",
+    "remove": "Retirer",
+    "emptyCart": "Le panier est vide, commencez dès maintenant votre meilleure expérience de shopping.",
+    "itemAdded": "L'article a été ajouté avec succès",
+    "itemRemoved": "L'article a été supprimé avec succès",
+    "qtyUpdated": "La quantité de l'article a été mise à jour avec succès",
+    "errorOccurred": "Une erreur est survenue ! Veuillez réessayer plus tard",
+    "removeConfirm": "Confirmation pour supprimer l'élément",
+    "removeConfMsg": "Êtes-vous sûr de vouloir supprimer cet article du panier d'achat ?",
+    "yes": "Oui",
+    "no": "Non",
+    "execute": "Exécuter l'ordre d'achat",
+    "removeAll": "Vider le panier"
   }
 }

@@ -15,9 +15,9 @@ import Menu from "../Menu";
 import NextLink from "next/link";
 import { useLocale } from "next-intl";
 import WishListBadge from "./WishListBadge";
-import CartDrawer from "./CartDrawer";
 import ProfileBadge from "./ProfileBadge";
 import SideMenuDrawer from "../Menu/SideMenu/SideMenuDrawer";
+import CartDrawer from "./CartDrawer";
 
 export interface NavBarProps {
   session: any;

@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import Provider from "./chakraProvider";
 import "./globals.css";
 import { getSession } from "@/services/auth";
+import { CartWrapper } from "@/contexts/shoppingCart";
 
 export const metadata: Metadata = {
   title: "Entre Murs Galerie",
@@ -27,9 +28,11 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <Provider>
-            <NavBar session={session} />
-            {children}
-            <Footer />
+            <CartWrapper>
+              <NavBar session={session} />
+              {children}
+              <Footer />
+            </CartWrapper>
           </Provider>
         </NextIntlClientProvider>
       </body>

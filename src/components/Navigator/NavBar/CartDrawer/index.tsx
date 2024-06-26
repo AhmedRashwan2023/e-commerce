@@ -11,17 +11,21 @@ import {
   Flex,
   Link,
 } from "@chakra-ui/react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FaCartArrowDown } from "react-icons/fa6";
-import CountBadge from "../CountBadge";
+import CountBadge from "../../CountBadge";
 import { IoMdClose } from "react-icons/io";
+import CartViewer from "./CartViewer";
+import { useCartContext } from "@/contexts/shoppingCart";
 
 const CartDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const localeActive = useLocale();
+  const t = useTranslations("shoppingCart");
+  const { cartItems } = useCartContext();
 
   return (
-    <CountBadge count={2}>
+    <CountBadge count={cartItems.length}>
       <Box fontSize={23} onClick={onOpen} color={"#f1c232"} cursor={"pointer"}>
         <FaCartArrowDown />
       </Box>
@@ -29,28 +33,23 @@ const CartDrawer = () => {
         onClose={onClose}
         isOpen={isOpen}
         placement={"right"}
-        size={{ base: "full", md: "sm" }}
+        size={{ base: "full", md: "md" }}
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader dir={localeActive === "ar" ? "rtl" : "ltr"}>
+          <DrawerHeader
+            dir={localeActive === "ar" ? "rtl" : "ltr"}
+            color={"green"}
+          >
             <Flex justifyContent={"space-between"} alignItems={"center"}>
-              <Text>{`Cart`}</Text>
+              <Text>{`${t("drawerTitle")}`}</Text>
               <Link onClick={onClose} color={"#000000"}>
                 <IoMdClose />
               </Link>
             </Flex>
           </DrawerHeader>
           <DrawerBody>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Consequat nisl vel pretium lectus quam id. Semper quis lectus
-              nulla at volutpat diam ut venenatis. Dolor morbi non arcu risus
-              quis varius quam quisque. Massa ultricies mi quis hendrerit dolor
-              magna eget est lorem. Erat imperdiet sed euismod nisi porta.
-              Lectus vestibulum mattis ullamcorper velit.
-            </p>
+            <CartViewer />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

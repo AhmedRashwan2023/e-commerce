@@ -14,8 +14,9 @@ import ItemEvaluationProvider from "./ItemEvaluationProvider";
 import PriceProvider from "./PriceProvider";
 import NextLink from "next/link";
 import { FaPlus } from "react-icons/fa6";
+import AddToCartButton from "./AddToCartButton";
 
-interface ItemProps {
+export interface ItemProps {
   id: number;
   name: string;
   category: number;
@@ -41,10 +42,6 @@ const ItemCard = ({ item }: { item: ItemProps }) => {
     const category = categories.find((cat) => cat.id === categoryId);
     if (localeActive === "fr") return category ? category.fr : null;
     else return category ? category.ar : null;
-  };
-
-  const addToCard = async () => {
-    "use server";
   };
 
   return (
@@ -80,18 +77,7 @@ const ItemCard = ({ item }: { item: ItemProps }) => {
             normalPrice={item.normalPrice}
             sellingPrice={item.sellingPrice}
           />
-          <form action={addToCard}>
-            <Button
-              leftIcon={<FaPlus />}
-              size="sm"
-              type="submit"
-              backgroundColor={"#01114d"}
-              color={"white"}
-              _hover={{ bg: "#01114d", color: "white" }}
-            >
-              {t("addToCard")}
-            </Button>
-          </form>
+          <AddToCartButton item={item} />
         </Flex>
       </CardBody>
     </Card>
