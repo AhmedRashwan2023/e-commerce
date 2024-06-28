@@ -56,7 +56,8 @@
     "menu4Item4Nested2": "Paramètres",
     "menu4Item4Nested3": "Adresse",
     "menu4Item4Nested4": "Mode de paiement",
-    "menu4Item4Nested5": "Notification"
+    "menu4Item4Nested5": "Notification",
+    "shoppingCart": "Chariot De Courses"
   },
   "menuHelp": {
     "title": "Centre d'aide"
@@ -135,6 +136,7 @@
     "callUsDesc": "Appelez-nous depuis tout le Maroc Du Lundi au Dimanche de 9h00 à 19h"
   },
   "myAccount": {
+    "shoppingCart": "Chariot De Courses",
     "myOrders": "Vos commandes",
     "settings": "Paramètre",
     "address": "Adresse",
@@ -233,7 +235,8 @@
     "drawerTitle": "Chariot De Courses",
     "currency": "MAD",
     "remove": "Retirer",
-    "emptyCart": "Le panier est vide, commencez dès maintenant votre meilleure expérience de shopping.",
+    "emptyCartText": "Le panier est vide,",
+    "emptyCartLink": "commencez dès maintenant votre meilleure expérience de shopping.",
     "itemAdded": "L'article a été ajouté avec succès",
     "itemRemoved": "L'article a été supprimé avec succès",
     "qtyUpdated": "La quantité de l'article a été mise à jour avec succès",

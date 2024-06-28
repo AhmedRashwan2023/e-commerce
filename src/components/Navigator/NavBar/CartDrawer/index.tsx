@@ -49,7 +49,7 @@ const CartDrawer = () => {
             </Flex>
           </DrawerHeader>
           <DrawerBody>
-            <CartViewer />
+            <CartViewer onClose={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

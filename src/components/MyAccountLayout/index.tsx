@@ -31,6 +31,11 @@ const MyAccountLayout = async ({ children }: { children: ReactNode }) => {
     <Flex px={bodyPadding} gap={10}>
       <Show above="lg">
         <Stack py={"3rem"}>
+          <SideLink
+            href="shopping-cart"
+            text={t("shoppingCart")}
+            icon={"FaShoppingCart"}
+          />
           <SideLink href="orders" text={t("myOrders")} icon={"FaShoppingBag"} />
           <SideLink
             href="account-settings"

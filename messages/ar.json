@@ -56,7 +56,8 @@
     "menu4Item4Nested2": "الإعدادات",
     "menu4Item4Nested3": "العناوين",
     "menu4Item4Nested4": "طريقة الدفع",
-    "menu4Item4Nested5": "الإشعارات"
+    "menu4Item4Nested5": "الإشعارات",
+    "shoppingCart": "عربة التسوق"
   },
   "menuHelp": {
     "title": "المساعدة"
@@ -135,6 +136,7 @@
     "callUsDesc": "اتصل بنا من أي مكان في المغرب من الاثنين إلى الأحد من الساعة 9:00 صباحًا حتى الساعة 7:00 مساءً."
   },
   "myAccount": {
+    "shoppingCart": "عربة التسوق",
     "myOrders": "طلباتك",
     "settings": "إعدادات الحساب",
     "address": "العناوين",
@@ -233,7 +235,8 @@
     "drawerTitle": "عربة التسوق",
     "currency": "درهم",
     "remove": "حذف",
-    "emptyCart": "عربة التسوق فارغة، ابدأ تجربتك التسوقية الأفضل الآن.",
+    "emptyCartText": "عربة التسوق فارغة،",
+    "emptyCartLink": "ابدأ تجربتك التسوقية الأفضل الآن.",
     "itemAdded": "تمت إضافة المنتج بنجاح",
     "itemRemoved": "تمت إزالة المنتج بنجاح",
     "qtyUpdated": "تم تحديث كمية المنتج بنجاح",

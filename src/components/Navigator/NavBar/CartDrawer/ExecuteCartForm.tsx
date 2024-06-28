@@ -1,10 +1,8 @@
 import { useCartContext } from "@/contexts/shoppingCart";
 import { Button, Flex } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import React from "react";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { handleExecuteCart } from "./action";
-import { MdDeleteForever } from "react-icons/md";
 import RemoveAllItemsBtn from "./RemoveAllItemsBtn";
 
 const ExecuteCartForm = () => {

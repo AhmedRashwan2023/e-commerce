@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import { ReactNode } from "react";
 
 const breakpoints = {
@@ -19,11 +19,11 @@ const theme = extendTheme({
 });
 
 const Provider = ({ children }: { children: ReactNode }) => {
-  const pathname = usePathname();
+  const activeLocale = useLocale();
 
   return (
     <ChakraProvider theme={theme}>
-      <Box dir={pathname.includes("ar") ? "rtl" : "ltr"} fontSize={"14px"}>
+      <Box dir={activeLocale === "ar" ? "rtl" : "ltr"} fontSize={"14px"}>
         {children}
       </Box>
     </ChakraProvider>

@@ -4,7 +4,7 @@ import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { CiSettings } from "react-icons/ci";
-import { FaShoppingBag } from "react-icons/fa";
+import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
 import { FaRegBell } from "react-icons/fa6";
 import { MdLocationPin } from "react-icons/md";
 
@@ -20,6 +20,8 @@ const SideLink = ({
   const Icon =
     icon === "CiSettings"
       ? CiSettings
+      : icon === "FaShoppingCart"
+      ? FaShoppingCart
       : icon === "MdLocationPin"
       ? MdLocationPin
       : icon === "FaRegBell"

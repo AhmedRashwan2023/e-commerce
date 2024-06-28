@@ -153,6 +153,19 @@ const Menu4Account: React.FC<NavBarProps> = ({
         >
           <Link
             as={NextLink}
+            href={`/${activeLocale}/shopping-cart`}
+            onClick={() => {
+              if (closeDrawer) closeDrawer();
+            }}
+            py={1}
+            px={2}
+            borderRadius={5}
+            _hover={{ bg: "#eeeeee" }}
+          >
+            {t("shoppingCart")}
+          </Link>
+          <Link
+            as={NextLink}
             href={`/${activeLocale}/orders`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
