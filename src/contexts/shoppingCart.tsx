@@ -37,7 +37,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-right",
+        position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -80,16 +80,16 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
       toast({
         description: `${t("itemAdded")}`,
-        position: "top-right",
+        position: "top-left",
         status: "success",
-        duration: 500,
+        duration: 1500,
         isClosable: true,
       });
     } catch (error) {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-right",
+        position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -109,16 +109,16 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
       toast({
         description: `${t("itemRemoved")}`,
-        position: "top-right",
+        position: "top-left",
         status: "warning",
-        duration: 500,
+        duration: 1500,
         isClosable: true,
       });
     } catch (error) {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-right",
+        position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -150,9 +150,9 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
         toast({
           description: `${t("qtyUpdated")}`,
-          position: "top-right",
+          position: "top-left",
           status: "success",
-          duration: 500,
+          duration: 1500,
           isClosable: true,
         });
       }
@@ -160,7 +160,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-right",
+        position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -192,9 +192,9 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
         toast({
           description: `${t("qtyUpdated")}`,
-          position: "top-right",
+          position: "top-left",
           status: "success",
-          duration: 500,
+          duration: 1500,
           isClosable: true,
         });
       }
@@ -202,16 +202,55 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-right",
+        position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
       });
     }
   };
+
+  const removeAllItems = () => {
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+
+        if (key && key.startsWith("cart_")) {
+          localStorage.removeItem(key);
+        }
+      }
+
+      setCartItems([]);
+
+      toast({
+        description: `${t("allItemsRemoved")}`,
+        position: "top-left",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+      });
+    } catch (error) {
+      console.log(error);
+      toast({
+        description: `${t("errorOccurred")}`,
+        position: "top-left",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, addQty, decreseQty }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        addQty,
+        decreseQty,
+        removeAllItems,
+      }}
     >
       {children}
     </CartContext.Provider>

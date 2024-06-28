@@ -11,6 +11,7 @@ const SignInForm = ({ specialURL }: { specialURL?: string }) => {
   const t = useTranslations("signInPage");
   const toast = useToast();
   const router = useRouter();
+
   const handleFormAction = async (formData: FormData) => {
     const data = await handleSignIn(formData);
     if (data?.error) {
@@ -39,6 +40,7 @@ const SignInForm = ({ specialURL }: { specialURL?: string }) => {
         _hover={{ borderColor: "rgb(1,17,77)" }}
         borderWidth={1}
         mb={3}
+        value={"administrateur@optimgov.com"}
       />
       <InputPassword isRequired />
       <HStack fontWeight={"semibold"}>

@@ -32,8 +32,6 @@ export async function decrypt(input: string): Promise<any> {
 }
 
 export async function signIn(formData: FormData) {
-  // Verify credentials && get the user
-
   const user = {
     username: formData.get("username"),
     password: formData.get("password"),
@@ -48,13 +46,9 @@ export async function signIn(formData: FormData) {
 
     const data = await res.json();
 
-    // const user = { username: "ahmed" };
-
-    // Create the session
     const expires = new Date(Date.now() + 60 * 60 * 24 * 1000);
     const session = await encrypt({ data, expires });
 
-    // Save the session in a cookie
     cookies().set("session", session, { expires, httpOnly: true });
 
     return data;
@@ -64,7 +58,6 @@ export async function signIn(formData: FormData) {
 }
 
 export async function signOut() {
-  // Destroy the session
   cookies().set("session", "", { expires: new Date(0) });
 }
 

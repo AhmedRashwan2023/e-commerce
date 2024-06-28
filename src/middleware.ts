@@ -1,6 +1,4 @@
 import createMiddleware from "next-intl/middleware";
-import { NextRequest } from "next/server";
-import { updateSession } from "./services/auth";
 
 export default createMiddleware({
   // A list of all locales that are supported

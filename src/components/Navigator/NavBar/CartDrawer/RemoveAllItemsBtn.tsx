@@ -1,11 +1,7 @@
+import { useCartContext } from "@/contexts/shoppingCart";
 import {
-  HStack,
-  Icon,
-  useDisclosure,
-  Text,
   AlertDialog,
   AlertDialogBody,
-  AlertDialogCloseButton,
   AlertDialogContent,
   AlertDialogFooter,
   AlertDialogHeader,
@@ -13,33 +9,33 @@ import {
   Button,
   Flex,
   Link,
+  useDisclosure,
+  Text,
+  HStack,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MdDeleteForever } from "react-icons/md";
-import { CartItemProps } from "./CartItem";
-import { useCartContext } from "@/contexts/shoppingCart";
 
-const RemoveFromCart = ({ item }: { item: CartItemProps }) => {
+const RemoveAllItemsBtn = () => {
   const t = useTranslations("shoppingCart");
-  const localeActive = useLocale();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { removeAllItems } = useCartContext();
+
   const cancelRef = useRef<HTMLButtonElement | null>(null);
-  const { removeFromCart } = useCartContext();
+  const localeActive = useLocale();
 
   return (
     <>
-      <HStack
-        fontWeight={"semibold"}
-        fontSize={12}
-        gap={1}
-        cursor={"pointer"}
+      <Button
+        colorScheme="red"
+        size="sm"
+        leftIcon={<MdDeleteForever />}
         onClick={onOpen}
       >
-        <Icon as={MdDeleteForever} color={"#6aa84f"} fontSize={15} />
-        <Text color={"#999999"}>{t("remove")}</Text>
-      </HStack>
+        {t("removeAll")}
+      </Button>
       <AlertDialog
         motionPreset="slideInBottom"
         leastDestructiveRef={cancelRef}
@@ -58,7 +54,7 @@ const RemoveFromCart = ({ item }: { item: CartItemProps }) => {
               </Link>
             </Flex>
           </AlertDialogHeader>
-          <AlertDialogBody>{t("removeConfMsg")}</AlertDialogBody>
+          <AlertDialogBody>{t("removeAllConf")}</AlertDialogBody>
           <AlertDialogFooter dir={localeActive === "ar" ? "rtl" : "ltr"}>
             <HStack gap={2}>
               <Button ref={cancelRef} onClick={onClose}>
@@ -68,7 +64,7 @@ const RemoveFromCart = ({ item }: { item: CartItemProps }) => {
                 colorScheme="red"
                 ml={3}
                 onClick={() => {
-                  removeFromCart(item);
+                  removeAllItems();
                   onClose();
                 }}
               >
@@ -82,4 +78,4 @@ const RemoveFromCart = ({ item }: { item: CartItemProps }) => {
   );
 };
 
-export default RemoveFromCart;
+export default RemoveAllItemsBtn;
