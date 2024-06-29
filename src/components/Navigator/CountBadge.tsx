@@ -10,7 +10,7 @@ const CountBadge = ({
 }) => {
   return (
     <Box position={"relative"}>
-      {count !== null && (
+      {count !== null && count !== 0 && (
         <Box
           position={"absolute"}
           backgroundColor={"#cc0000"}

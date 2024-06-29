@@ -3,22 +3,20 @@ import { useTranslations } from "next-intl";
 import ModifyAddressModal from "./ModifyAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
 
-interface Props {
-  data: {
-    id: number;
-    firstName: string;
-    lastName: string;
-    address1: string;
-    address2: string;
-    city: string;
-    phone: string;
-    postCode: string;
-    businessName: string;
-    setAsDefault: boolean;
-  };
+export interface AddressProps {
+  id: number;
+  firstName: string;
+  lastName: string;
+  address1: string;
+  address2: string;
+  city: string;
+  phone: string;
+  postCode: string;
+  businessName: string;
+  setAsDefault: boolean;
 }
 
-const AddressCard = ({ data }: Props) => {
+const AddressCard = ({ data }: { data: AddressProps }) => {
   const t = useTranslations("myAddresses");
 
   const setAddressAsDefault = async () => {

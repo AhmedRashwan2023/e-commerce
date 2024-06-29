@@ -10,6 +10,7 @@ import {
   Text,
   Flex,
   Link,
+  Stack,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { FaCartArrowDown } from "react-icons/fa6";
@@ -17,6 +18,7 @@ import CountBadge from "../../CountBadge";
 import { IoMdClose } from "react-icons/io";
 import CartViewer from "./CartViewer";
 import { useCartContext } from "@/contexts/shoppingCart";
+import ExecuteCart from "./ExecuteCart";
 
 const CartDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -49,7 +51,10 @@ const CartDrawer = () => {
             </Flex>
           </DrawerHeader>
           <DrawerBody>
-            <CartViewer onClose={onClose} />
+            <Stack gap={5}>
+              <CartViewer onClose={onClose} />
+              {cartItems.length > 0 && <ExecuteCart onClose={onClose} />}
+            </Stack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

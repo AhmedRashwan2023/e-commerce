@@ -248,6 +248,9 @@
     "execute": "Exécuter l'ordre d'achat",
     "removeAll": "Vider le panier",
     "allItemsRemoved": "Tous les articles ont été retirés du panier.",
-    "removeAllConf": "Êtes-vous sûr de vouloir supprimer tous les articles du panier?"
+    "removeAllConf": "Êtes-vous sûr de vouloir supprimer tous les articles du panier?",
+    "selectAddress": "Sélectionner une adresse",
+    "selectPayment": "Méthode de paiement",
+    "COD": "Contre remboursement"
   }
 }

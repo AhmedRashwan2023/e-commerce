@@ -4,7 +4,6 @@ import React from "react";
 import CartItem, { CartItemProps } from "./CartItem";
 import { useCartContext } from "@/contexts/shoppingCart";
 import { useLocale, useTranslations } from "next-intl";
-import ExecuteCartForm from "./ExecuteCartForm";
 import NextLink from "next/link";
 
 const CartViewer = ({ onClose }: { onClose?: () => void }) => {
@@ -18,7 +17,6 @@ const CartViewer = ({ onClose }: { onClose?: () => void }) => {
       {cartItems.length === 0 && (
         <Alert status="warning" borderRadius={6}>
           <AlertIcon />
-
           <Text>
             {t("emptyCartText")}&nbsp;
             <Link
@@ -38,7 +36,6 @@ const CartViewer = ({ onClose }: { onClose?: () => void }) => {
         cartItems.map((item: CartItemProps, index: number) => (
           <CartItem key={index} item={item} />
         ))}
-      {cartItems.length > 0 && <ExecuteCartForm />}
     </Stack>
   );
 };

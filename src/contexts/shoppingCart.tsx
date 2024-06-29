@@ -37,7 +37,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -80,7 +80,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
       toast({
         description: `${t("itemAdded")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "success",
         duration: 1500,
         isClosable: true,
@@ -89,7 +89,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -109,7 +109,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
       toast({
         description: `${t("itemRemoved")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "warning",
         duration: 1500,
         isClosable: true,
@@ -118,7 +118,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -150,7 +150,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
         toast({
           description: `${t("qtyUpdated")}`,
-          position: "top-left",
+          // position: "top-left",
           status: "success",
           duration: 1500,
           isClosable: true,
@@ -160,7 +160,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -192,7 +192,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
         toast({
           description: `${t("qtyUpdated")}`,
-          position: "top-left",
+          // position: "top-left",
           status: "success",
           duration: 1500,
           isClosable: true,
@@ -202,7 +202,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
@@ -224,7 +224,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
 
       toast({
         description: `${t("allItemsRemoved")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "warning",
         duration: 1500,
         isClosable: true,
@@ -233,7 +233,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       console.log(error);
       toast({
         description: `${t("errorOccurred")}`,
-        position: "top-left",
+        // position: "top-left",
         status: "error",
         duration: 2000,
         isClosable: true,
