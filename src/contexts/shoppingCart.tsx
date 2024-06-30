@@ -43,7 +43,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
         isClosable: true,
       });
     }
-  }, []);
+  }, [t, toast]);
   const addToCart = (item: CartItemProps) => {
     try {
       const foundItem = cartItems.find((i: CartItemProps) => i.id === item.id);

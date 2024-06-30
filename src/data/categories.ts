@@ -12,25 +12,25 @@ export const categories = [
   {
     id: 6,
     fr: "Bois",
-    ar: "لوحات فنية",
+    ar: "خشب",
     img: "/images/categories/6.jpg",
   },
   {
     id: 7,
     fr: "Marqueterie",
-    ar: "لوحات فنية",
+    ar: "خشب مطعم",
     img: "/images/categories/7.jpg",
   },
   {
     id: 8,
     fr: "Poterie",
-    ar: "لوحات فنية",
+    ar: "فخار",
     img: "/images/categories/8.jpg",
   },
   {
     id: 9,
     fr: "Cuir",
-    ar: "لوحات فنية",
+    ar: "جلد",
     img: "/images/categories/9.jpg",
   },
   {

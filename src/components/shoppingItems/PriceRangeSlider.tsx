@@ -46,7 +46,7 @@ const PriceRangeSlider = () => {
   return (
     <>
       <RangeSlider
-        aria-label={["min", "max"]}
+        // aria-label={["min", "max"]}
         defaultValue={[minPrice, maxPrice]}
         min={6}
         max={300}
