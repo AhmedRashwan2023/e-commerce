@@ -19,7 +19,7 @@ const PageSwiper = () => {
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
-          delay: 5000000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={true}

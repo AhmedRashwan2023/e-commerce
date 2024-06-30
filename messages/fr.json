@@ -252,5 +252,14 @@
     "selectAddress": "Sélectionner une adresse",
     "selectPayment": "Méthode de paiement",
     "COD": "Contre remboursement"
+  },
+  "mostVisitedCats": {
+    "title": "Les catégories les plus visitées",
+    "wood": "Bois",
+    "leather": "Cuir",
+    "buyNowButton": "Achetez maintenant"
+  },
+  "popularProducts": {
+    "title": "Produits populaires"
   }
 }

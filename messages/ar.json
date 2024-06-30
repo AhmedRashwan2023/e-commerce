@@ -252,5 +252,14 @@
     "selectAddress": "اختر عنوان",
     "selectPayment": "طريقة الدفع",
     "COD": "الدفع عند الإستلام"
+  },
+  "mostVisitedCats": {
+    "title": "أكثر الفئات زيارةً",
+    "wood": "خشب",
+    "leather": "جلد",
+    "buyNowButton": "اشتر الآن"
+  },
+  "popularProducts": {
+    "title": "أشهر المنجات"
   }
 }

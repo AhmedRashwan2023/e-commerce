@@ -1,3 +1,4 @@
+import { bodyPadding } from "@/assets/global";
 import { Box, Flex, Link, Stack, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
@@ -11,37 +12,39 @@ const MainPageFooter = () => {
   const activeLocale = useLocale();
   const t = useTranslations("mainPageFotter");
   return (
-    <Flex py={20} gap={5} justifyContent={"space-between"} flexWrap={"wrap"}>
-      <Card icon={BsClock} title={t("card1Title")}>
-        <Text>
-          {t("card1TextPart1")}
-          <span
-            style={{ fontSize: "17px", color: "black", fontWeight: "bold" }}
+    <Box px={bodyPadding}>
+      <Flex py={20} gap={5} justifyContent={"space-between"} flexWrap={"wrap"}>
+        <Card icon={BsClock} title={t("card1Title")}>
+          <Text>
+            {t("card1TextPart1")}
+            <span
+              style={{ fontSize: "17px", color: "black", fontWeight: "bold" }}
+            >
+              &nbsp;{t("card1TextPart2")}&nbsp;
+            </span>
+          </Text>
+          <Text>{t("card1TextPart3")}</Text>
+        </Card>
+        <Card icon={IoGiftOutline} title={t("card2Title")}>
+          {t("card2Text")}
+        </Card>
+        <Card icon={FaBoxOpen} title={t("card3Title")}>
+          {t("card3Text")}
+        </Card>
+        <Card icon={FiRefreshCcw} title={t("card3Title")}>
+          {t("card4Text")}&nbsp;
+          <Link
+            as={NextLink}
+            href={`/${activeLocale}/shopping-items`}
+            color={"#01a915"}
+            textDecoration={"none"}
+            _hover={{ color: "#048414" }}
           >
-            &nbsp;{t("card1TextPart2")}&nbsp;
-          </span>
-        </Text>
-        <Text>{t("card1TextPart3")}</Text>
-      </Card>
-      <Card icon={IoGiftOutline} title={t("card2Title")}>
-        {t("card2Text")}
-      </Card>
-      <Card icon={FaBoxOpen} title={t("card3Title")}>
-        {t("card3Text")}
-      </Card>
-      <Card icon={FiRefreshCcw} title={t("card3Title")}>
-        {t("card4Text")}&nbsp;
-        <Link
-          as={NextLink}
-          href={`/${activeLocale}/shopping-items`}
-          color={"#01a915"}
-          textDecoration={"none"}
-          _hover={{ color: "#048414" }}
-        >
-          {t("card4Link")}
-        </Link>
-      </Card>
-    </Flex>
+            {t("card4Link")}
+          </Link>
+        </Card>
+      </Flex>
+    </Box>
   );
 };
 
