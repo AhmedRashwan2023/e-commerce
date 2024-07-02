@@ -3,7 +3,7 @@ import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { GoHeart } from "react-icons/go";
 import { NavBarProps } from ".";
-import LoginModel from "../../Account/LoginModel";
+import LoginModal from "../../Account/LoginModel";
 import CountBadge from "../CountBadge";
 
 const WishListBadge: React.FC<NavBarProps> = ({ session }) => {
@@ -11,7 +11,7 @@ const WishListBadge: React.FC<NavBarProps> = ({ session }) => {
 
   return (
     <CountBadge>
-      {!session && <LoginModel icon={"GoHeart"} />}
+      {!session && <LoginModal icon={"GoHeart"} />}
       {session && (
         <Link fontSize={20} as={NextLink} href={`/${localeActive}/orders`}>
           <GoHeart />

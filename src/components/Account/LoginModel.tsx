@@ -18,9 +18,9 @@ import { IoPerson } from "react-icons/io5";
 import { TfiLayoutWidthDefaultAlt } from "react-icons/tfi";
 import SignInForm, { SignInFormProps } from "./SignInForm";
 
-const LoginModel = ({
-  redirect,
+const LoginModal = ({
   specialURL,
+  extraFn,
   icon,
 }: SignInFormProps & {
   icon: string;
@@ -55,7 +55,7 @@ const LoginModel = ({
             </Flex>
           </ModalHeader>
           <ModalBody>
-            <SignInForm redirect={redirect} specialURL={specialURL} />
+            <SignInForm specialURL={specialURL} extraFn={extraFn} />
           </ModalBody>
         </ModalContent>
       </Modal>
@@ -63,4 +63,4 @@ const LoginModel = ({
   );
 };
 
-export default LoginModel;
+export default LoginModal;

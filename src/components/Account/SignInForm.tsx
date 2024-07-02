@@ -4,18 +4,19 @@ import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
 import InputPassword from "../FormControl/InputPassword";
 import { handleSignIn } from "./action";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export interface SignInFormProps {
-  redirect?: boolean;
   specialURL?: string;
+  extraFn?: () => void;
 }
 
-const SignInForm = ({ redirect, specialURL }: SignInFormProps) => {
+const SignInForm = ({ specialURL, extraFn }: SignInFormProps) => {
   const activeLocale = useLocale();
   const t = useTranslations("signInPage");
   const toast = useToast();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleFormAction = async (formData: FormData) => {
     const data = await handleSignIn(formData);
@@ -29,10 +30,10 @@ const SignInForm = ({ redirect, specialURL }: SignInFormProps) => {
       });
       return;
     } else {
-      if (redirect) {
-        if (specialURL) router.push(specialURL);
-        else router.push(`/${activeLocale}`);
-      }
+      if (extraFn) extraFn();
+      if (specialURL) {
+        router.push(specialURL);
+      } else router.push(pathname);
     }
   };
 
