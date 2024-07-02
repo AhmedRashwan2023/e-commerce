@@ -33,7 +33,13 @@ export interface ItemProps {
   evaluation: number;
 }
 
-const ItemCard = ({ item }: { item: ItemProps }) => {
+const ItemCard = ({
+  item,
+  inWishList,
+}: {
+  item: ItemProps;
+  inWishList: boolean;
+}) => {
   const t = useTranslations("shoppingItems");
   const localeActive = useLocale();
   const isSale = item?.sellingPrice < item?.normalPrice ? true : false;
@@ -79,7 +85,7 @@ const ItemCard = ({ item }: { item: ItemProps }) => {
             sellingPrice={item.sellingPrice}
           />
           <HStack>
-            <AddToWishList itemId={item.id} />
+            <AddToWishList itemId={item.id} inWishList={inWishList} />
             <AddToCartButton item={item} />
           </HStack>
         </Flex>

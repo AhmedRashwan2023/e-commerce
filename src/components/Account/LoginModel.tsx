@@ -21,8 +21,10 @@ import SignInForm, { SignInFormProps } from "./SignInForm";
 const LoginModal = ({
   specialURL,
   icon,
+  fontSize,
 }: SignInFormProps & {
   icon: string;
+  fontSize?: number;
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("signInPage");
@@ -39,7 +41,7 @@ const LoginModal = ({
 
   return (
     <>
-      <Link onClick={onOpen} fontSize={20}>
+      <Link onClick={onOpen} fontSize={fontSize ? fontSize : 20}>
         <Icon />
       </Link>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>

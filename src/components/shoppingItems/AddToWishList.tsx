@@ -1,15 +1,25 @@
 import { getSession } from "@/services/auth";
-import { Box } from "@chakra-ui/react";
-import { GoHeart, GoHeartFill } from "react-icons/go";
+import { Box, Button, Link } from "@chakra-ui/react";
 import LoginModal from "../Account/LoginModel";
-import { handleAddToWishList } from "./actions";
+import { GoHeart, GoHeartFill } from "react-icons/go";
+import UpdateWishListHandler from "./UpdateWishListHandler";
 
-const AddToWishList = async ({ itemId }: { itemId: number }) => {
-  const itemsInList = [1, 4, 5];
-  const isFound = itemsInList.includes(itemId);
+export interface AddToWishListProps {
+  itemId: number;
+  inWishList: boolean;
+}
+
+const AddToWishList = async ({ itemId, inWishList }: AddToWishListProps) => {
   const session = await getSession();
 
-  return <Box>{!session && <LoginModal icon="GoHeart" />}</Box>;
+  return (
+    <Box fontSize={24} color={"#cc0000"}>
+      {!session && <LoginModal icon="GoHeart" fontSize={24} />}
+      {session && (
+        <UpdateWishListHandler itemId={itemId} inWishList={inWishList} />
+      )}
+    </Box>
+  );
 };
 
 export default AddToWishList;

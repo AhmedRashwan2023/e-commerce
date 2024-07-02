@@ -22,6 +22,7 @@ const displayOptions = [50, 30, 20, 10];
 const orderOptions = ["featured", "priceLower", "priceHigher", "date"];
 
 const ItemsGrid = async ({ initialSearchParams }: Props) => {
+  const userWishList = [1, 4, 5];
   const localeActive = await getLocale();
   const t = await getTranslations("shoppingItems");
 
@@ -80,7 +81,10 @@ const ItemsGrid = async ({ initialSearchParams }: Props) => {
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={6}>
         {products.map((product, index) => (
           <ItemCardContainer key={index}>
-            <ItemCard item={product} />
+            <ItemCard
+              item={product}
+              inWishList={userWishList.includes(product.id)}
+            />
           </ItemCardContainer>
         ))}
       </SimpleGrid>
