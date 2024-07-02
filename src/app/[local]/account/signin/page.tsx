@@ -12,8 +12,6 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { signIn } from "@/services/auth";
-import { redirect } from "next/navigation";
 import SignInForm from "@/components/Account/SignInForm";
 
 const SignIn = () => {
@@ -46,7 +44,7 @@ const SignIn = () => {
               {t("description")}
             </Text>
           </Flex>
-          <SignInForm />
+          <SignInForm redirect={true} />
         </Flex>
       </Flex>
     </>

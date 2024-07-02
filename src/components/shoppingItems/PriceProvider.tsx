@@ -12,7 +12,7 @@ const PriceProvider = ({
   const t = useTranslations("shoppingItems");
 
   return (
-    <HStack fontSize={16} fontWeight={"semibold"}>
+    <HStack fontSize={14} fontWeight={"semibold"}>
       {isSale && <Text>{`${sellingPrice} ${t("currency")}`}</Text>}
       <Text
         color={isSale ? "#9c9c9c" : "black"}

@@ -14,7 +14,7 @@ const ProfileBadge: React.FC<NavBarProps> = ({ session }) => {
     <CountBadge>
       {!session && (
         <LoginModel icon={"IoPerson"}>
-          <SignInForm specialURL={`/${localeActive}/orders`} />
+          <SignInForm redirect={true} specialURL={`/${localeActive}/orders`} />
         </LoginModel>
       )}
       {session && (

@@ -13,9 +13,10 @@ import {
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { ReactNode } from "react";
+import { GoHeart, GoHeartFill } from "react-icons/go";
 import { IoMdClose } from "react-icons/io";
-import { FiHeart } from "react-icons/fi";
 import { IoPerson } from "react-icons/io5";
+import { TfiLayoutWidthDefaultAlt } from "react-icons/tfi";
 
 const LoginModel = ({
   children,
@@ -28,10 +29,19 @@ const LoginModel = ({
   const t = useTranslations("signInPage");
   const localeActive = useLocale();
 
+  const Icon =
+    icon === "GoHeart"
+      ? GoHeart
+      : icon === "IoPerson"
+      ? IoPerson
+      : icon === "GoHeartFill"
+      ? GoHeartFill
+      : TfiLayoutWidthDefaultAlt;
+
   return (
     <>
       <Link onClick={onOpen} fontSize={20}>
-        {icon === "FiHeart" ? <FiHeart /> : <IoPerson />}
+        <Icon />
       </Link>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />

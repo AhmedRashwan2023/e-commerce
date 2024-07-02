@@ -5,15 +5,15 @@ import {
   Card,
   CardBody,
   Flex,
+  HStack,
   Image,
   Link,
   Text,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
+import NextLink from "next/link";
 import ItemEvaluationProvider from "./ItemEvaluationProvider";
 import PriceProvider from "./PriceProvider";
-import NextLink from "next/link";
-import { FaPlus } from "react-icons/fa6";
 import AddToCartButton from "./AddToCartButton";
 
 export interface ItemProps {
@@ -77,7 +77,9 @@ const ItemCard = ({ item }: { item: ItemProps }) => {
             normalPrice={item.normalPrice}
             sellingPrice={item.sellingPrice}
           />
-          <AddToCartButton item={item} />
+          <HStack>
+            <AddToCartButton item={item} />
+          </HStack>
         </Flex>
       </CardBody>
     </Card>
