@@ -6,15 +6,12 @@ import InputPassword from "../FormControl/InputPassword";
 import { handleSignIn } from "./action";
 import { useRouter } from "next/navigation";
 
-const SignInForm = ({
-  redirect,
-  specialURL,
-  extraFn,
-}: {
-  redirect: boolean;
+export interface SignInFormProps {
+  redirect?: boolean;
   specialURL?: string;
-  extraFn?: () => void;
-}) => {
+}
+
+const SignInForm = ({ redirect, specialURL }: SignInFormProps) => {
   const activeLocale = useLocale();
   const t = useTranslations("signInPage");
   const toast = useToast();
@@ -36,7 +33,6 @@ const SignInForm = ({
         if (specialURL) router.push(specialURL);
         else router.push(`/${activeLocale}`);
       }
-      if (extraFn) extraFn();
     }
   };
 

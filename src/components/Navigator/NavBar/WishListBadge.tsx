@@ -1,11 +1,10 @@
-import CountBadge from "../CountBadge";
-import { Box, Link } from "@chakra-ui/react";
-import { FiHeart } from "react-icons/fi";
-import { NavBarProps } from ".";
-import NextLink from "next/link";
-import SignInForm from "@/components/Account/SignInForm";
-import LoginModel from "./ProfileBadge/LoginModel";
+import { Link } from "@chakra-ui/react";
 import { useLocale } from "next-intl";
+import NextLink from "next/link";
+import { GoHeart } from "react-icons/go";
+import { NavBarProps } from ".";
+import LoginModel from "../../Account/LoginModel";
+import CountBadge from "../CountBadge";
 
 const WishListBadge: React.FC<NavBarProps> = ({ session }) => {
   const localeActive = useLocale();
@@ -13,13 +12,19 @@ const WishListBadge: React.FC<NavBarProps> = ({ session }) => {
   return (
     <CountBadge>
       {!session && (
-        <LoginModel icon={"FiHeart"}>
-          <SignInForm specialURL={`/${localeActive}/account-settings`} />
-        </LoginModel>
+        <LoginModel
+          icon={"GoHeart"}
+          // specialURL={`/${localeActive}/account-settings`}
+          // redirect={false}
+          extraFn={async () => {
+            "use server";
+            console.log("Extra FN");
+          }}
+        />
       )}
       {session && (
         <Link fontSize={20} as={NextLink} href={`/${localeActive}/orders`}>
-          <FiHeart />
+          <GoHeart />
         </Link>
       )}
     </CountBadge>

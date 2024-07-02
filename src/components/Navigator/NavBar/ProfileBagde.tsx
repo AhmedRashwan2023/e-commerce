@@ -1,11 +1,10 @@
-import SignInForm from "@/components/Account/SignInForm";
 import { Link } from "@chakra-ui/react";
 import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { IoPerson } from "react-icons/io5";
-import CountBadge from "../../CountBadge";
-import { NavBarProps } from "../../NavBar";
-import LoginModel from "./LoginModel";
+import { NavBarProps } from ".";
+import LoginModel from "../../Account/LoginModel";
+import CountBadge from "../CountBadge";
 
 const ProfileBadge: React.FC<NavBarProps> = ({ session }) => {
   const localeActive = useLocale();
@@ -13,9 +12,11 @@ const ProfileBadge: React.FC<NavBarProps> = ({ session }) => {
   return (
     <CountBadge>
       {!session && (
-        <LoginModel icon={"IoPerson"}>
-          <SignInForm redirect={true} specialURL={`/${localeActive}/orders`} />
-        </LoginModel>
+        <LoginModel
+          icon={"IoPerson"}
+          redirect={true}
+          specialURL={`/${localeActive}/orders`}
+        />
       )}
       {session && (
         <Link fontSize={20} as={NextLink} href={`/${localeActive}/orders`}>

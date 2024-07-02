@@ -1,23 +1,14 @@
-import Navigarot from "..";
-import {
-  Box,
-  HStack,
-  Link,
-  Image,
-  Show,
-  Flex,
-  Text,
-  Stack,
-} from "@chakra-ui/react";
 import { bodyPadding } from "@/assets/global";
-import SearchInput from "./SearchInput";
-import Menu from "../Menu";
-import NextLink from "next/link";
+import { Box, Flex, HStack, Image, Link, Show } from "@chakra-ui/react";
 import { useLocale } from "next-intl";
-import WishListBadge from "./WishListBadge";
-import ProfileBadge from "./ProfileBadge";
+import NextLink from "next/link";
+import Navigarot from "..";
+import Menu from "../Menu";
 import SideMenuDrawer from "../Menu/SideMenu/SideMenuDrawer";
 import CartDrawer from "./CartDrawer";
+import ProfileBadge from "./ProfileBagde";
+import SearchInput from "./SearchInput";
+import WishListBadge from "./WishListBadge";
 
 export interface NavBarProps {
   session: any;

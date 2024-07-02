@@ -12,24 +12,40 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import { ReactNode } from "react";
+import { GoHeart, GoHeartFill } from "react-icons/go";
 import { IoMdClose } from "react-icons/io";
 import { IoPerson } from "react-icons/io5";
+import { TfiLayoutWidthDefaultAlt } from "react-icons/tfi";
+import SignInForm, { SignInFormProps } from "./SignInForm";
 
-const ProfileLoginModel = ({ children }: { children: ReactNode }) => {
+const LoginModel = ({
+  redirect,
+  specialURL,
+  icon,
+}: SignInFormProps & {
+  icon: string;
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("signInPage");
   const localeActive = useLocale();
 
+  const Icon =
+    icon === "GoHeart"
+      ? GoHeart
+      : icon === "IoPerson"
+      ? IoPerson
+      : icon === "GoHeartFill"
+      ? GoHeartFill
+      : TfiLayoutWidthDefaultAlt;
+
   return (
     <>
       <Link onClick={onOpen} fontSize={20}>
-        <IoPerson />
+        <Icon />
       </Link>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent dir={localeActive === "ar" ? "rtl" : "ltr"}>
-          {/* <ModalHeader>{t("signInButton")}</ModalHeader> */}
           <ModalHeader dir={localeActive === "ar" ? "rtl" : "ltr"}>
             <Flex justifyContent={"space-between"} alignItems={"center"}>
               <Text>{t("signInButton")}</Text>
@@ -38,11 +54,13 @@ const ProfileLoginModel = ({ children }: { children: ReactNode }) => {
               </Link>
             </Flex>
           </ModalHeader>
-          <ModalBody>{children}</ModalBody>
+          <ModalBody>
+            <SignInForm redirect={redirect} specialURL={specialURL} />
+          </ModalBody>
         </ModalContent>
       </Modal>
     </>
   );
 };
 
-export default ProfileLoginModel;
+export default LoginModel;
