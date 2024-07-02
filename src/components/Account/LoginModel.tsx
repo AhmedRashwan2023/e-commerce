@@ -20,7 +20,6 @@ import SignInForm, { SignInFormProps } from "./SignInForm";
 
 const LoginModal = ({
   specialURL,
-  extraFn,
   icon,
 }: SignInFormProps & {
   icon: string;
@@ -55,7 +54,7 @@ const LoginModal = ({
             </Flex>
           </ModalHeader>
           <ModalBody>
-            <SignInForm specialURL={specialURL} extraFn={extraFn} />
+            <SignInForm specialURL={specialURL} />
           </ModalBody>
         </ModalContent>
       </Modal>

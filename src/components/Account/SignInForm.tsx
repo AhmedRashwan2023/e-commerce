@@ -8,10 +8,9 @@ import { usePathname, useRouter } from "next/navigation";
 
 export interface SignInFormProps {
   specialURL?: string;
-  extraFn?: () => void;
 }
 
-const SignInForm = ({ specialURL, extraFn }: SignInFormProps) => {
+const SignInForm = ({ specialURL }: SignInFormProps) => {
   const activeLocale = useLocale();
   const t = useTranslations("signInPage");
   const toast = useToast();
@@ -30,7 +29,6 @@ const SignInForm = ({ specialURL, extraFn }: SignInFormProps) => {
       });
       return;
     } else {
-      if (extraFn) extraFn();
       if (specialURL) {
         router.push(specialURL);
       } else router.push(pathname);

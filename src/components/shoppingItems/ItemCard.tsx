@@ -15,6 +15,7 @@ import NextLink from "next/link";
 import ItemEvaluationProvider from "./ItemEvaluationProvider";
 import PriceProvider from "./PriceProvider";
 import AddToCartButton from "./AddToCartButton";
+import AddToWishList from "./AddToWishList";
 
 export interface ItemProps {
   id: number;
@@ -78,6 +79,7 @@ const ItemCard = ({ item }: { item: ItemProps }) => {
             sellingPrice={item.sellingPrice}
           />
           <HStack>
+            <AddToWishList itemId={item.id} />
             <AddToCartButton item={item} />
           </HStack>
         </Flex>
