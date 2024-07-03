@@ -1,6 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+import * as db from "../utils/db";
 
 const secretKey = process.env.SECRET_KEY;
 
@@ -37,24 +38,14 @@ export async function signIn(formData: FormData) {
     password: formData.get("password"),
   };
 
-  try {
-    const res = await fetch("https://srv14.optimgov.com/authenticate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    });
+  const data = await db.postRequest("authenticate", user);
 
-    const data = await res.json();
-
+  if (!data?.error) {
     const expires = new Date(Date.now() + 60 * 60 * 24 * 1000);
     const session = await encrypt({ data, expires });
-
     cookies().set("session", session, { expires, httpOnly: true });
-
-    return data;
-  } catch (error) {
-    return { error: true };
   }
+  return data;
 }
 
 export async function signOut() {

@@ -44,7 +44,7 @@ const SignIn = () => {
               {t("description")}
             </Text>
           </Flex>
-          <SignInForm redirect={true} />
+          <SignInForm specialURL={`/${activeLocale}`} />
         </Flex>
       </Flex>
     </>
