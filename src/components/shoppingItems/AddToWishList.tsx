@@ -7,14 +7,21 @@ import UpdateWishListHandler from "./UpdateWishListHandler";
 export interface AddToWishListProps {
   itemId: number;
   inWishList: boolean;
+  fontSize?: number;
 }
 
-const AddToWishList = async ({ itemId, inWishList }: AddToWishListProps) => {
+const AddToWishList = async ({
+  itemId,
+  inWishList,
+  fontSize,
+}: AddToWishListProps) => {
   const session = await getSession();
 
   return (
-    <Box fontSize={24} color={"#cc0000"}>
-      {!session && <LoginModal icon="GoHeart" fontSize={24} />}
+    <Box fontSize={fontSize ? fontSize : 24} color={"#cc0000"}>
+      {!session && (
+        <LoginModal icon="GoHeart" fontSize={fontSize ? fontSize : 24} />
+      )}
       {session && (
         <UpdateWishListHandler itemId={itemId} inWishList={inWishList} />
       )}

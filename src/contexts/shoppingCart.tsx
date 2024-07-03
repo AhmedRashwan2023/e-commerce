@@ -97,6 +97,59 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const addToCartWithQty = (item: CartItemProps, qty: number) => {
+    try {
+      const foundItem = cartItems.find((i: CartItemProps) => i.id === item.id);
+      let newCart: CartItemProps[] = [];
+
+      if (foundItem) {
+        newCart = cartItems.map((i: CartItemProps) =>
+          i.id === foundItem.id
+            ? {
+                ...i,
+                qty: qty,
+                totalSellingPrice: i.sellingPrice * qty,
+                totalNormalPrice: i.normalPrice * qty,
+              }
+            : i
+        );
+      } else {
+        newCart = [
+          ...cartItems,
+          {
+            ...item,
+            qty: qty,
+            totalSellingPrice: item.sellingPrice * qty,
+            totalNormalPrice: item.normalPrice * qty,
+          },
+        ];
+      }
+
+      setCartItems(newCart);
+
+      newCart.forEach((cartItem) => {
+        localStorage.setItem(`cart_${cartItem.id}`, JSON.stringify(cartItem));
+      });
+
+      toast({
+        description: `${t("itemAdded")}`,
+        // position: "top-left",
+        status: "success",
+        duration: 1500,
+        isClosable: true,
+      });
+    } catch (error) {
+      console.log(error);
+      toast({
+        description: `${t("errorOccurred")}`,
+        // position: "top-left",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+      });
+    }
+  };
+
   const removeFromCart = (item: CartItemProps) => {
     try {
       const remainingItems = cartItems.filter(
@@ -246,6 +299,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
       value={{
         cartItems,
         addToCart,
+        addToCartWithQty,
         removeFromCart,
         addQty,
         decreseQty,
