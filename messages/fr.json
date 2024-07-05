@@ -261,5 +261,23 @@
   },
   "popularProducts": {
     "title": "Produits populaires"
+  },
+  "itemDetailed": {
+    "productCode": "Code produit:",
+    "availability": "Disponibilité:",
+    "type": "Type:",
+    "shipping": "Expédition:",
+    "productDetailsTabTitle": "Détails du produit",
+    "informationTabTitle": "Information",
+    "reviewsTabTitle": "Avis"
+  },
+  "descriptionTab": {
+    "title": "Description",
+    "subTitle": "Description de produit",
+    "unitTitle": "Unité",
+    "sellerTitle": "Vendeur"
+  },
+  "recommendedItems": {
+    "title": "Recommandé pour vous"
   }
 }

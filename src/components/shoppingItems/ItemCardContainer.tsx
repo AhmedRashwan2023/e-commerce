@@ -5,7 +5,6 @@ const ItemCardContainer = ({ children }: { children: ReactNode }) => {
   return (
     <Box
       borderRadius={10}
-      borderWidth={1}
       overflow="hidden"
       _hover={{
         transform: "scale(1.03)",

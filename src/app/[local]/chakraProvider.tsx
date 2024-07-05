@@ -14,8 +14,14 @@ const breakpoints = {
   "2xl": "96em", //1536px
 };
 
+const fonts = {
+  heading: `'Quicksand Variable', sans-serif`,
+  body: `'Quicksand Variable', sans-serif`,
+};
+
 const theme = extendTheme({
   breakpoints,
+  fonts,
 });
 
 const Provider = ({ children }: { children: ReactNode }) => {

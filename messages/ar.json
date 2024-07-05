@@ -261,5 +261,23 @@
   },
   "popularProducts": {
     "title": "أشهر المنجات"
+  },
+  "itemDetailed": {
+    "productCode": "رمز المنتج:",
+    "availability": "الحالة:",
+    "type": "النوع:",
+    "shipping": "الشحن:",
+    "productDetailsTabTitle": "تفاصيل المنتج",
+    "informationTabTitle": "معلومات",
+    "reviewsTabTitle": "التقييمات"
+  },
+  "descriptionTab": {
+    "title": "المواصفات",
+    "subTitle": "وصف المنتج",
+    "unitTitle": "الوحدة",
+    "sellerTitle": "البائع"
+  },
+  "recommendedItems": {
+    "title": "نرشح لك"
   }
 }

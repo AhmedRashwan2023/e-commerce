@@ -1,6 +1,5 @@
 "use client";
 
-import AddToWishList from "@/components/ShoppingItems/AddToWishList";
 import { ItemProps } from "@/components/ShoppingItems/ItemCard";
 import { useCartContext } from "@/contexts/shoppingCart";
 import {
@@ -14,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { FormEvent } from "react";
-import { FaPlus } from "react-icons/fa6";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 
 const AddToCartWithQty = ({ item }: { item: ItemProps }) => {
   const t = useTranslations("shoppingItems");
@@ -39,7 +38,7 @@ const AddToCartWithQty = ({ item }: { item: ItemProps }) => {
         </NumberInput>
         <Button
           w={200}
-          leftIcon={<FaPlus />}
+          leftIcon={<MdOutlineAddShoppingCart />}
           type="submit"
           backgroundColor={"#01114d"}
           color={"white"}

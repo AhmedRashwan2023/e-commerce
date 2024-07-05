@@ -34,7 +34,7 @@ const CartViewer = ({ onClose }: { onClose?: () => void }) => {
       )}
       {cartItems &&
         cartItems.map((item: CartItemProps, index: number) => (
-          <CartItem key={index} item={item} />
+          <CartItem key={index} item={item} onClose={onClose} />
         ))}
     </Stack>
   );

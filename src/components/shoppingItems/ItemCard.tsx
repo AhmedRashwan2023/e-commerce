@@ -52,7 +52,7 @@ const ItemCard = ({
   };
 
   return (
-    <Card overflow="hidden" variant="outline" pt={5}>
+    <Card overflow="hidden" variant="solid" pt={5}>
       {isSale && (
         <Box
           backgroundColor={"#db3030"}

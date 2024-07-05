@@ -1,8 +1,17 @@
 import { useCartContext } from "@/contexts/shoppingCart";
-import { Button, Divider, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Divider,
+  HStack,
+  Image,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import RemoveFromCart from "./RemoveFromCart";
+import NextLink from "next/link";
 
 export interface CartItemProps {
   id: number;
@@ -14,7 +23,13 @@ export interface CartItemProps {
   totalNormalPrice: number;
   totalSellingPrice: number;
 }
-const CartItem = ({ item }: { item: CartItemProps }) => {
+const CartItem = ({
+  item,
+  onClose,
+}: {
+  item: CartItemProps;
+  onClose?: () => void;
+}) => {
   const t = useTranslations("shoppingCart");
   const localeActive = useLocale();
   const { addQty, decreseQty } = useCartContext();
@@ -26,7 +41,15 @@ const CartItem = ({ item }: { item: CartItemProps }) => {
     <Stack dir={direction}>
       <HStack w={"100%"} justifyContent={"space-between"}>
         <HStack>
-          <Image src={item.image} alt="cart-item-image" boxSize={"80px"} />
+          <Link
+            as={NextLink}
+            href={`/${localeActive}/shopping-items/${item.id}`}
+            onClick={() => {
+              if (onClose) onClose();
+            }}
+          >
+            <Image src={item.image} alt="cart-item-image" boxSize={"80px"} />
+          </Link>
           <Stack gap={0}>
             <Text fontWeight={"semibold"} fontSize={14}>
               {item.name}

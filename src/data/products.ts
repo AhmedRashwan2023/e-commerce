@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Product Name 1",
-    category: 2,
+    category: 1,
     weight: 1.5,
     inStore: true,
     isActive: true,
@@ -17,7 +17,7 @@ export const products = [
   {
     id: 2,
     name: "Product Name 2",
-    category: 2,
+    category: 3,
     weight: 1.5,
     inStore: true,
     isActive: true,
@@ -47,7 +47,7 @@ export const products = [
   {
     id: 4,
     name: "Product Name 4",
-    category: 2,
+    category: 6,
     weight: 1.5,
     inStore: true,
     isActive: true,
@@ -62,7 +62,7 @@ export const products = [
   {
     id: 5,
     name: "Product Name 5",
-    category: 2,
+    category: 5,
     weight: 1.5,
     inStore: true,
     isActive: true,
