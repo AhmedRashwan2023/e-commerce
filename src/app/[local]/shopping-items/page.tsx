@@ -18,8 +18,8 @@ const ShoppingItems = async ({
 
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,
-    priceFrom: (searchParams.priceFrom || 0) as number,
-    priceTo: (searchParams.priceTo || 300) as number,
+    mixPrice: (searchParams.mixPrice || 0) as number,
+    maxPrice: (searchParams.maxPrice || 300) as number,
     evaluation: (searchParams.evaluation || 5) as number,
     name: (searchParams.name || "") as string,
     display: (searchParams.display || 50) as number,

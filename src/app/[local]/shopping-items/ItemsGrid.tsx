@@ -9,8 +9,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 interface Props {
   initialSearchParams: {
     catId: number;
-    priceFrom: number;
-    priceTo: number;
+    mixPrice: number;
+    maxPrice: number;
     evaluation: number;
     name: string;
     display: number;
@@ -32,10 +32,10 @@ const ItemsGrid = async ({ initialSearchParams }: Props) => {
     )
       ? initialSearchParams.catId
       : 0,
-    priceFrom:
-      initialSearchParams.priceFrom < 6 ? 6 : initialSearchParams.priceFrom,
-    priceTo:
-      initialSearchParams.priceTo > 300 ? 300 : initialSearchParams.priceTo,
+    mixPrice:
+      initialSearchParams.mixPrice < 6 ? 6 : initialSearchParams.mixPrice,
+    maxPrice:
+      initialSearchParams.maxPrice > 300 ? 300 : initialSearchParams.maxPrice,
     evaluation:
       initialSearchParams.evaluation < 1 && initialSearchParams.evaluation > 5
         ? initialSearchParams.evaluation

@@ -46,7 +46,7 @@ const SignInForm = ({ specialURL }: SignInFormProps) => {
         _hover={{ borderColor: "rgb(1,17,77)" }}
         borderWidth={1}
         mb={3}
-        value={"administrateur@optimgov.com"}
+        // value={"administrateur@optimgov.com"}
       />
       <InputPassword isRequired />
       <HStack fontWeight={"semibold"}>

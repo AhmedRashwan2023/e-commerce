@@ -16,30 +16,30 @@ const PriceRangeSlider = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const priceFromString = searchParams.get("priceFrom");
-  const priceToString = searchParams.get("priceTo");
+  const mixPriceString = searchParams.get("mixPrice");
+  const maxPriceString = searchParams.get("maxPrice");
 
-  const initialPriceFrom = priceFromString
-    ? parseInt(priceFromString) >= 6 &&
-      parseInt(priceFromString) < parseInt(priceToString!)
-      ? parseInt(priceFromString)
+  const initialmixPrice = mixPriceString
+    ? parseInt(mixPriceString) >= 6 &&
+      parseInt(mixPriceString) < parseInt(maxPriceString!)
+      ? parseInt(mixPriceString)
       : 6
     : 6;
 
-  const initialPriceTo = priceToString
-    ? parseInt(priceToString) <= 300 &&
-      parseInt(priceToString) > parseInt(priceFromString!)
-      ? parseInt(priceToString)
+  const initialmaxPrice = maxPriceString
+    ? parseInt(maxPriceString) <= 300 &&
+      parseInt(maxPriceString) > parseInt(mixPriceString!)
+      ? parseInt(maxPriceString)
       : 300
     : 300;
 
-  const [minPrice, setMin] = useState(initialPriceFrom);
-  const [maxPrice, setMax] = useState(initialPriceTo);
+  const [minPrice, setMin] = useState(initialmixPrice);
+  const [maxPrice, setMax] = useState(initialmaxPrice);
 
-  const setSearchParams = (priceFrom: string, priceTo: string) => {
+  const setSearchParams = (mixPrice: string, maxPrice: string) => {
     const params = new URLSearchParams(searchParams);
-    params.set("priceFrom", priceFrom);
-    params.set("priceTo", priceTo);
+    params.set("mixPrice", mixPrice);
+    params.set("maxPrice", maxPrice);
     return params.toString();
   };
 

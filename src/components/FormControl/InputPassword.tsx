@@ -30,7 +30,7 @@ const InputPassword = ({ isRequired }: { isRequired?: boolean }) => {
         mb={3}
         type={showPass ? "text" : "password"}
         isRequired={isRequired}
-        value={"12345678"}
+        // value={"12345678"}
       />
       {activeLocale === "ar" ? (
         <InputLeftElement

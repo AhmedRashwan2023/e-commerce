@@ -6,6 +6,7 @@ export const postRequest = async (endpoint: string, params: any) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(params),
+      cache: "no-store",
     });
 
     if (!res.ok) {
@@ -26,6 +27,7 @@ export const getRequest = async (endpoint: string) => {
     const res = await fetch(`${backendUrl}/${endpoint}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
+      cache: "no-store",
     });
 
     if (!res.ok) {

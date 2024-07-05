@@ -17,6 +17,7 @@ const RecommendedContainer = () => {
           (product, index) =>
             index < 2 && (
               <Box
+                key={index}
                 overflow="hidden"
                 _hover={{
                   transform: "scale(1.03)",

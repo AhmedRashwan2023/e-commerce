@@ -73,10 +73,10 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
                   <Text fontWeight={"semibold"}>{t("type")}</Text>
                   <Text>{`{categoryName}`}</Text>
                 </HStack>
-                <HStack>
+                {/* <HStack>
                   <Text fontWeight={"semibold"}>{t("shipping")}</Text>
                   <Text>{`{shippingDetailsAndTiming}`}</Text>
-                </HStack>
+                </HStack> */}
               </Stack>
             </Stack>
           </HStack>

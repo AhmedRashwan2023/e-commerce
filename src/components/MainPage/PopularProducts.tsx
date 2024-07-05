@@ -7,7 +7,7 @@ import ItemCardContainer from "../ShoppingItems/ItemCardContainer";
 
 const PopularProducts = async () => {
   const t = await getTranslations("popularProducts");
-
+  const userWishList = [1, 4, 5];
   return (
     <Box px={bodyPadding}>
       <Stack>
@@ -18,7 +18,10 @@ const PopularProducts = async () => {
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={6}>
           {products.map((product, index) => (
             <ItemCardContainer key={index}>
-              <ItemCard item={product} />
+              <ItemCard
+                item={product}
+                inWishList={userWishList.includes(product.id)}
+              />
             </ItemCardContainer>
           ))}
         </SimpleGrid>

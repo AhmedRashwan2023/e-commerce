@@ -5,10 +5,10 @@ export const setSearchParams = (
 ) => {
   let params = {};
   if (searchParams.catId) params = { ...params, catId: searchParams.catId };
-  if (searchParams.priceFrom)
-    params = { ...params, priceFrom: searchParams.priceFrom };
-  if (searchParams.priceTo)
-    params = { ...params, priceTo: searchParams.priceTo };
+  if (searchParams.mixPrice)
+    params = { ...params, mixPrice: searchParams.mixPrice };
+  if (searchParams.maxPrice)
+    params = { ...params, maxPrice: searchParams.maxPrice };
   if (searchParams.evaluation)
     params = { ...params, evaluation: searchParams.evaluation };
   if (searchParams.name) params = { ...params, name: searchParams.name };
