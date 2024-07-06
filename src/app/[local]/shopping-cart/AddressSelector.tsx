@@ -1,10 +1,25 @@
 "use client";
 import React, { useState } from "react";
-import { Flex, Radio, RadioGroup, Stack, Text, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Radio,
+  RadioGroup,
+  Stack,
+  Text,
+  Box,
+  Alert,
+  AlertIcon,
+  Link,
+} from "@chakra-ui/react";
 import { AddressProps } from "../my-addresses/AddressCard";
+import NextLink from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 const AddressSelector = ({ addresses }: { addresses: AddressProps[] }) => {
+  console.log("addresses", addresses.length);
   const [value, setValue] = useState("1");
+  const t = useTranslations("shoppingCart");
+  const localeActive = useLocale();
   const [selectedAddress, setSelectedAddress] = useState<AddressProps | null>(
     null
   );
@@ -14,18 +29,36 @@ const AddressSelector = ({ addresses }: { addresses: AddressProps[] }) => {
   };
 
   return (
-    <RadioGroup onChange={setValue} value={value} name="address">
-      <Stack>
-        {addresses.map((address, index) => (
-          <RadioWrapper
-            key={address.id} // Remember to add a unique key prop when mapping elements
-            address={address}
-            isSelected={address === selectedAddress}
-            onSelect={handleSelectAddress}
-          />
-        ))}
-      </Stack>
-    </RadioGroup>
+    <>
+      {addresses.length > 0 ? (
+        <RadioGroup onChange={setValue} value={value} name="address">
+          <Stack>
+            {addresses.map((address, index) => (
+              <RadioWrapper
+                key={address.id}
+                address={address}
+                isSelected={address === selectedAddress}
+                onSelect={handleSelectAddress}
+              />
+            ))}
+          </Stack>
+        </RadioGroup>
+      ) : (
+        <Alert status="warning" borderRadius={6}>
+          <AlertIcon />
+          <Text fontSize={15}>
+            {t("addAddressText")}&nbsp;
+            <Link
+              as={NextLink}
+              href={`/${localeActive}/my-addresses`}
+              textDecoration={"underline !important"}
+            >
+              {t("addAddressLink")}
+            </Link>
+          </Text>
+        </Alert>
+      )}
+    </>
   );
 };
 

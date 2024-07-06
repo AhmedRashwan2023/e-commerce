@@ -251,7 +251,9 @@
     "removeAllConf": "Êtes-vous sûr de vouloir supprimer tous les articles du panier?",
     "selectAddress": "Sélectionner une adresse",
     "selectPayment": "Méthode de paiement",
-    "COD": "Contre remboursement"
+    "COD": "Contre remboursement",
+    "addAddressText": "Vous n'avez pas encore ajouté d'adresses,",
+    "addAddressLink": "allez dans les paramètres de vos adresses pour ajouter."
   },
   "mostVisitedCats": {
     "title": "Les catégories les plus visitées",
@@ -292,7 +294,7 @@
     "itemAdded": "L'article a été ajouté à votre liste de souhaits",
     "itemRemoved": "L'article a été supprimé de votre liste de souhaits",
     "allItemsRemoved": "Tous les articles ont été supprimés de votre liste de souhaits.",
-    "removeItemConf": "Êtes-vous sûr(e) de vouloir supprimer cet article de votre liste de souhaits?",
+    "removeItemConf": "Êtes-vous sûre de vouloir supprimer cet article de votre liste de souhaits?",
     "removeAllConf": "Êtes-vous sûr de vouloir supprimer tous les articles de votre liste de souhaits?",
     "removeAllText": "Supprimer tous les articles",
     "emptyListText": "Votre liste de souhaits est vide,",

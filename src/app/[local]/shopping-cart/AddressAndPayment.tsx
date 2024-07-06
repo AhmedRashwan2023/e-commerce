@@ -7,6 +7,7 @@ import PaymentSelector from "./PaymentSelector";
 
 const AddressAndPayment = async () => {
   const t = await getTranslations("shoppingCart");
+  const isDisabled = addresses.length === 0 ? true : false;
   return (
     <ShippoingOptions>
       <Stack gap={7}>
@@ -23,7 +24,7 @@ const AddressAndPayment = async () => {
           <PaymentSelector />
         </Stack>
         <Flex gap={7} justifyContent={"flex-end"}>
-          <Button colorScheme="green" type="submit">
+          <Button colorScheme="green" type="submit" isDisabled={isDisabled}>
             {t("execute")}
           </Button>
         </Flex>
