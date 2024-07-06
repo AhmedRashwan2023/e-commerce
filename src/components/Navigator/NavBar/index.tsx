@@ -9,14 +9,29 @@ import CartDrawer from "./CartDrawer";
 import ProfileBadge from "./ProfileBagde";
 import SearchInput from "./SearchInput";
 import WishListBadge from "./WishListBadge";
+import { getLocale } from "next-intl/server";
+import { postRequest } from "@/utils/db";
+
+export interface Category {
+  id: number;
+  name: string;
+  description: string;
+  status: boolean;
+  image: string | null;
+  parentCategoryId: number;
+  parentCategoryName: string | null;
+  countProducts: number;
+}
 
 export interface NavBarProps {
   session: any;
   menuLocation?: string;
   closeDrawer?: () => void;
+  categories?: Category[];
 }
-const NavBar: React.FC<NavBarProps> = ({ session }) => {
-  const localeActive = useLocale();
+const NavBar: React.FC<NavBarProps> = async ({ session }) => {
+  const localeActive = await getLocale();
+  const categories = await postRequest("/api/categories/getCats", {});
   return (
     <Navigarot>
       <Box backgroundColor={"#01114d"} px={bodyPadding}>
@@ -41,12 +56,12 @@ const NavBar: React.FC<NavBarProps> = ({ session }) => {
             <CartDrawer session={session} />
             <ProfileBadge session={session} />
             <Show below="lg">
-              <SideMenuDrawer session={session} />
+              <SideMenuDrawer session={session} categories={categories} />
             </Show>
           </HStack>
         </Flex>
         <Show above="lg">
-          <Menu session={session} />
+          <Menu session={session} categories={categories} />
         </Show>
       </Box>
     </Navigarot>

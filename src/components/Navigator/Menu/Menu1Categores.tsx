@@ -14,12 +14,21 @@ import {
 import { TbCategory } from "react-icons/tb";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { categories } from "@/data/categories";
+// import { categories } from "@/data/categories";
 import { useRouter } from "next/navigation";
 import { MenuLocationProps } from ".";
 import { useState } from "react";
+import { Category } from "../NavBar";
 
-const Menu1Categores = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
+interface Menu1CategoresProps extends MenuLocationProps {
+  categories: Category[];
+}
+
+const Menu1Categores: React.FC<Menu1CategoresProps> = ({
+  menuLocation,
+  closeDrawer,
+  categories,
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("menuCategores");
   const router = useRouter();
@@ -63,7 +72,8 @@ const Menu1Categores = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
               onClick={onClose}
             >
               <MenuItem>
-                {localActive === "fr" ? category.fr : category.ar}
+                {/* {localActive === "fr" ? category.fr : category.ar} */}
+                {category.name}
               </MenuItem>
             </Link>
           ))}
@@ -92,7 +102,8 @@ const Menu1Categores = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
               }}
               _hover={{ bg: "#eeeeee" }}
             >
-              {localActive === "fr" ? category.fr : category.ar}
+              {/* {localActive === "fr" ? category.fr : category.ar} */}
+              {category.name}
             </Link>
           ))}
         </Stack>

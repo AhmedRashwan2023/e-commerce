@@ -19,8 +19,15 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import SearchInput from "../../NavBar/SearchInput";
 import Menu from "..";
+import { Category } from "../../NavBar";
 
-const SideMenuDrawer = ({ session }: { session: any }) => {
+const SideMenuDrawer = ({
+  session,
+  categories,
+}: {
+  session: any;
+  categories: Category[];
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("Index");
   const localeActive = useLocale();
@@ -63,6 +70,7 @@ const SideMenuDrawer = ({ session }: { session: any }) => {
                 session={session}
                 menuLocation={"side"}
                 closeDrawer={onClose}
+                categories={categories}
               />
             </Stack>
           </DrawerBody>
