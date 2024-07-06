@@ -287,10 +287,20 @@
     "units": "Quantity of product packaging"
   },
   "wishlist": {
+    "title": "Votre liste de souhaits",
     "errorOccurred": "Une erreur est survenue ! Veuillez réessayer plus tard",
     "itemAdded": "L'article a été ajouté à votre liste de souhaits",
     "itemRemoved": "L'article a été supprimé de votre liste de souhaits",
     "allItemsRemoved": "Tous les articles ont été supprimés de votre liste de souhaits.",
-    "confMsg": "Êtes-vous sûr de vouloir supprimer tous les articles de votre liste de souhaits?"
+    "removeItemConf": "Êtes-vous sûr(e) de vouloir supprimer cet article de votre liste de souhaits?",
+    "removeAllConf": "Êtes-vous sûr de vouloir supprimer tous les articles de votre liste de souhaits?",
+    "removeAllText": "Supprimer tous les articles",
+    "emptyListText": "Votre liste de souhaits est vide,",
+    "emptyListLink": "commencez à faire vos achats et ajoutez vos articles préférés à votre liste maintenant.",
+    "remove": "Retirer",
+    "yes": "Oui",
+    "no": "Non",
+    "confirmRemovingItemTitle": "Confirmer la suppression de cet article de votre liste de souhaits",
+    "confirmRemovingAllTitle": "Confirmer la suppression de tous les articles de votre liste de souhaits"
   }
 }
