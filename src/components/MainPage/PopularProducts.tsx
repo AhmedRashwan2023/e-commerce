@@ -18,10 +18,7 @@ const PopularProducts = async () => {
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={6}>
           {products.map((product, index) => (
             <ItemCardContainer key={index}>
-              <ItemCard
-                item={product}
-                inWishList={userWishList.includes(product.id)}
-              />
+              <ItemCard item={product} />
             </ItemCardContainer>
           ))}
         </SimpleGrid>

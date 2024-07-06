@@ -12,10 +12,7 @@ const RelatedArticalsContainer = () => {
         (product, index) =>
           index < 4 && (
             <ItemCardContainer key={index}>
-              <ItemCard
-                item={product}
-                inWishList={userWishList.includes(product.id)}
-              />
+              <ItemCard item={product} />
             </ItemCardContainer>
           )
       )}

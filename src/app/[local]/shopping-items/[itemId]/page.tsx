@@ -64,11 +64,7 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
               <Flex py={3} gap={8} alignItems={"flex-end"}>
                 <AddToCartWithQty item={product!} />
                 <Box pb={1}>
-                  <AddToWishList
-                    itemId={product?.id!}
-                    inWishList={false}
-                    fontSize={30}
-                  />
+                  <AddToWishList item={product!} fontSize={30} />
                 </Box>
               </Flex>
               <Divider />

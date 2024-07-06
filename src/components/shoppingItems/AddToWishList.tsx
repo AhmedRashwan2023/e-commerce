@@ -1,30 +1,33 @@
-import { getSession } from "@/services/auth";
-import { Box, Button, Link } from "@chakra-ui/react";
-import LoginModal from "../Account/LoginModel";
+"use client";
+import { useWishlistContext } from "@/contexts/wishlistContext";
+import { Box, Link } from "@chakra-ui/react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
-import UpdateWishListHandler from "./UpdateWishListHandler";
+import { ItemProps } from "./ItemCard";
 
-export interface AddToWishListProps {
-  itemId: number;
-  inWishList: boolean;
+const AddToWishList = ({
+  fontSize = 24,
+  item,
+}: {
   fontSize?: number;
-}
+  item: ItemProps;
+}) => {
+  const { wishlistItems, addToWishlist, removeFromWishlist } =
+    useWishlistContext();
 
-const AddToWishList = async ({
-  itemId,
-  inWishList,
-  fontSize,
-}: AddToWishListProps) => {
-  const session = await getSession();
+  const itemFound: ItemProps = wishlistItems.find(
+    (i: ItemProps) => i.id === item.id
+  );
+
+  const updateWithList = () => {
+    if (itemFound) removeFromWishlist(item);
+    else if (!itemFound) addToWishlist(item);
+  };
 
   return (
-    <Box fontSize={fontSize ? fontSize : 24} color={"#cc0000"}>
-      {!session && (
-        <LoginModal icon="GoHeart" fontSize={fontSize ? fontSize : 24} />
-      )}
-      {session && (
-        <UpdateWishListHandler itemId={itemId} inWishList={inWishList} />
-      )}
+    <Box fontSize={fontSize} color={"#cc0000"}>
+      <Link onClick={updateWithList}>
+        {itemFound ? <GoHeartFill /> : <GoHeart />}
+      </Link>
     </Box>
   );
 };

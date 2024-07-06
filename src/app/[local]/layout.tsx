@@ -7,6 +7,7 @@ import Provider from "./chakraProvider";
 import "./globals.css";
 import { getSession } from "@/services/auth";
 import { CartWrapper } from "@/contexts/shoppingCart";
+import { WishlistWrapper } from "@/contexts/wishlistContext";
 
 export const metadata: Metadata = {
   title: "Entre Murs Galerie",
@@ -28,11 +29,13 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <Provider>
-            <CartWrapper>
-              <NavBar session={session} />
-              {children}
-              <Footer />
-            </CartWrapper>
+            <WishlistWrapper>
+              <CartWrapper>
+                <NavBar session={session} />
+                {children}
+                <Footer />
+              </CartWrapper>
+            </WishlistWrapper>
           </Provider>
         </NextIntlClientProvider>
       </body>
