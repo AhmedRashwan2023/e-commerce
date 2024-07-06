@@ -16,9 +16,9 @@ const TabsContainer = ({ product }: { product: ItemProps }) => {
         <Tab fontSize={13} fontWeight={"semibold"}>
           {t("informationTabTitle")}
         </Tab>
-        <Tab fontSize={13} fontWeight={"semibold"}>
+        {/* <Tab fontSize={13} fontWeight={"semibold"}>
           {t("reviewsTabTitle")}
-        </Tab>
+        </Tab> */}
       </TabList>
 
       <TabPanels minH={320}>
@@ -28,9 +28,9 @@ const TabsContainer = ({ product }: { product: ItemProps }) => {
         <TabPanel>
           <InformationTab product={product!} />
         </TabPanel>
-        <TabPanel>
+        {/* <TabPanel>
           <ReviewsTab product={product!} />
-        </TabPanel>
+        </TabPanel> */}
       </TabPanels>
     </Tabs>
   );
