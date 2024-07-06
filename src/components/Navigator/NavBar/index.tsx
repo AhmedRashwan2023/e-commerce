@@ -40,7 +40,7 @@ const NavBar: React.FC<NavBarProps> = ({ session }) => {
             <Show above="lg">
               <WishListBadge session={session} />
             </Show>
-            <CartDrawer />
+            <CartDrawer session={session} />
             <ProfileBadge session={session} />
             <Show below="lg">
               <SideMenuDrawer session={session} />

@@ -19,8 +19,9 @@ import { IoMdClose } from "react-icons/io";
 import CartViewer from "./CartViewer";
 import { useCartContext } from "@/contexts/shoppingCart";
 import ExecuteCart from "./ExecuteCart";
+import { NavBarProps } from "..";
 
-const CartDrawer = () => {
+const CartDrawer: React.FC<NavBarProps> = ({ session }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const localeActive = useLocale();
   const t = useTranslations("shoppingCart");
@@ -53,7 +54,9 @@ const CartDrawer = () => {
           <DrawerBody>
             <Stack gap={5}>
               <CartViewer onClose={onClose} />
-              {cartItems.length > 0 && <ExecuteCart onClose={onClose} />}
+              {cartItems.length > 0 && (
+                <ExecuteCart session={session} onClose={onClose} />
+              )}
             </Stack>
           </DrawerBody>
         </DrawerContent>

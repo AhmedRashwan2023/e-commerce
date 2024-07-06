@@ -1,7 +1,8 @@
+import { ItemProps } from "@/components/ShoppingItems/ItemCard";
 import { Stack, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 
-const DescriptionTab = () => {
+const DescriptionTab = ({ product }: { product: ItemProps }) => {
   const t = useTranslations("descriptionTab");
   return (
     <Stack>
@@ -11,16 +12,11 @@ const DescriptionTab = () => {
       <Text fontWeight={"semibold"} fontSize={18}>
         {t("subTitle")}
       </Text>
-      <Text color={"#5b5b5b"}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque officiis
-        sint saepe omnis sed dolorum veritatis laboriosam deleniti, quos,
-        dolores sequi recusandae. Aperiam mollitia odio, ut tempore facere
-        assumenda rerum.
-      </Text>
+      <Text color={"#5b5b5b"}>{product.descriptionProduct}</Text>
       <Text fontWeight={"semibold"} fontSize={18} pt={2}>
         {t("unitTitle")}
       </Text>
-      <Text color={"#5b5b5b"}>{`{unitsNumber}`}</Text>
+      <Text color={"#5b5b5b"}>{product.unites}</Text>
       <Text fontWeight={"semibold"} fontSize={18} pt={2}>
         {t("sellerTitle")}
       </Text>

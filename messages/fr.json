@@ -279,5 +279,11 @@
   },
   "recommendedItems": {
     "title": "Recommandé pour vous"
+  },
+  "informationTab": {
+    "title": "Détails",
+    "weight": "Poids",
+    "ingredient": "Type of ingredient",
+    "units": "Quantity of product packaging"
   }
 }

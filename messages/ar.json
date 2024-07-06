@@ -279,5 +279,11 @@
   },
   "recommendedItems": {
     "title": "نرشح لك"
+  },
+  "informationTab": {
+    "title": "التفاصيل",
+    "weight": "الوزن",
+    "ingredient": "نوع الخامات",
+    "units": "عدد الوحدات بالعبوة"
   }
 }

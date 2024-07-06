@@ -22,8 +22,20 @@ import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/Rec
 
 const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
   const product = products.find((prod) => prod.id === parseInt(params.itemId));
+
   const localeActive = await getLocale();
   const t = await getTranslations("itemDetailed");
+
+  const stockAvail = () => {
+    if (localeActive === "fr") {
+      if (product?.inStore) return "En stock";
+      else return "Épuisé";
+    } else if (localeActive === "ar") {
+      if (product?.inStore) return "متاح";
+      else return "غير متوفر حالياً";
+    }
+  };
+
   return (
     <Box px={bodyPadding}>
       <Flex gap={6}>
@@ -38,10 +50,10 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
                 fontWeight={"semibold"}
                 color={"#eac102"}
               >
-                CategoryName
+                {product?.categoryName}
               </Link>
               <Text fontSize={33} fontWeight={"semibold"}>
-                Item Name
+                {product?.name}
               </Text>
               <PriceProvider
                 normalPrice={product?.normalPrice!}
@@ -63,15 +75,15 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
               <Stack gap={5} px={5} py={7} fontSize={16} color={"#999999"}>
                 <HStack>
                   <Text fontWeight={"semibold"}>{t("productCode")}</Text>
-                  <Text>{`{codeProduit}`}</Text>
+                  <Text>{product?.codeProduct}</Text>
                 </HStack>
                 <HStack>
                   <Text fontWeight={"semibold"}>{t("availability")}</Text>
-                  <Text>{`{inStock} true/false`}</Text>
+                  <Text>{stockAvail()}</Text>
                 </HStack>
                 <HStack>
                   <Text fontWeight={"semibold"}>{t("type")}</Text>
-                  <Text>{`{categoryName}`}</Text>
+                  <Text>{product?.categoryName}</Text>
                 </HStack>
                 {/* <HStack>
                   <Text fontWeight={"semibold"}>{t("shipping")}</Text>
@@ -87,7 +99,7 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
           </Flex>
         </Show>
       </Flex>
-      <TabsContainer />
+      <TabsContainer product={product!} />
       <RelatedArticalsContainer />
     </Box>
   );

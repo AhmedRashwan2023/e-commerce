@@ -22,11 +22,16 @@ export interface ItemProps {
   name: string;
   category: number;
   weight: number;
+  unites: number;
   inStore: boolean;
   isActive: boolean;
   normalPrice: number;
   sellingPrice: number;
+  descriptionProduct: string;
   description: string;
+  metaTitle: string;
+  metaDescription: string;
+  codeProduct: string;
   sku: string;
   image: string;
   categoryName: string;
