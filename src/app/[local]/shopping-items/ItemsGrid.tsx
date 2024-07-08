@@ -3,25 +3,14 @@ import ItemCardContainer from "@/components/ShoppingItems/ItemCardContainer";
 import ItemsDisplayAndOrder from "@/components/ShoppingItems/ItemsDisplayAndOrder";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
+import { ItemsGridProps } from "@/data/types";
 import { Box, Flex, HStack, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { getLocale, getTranslations } from "next-intl/server";
-
-interface Props {
-  initialSearchParams: {
-    catId: number;
-    mixPrice: number;
-    maxPrice: number;
-    evaluation: number;
-    name: string;
-    display: number;
-    orderBy: string;
-  };
-}
 
 const displayOptions = [50, 30, 20, 10];
 const orderOptions = ["featured", "priceLower", "priceHigher", "date"];
 
-const ItemsGrid = async ({ initialSearchParams }: Props) => {
+const ItemsGrid = async ({ initialSearchParams }: ItemsGridProps) => {
   const userWishList = [1, 4, 5];
   const localeActive = await getLocale();
   const t = await getTranslations("shoppingItems");

@@ -1,11 +1,11 @@
 "use client";
 
 import { useCartContext } from "@/contexts/shoppingCart";
+import { ItemProps } from "@/data/types";
 import { Button } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { FormEvent } from "react";
 import { FaPlus } from "react-icons/fa6";
-import { ItemProps } from "./ItemCard";
 
 const AddToCartButton = ({ item }: { item: ItemProps }) => {
   const t = useTranslations("shoppingItems");

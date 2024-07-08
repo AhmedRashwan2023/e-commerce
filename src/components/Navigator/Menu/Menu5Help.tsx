@@ -2,7 +2,7 @@
 import { Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
-import { MenuLocationProps } from ".";
+import { MenuLocationProps } from "@/data/types";
 
 const Menu5Help = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
   const t = useTranslations("menuHelp");

@@ -16,7 +16,8 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 import { IoMdClose } from "react-icons/io";
 import { IoPerson } from "react-icons/io5";
 import { TfiLayoutWidthDefaultAlt } from "react-icons/tfi";
-import SignInForm, { SignInFormProps } from "./SignInForm";
+import SignInForm from "./SignInForm";
+import { SignInFormProps } from "@/data/types";
 
 const LoginModal = ({
   specialURL,

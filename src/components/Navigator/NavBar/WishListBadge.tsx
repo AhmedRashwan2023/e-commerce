@@ -3,7 +3,7 @@ import { Link } from "@chakra-ui/react";
 import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { GoHeart } from "react-icons/go";
-import { NavBarProps } from ".";
+import { NavBarProps } from "@/data/types";
 import LoginModal from "../../Account/LoginModel";
 import CountBadge from "../CountBadge";
 import { useWishlistContext } from "@/contexts/wishlistContext";

@@ -1,10 +1,11 @@
 "use client";
 import { Alert, AlertIcon, HStack, Link, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import CartItem, { CartItemProps } from "./CartItem";
+import CartItem from "./CartItem";
 import { useCartContext } from "@/contexts/shoppingCart";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
+import { CartItemProps } from "@/data/types";
 
 const CartViewer = ({ onClose }: { onClose?: () => void }) => {
   const { cartItems } = useCartContext();

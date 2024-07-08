@@ -2,19 +2,7 @@ import { Box, Button, Card, Flex, Show, Stack, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import ModifyAddressModal from "./ModifyAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
-
-export interface AddressProps {
-  id: number;
-  firstName: string;
-  lastName: string;
-  address1: string;
-  address2: string;
-  city: string;
-  phone: string;
-  postCode: string;
-  businessName: string;
-  setAsDefault: boolean;
-}
+import { AddressProps } from "@/data/types";
 
 const AddressCard = ({ data }: { data: AddressProps }) => {
   const t = useTranslations("myAddresses");

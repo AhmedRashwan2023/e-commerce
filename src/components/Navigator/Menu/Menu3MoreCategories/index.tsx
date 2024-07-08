@@ -12,7 +12,7 @@ import {
 import { FaCaretDown } from "react-icons/fa";
 import Menu3MoreCategoriesDetails from "./Menu3MoreCategoriesDetails";
 import { useTranslations } from "next-intl";
-import { MenuLocationProps } from "..";
+import { MenuLocationProps } from "@/data/types";
 import { useState } from "react";
 
 const Menu3MoreCategories = ({

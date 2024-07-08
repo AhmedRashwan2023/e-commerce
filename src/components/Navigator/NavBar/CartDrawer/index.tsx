@@ -19,7 +19,7 @@ import { IoMdClose } from "react-icons/io";
 import CartViewer from "./CartViewer";
 import { useCartContext } from "@/contexts/shoppingCart";
 import ExecuteCart from "./ExecuteCart";
-import { NavBarProps } from "..";
+import { NavBarProps } from "@/data/types";
 
 const CartDrawer: React.FC<NavBarProps> = ({ session }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

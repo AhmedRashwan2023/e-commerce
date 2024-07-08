@@ -1,7 +1,7 @@
 "use client";
 
-import { ItemProps } from "@/components/ShoppingItems/ItemCard";
 import { useCartContext } from "@/contexts/shoppingCart";
+import { ItemProps } from "@/data/types";
 import {
   Button,
   Flex,

@@ -18,7 +18,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MdDeleteForever } from "react-icons/md";
-import { CartItemProps } from "./CartItem";
+import { CartItemProps } from "@/data/types";
 import { useCartContext } from "@/contexts/shoppingCart";
 
 const RemoveFromCart = ({ item }: { item: CartItemProps }) => {

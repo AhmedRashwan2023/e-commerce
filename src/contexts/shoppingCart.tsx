@@ -1,5 +1,5 @@
 "use client";
-import { CartItemProps } from "@/components/Navigator/NavBar/CartDrawer/CartItem";
+import { CartItemProps } from "@/data/types";
 import { useToast } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import {

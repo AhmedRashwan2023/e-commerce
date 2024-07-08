@@ -1,5 +1,6 @@
 "use client";
 
+import { WishlistItemsProps } from "@/data/types";
 import { useToast } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import {
@@ -10,13 +11,6 @@ import {
   useState,
 } from "react";
 
-export interface WishlistItemsProps {
-  id: number;
-  name: string;
-  image: string;
-  normalPrice: number;
-  sellingPrice: number;
-}
 const WishlistContext = createContext<any>([]);
 
 export const WishlistWrapper = ({ children }: { children: ReactNode }) => {

@@ -15,10 +15,10 @@ import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
 import { FaCaretDown } from "react-icons/fa";
 import Menu4NestedMenu from "./Menu4NestedMenu";
-import { NavBarProps } from "../../NavBar";
 import { useState } from "react";
 import { MdLogout } from "react-icons/md";
 import { handleSignOut } from "./action";
+import { NavBarProps } from "@/data/types";
 
 const Menu4Account: React.FC<NavBarProps> = ({
   session,

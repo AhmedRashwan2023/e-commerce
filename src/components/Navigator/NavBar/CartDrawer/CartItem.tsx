@@ -12,17 +12,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import RemoveFromCart from "./RemoveFromCart";
 import NextLink from "next/link";
+import { CartItemProps } from "@/data/types";
 
-export interface CartItemProps {
-  id: number;
-  name: string;
-  image: string;
-  qty: number;
-  normalPrice: number;
-  sellingPrice: number;
-  totalNormalPrice: number;
-  totalSellingPrice: number;
-}
 const CartItem = ({
   item,
   onClose,

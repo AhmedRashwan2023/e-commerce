@@ -2,7 +2,7 @@ import { Link } from "@chakra-ui/react";
 import { useLocale } from "next-intl";
 import NextLink from "next/link";
 import { IoPerson } from "react-icons/io5";
-import { NavBarProps } from ".";
+import { NavBarProps } from "@/data/types";
 import LoginModel from "../../Account/LoginModel";
 import CountBadge from "../CountBadge";
 

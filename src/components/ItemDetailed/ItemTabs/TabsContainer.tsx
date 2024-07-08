@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import DescriptionTab from "./DescriptionTab";
 import InformationTab from "./InformationTab";
 import ReviewsTab from "./ReviewsTab";
-import { ItemProps } from "@/components/ShoppingItems/ItemCard";
+import { ItemProps } from "@/data/types";
 
 const TabsContainer = ({ product }: { product: ItemProps }) => {
   const t = useTranslations("itemDetailed");

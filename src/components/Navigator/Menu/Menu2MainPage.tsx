@@ -1,8 +1,8 @@
 "use client";
+import { MenuLocationProps } from "@/data/types";
 import { Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
-import { MenuLocationProps } from ".";
 
 const Menu2MainPage = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
   const t = useTranslations("menuMainPage");

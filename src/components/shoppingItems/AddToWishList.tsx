@@ -2,7 +2,7 @@
 import { useWishlistContext } from "@/contexts/wishlistContext";
 import { Box, Link } from "@chakra-ui/react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
-import { ItemProps } from "./ItemCard";
+import { ItemProps } from "@/data/types";
 
 const AddToWishList = ({
   fontSize = 24,

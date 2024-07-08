@@ -16,13 +16,8 @@ import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 // import { categories } from "@/data/categories";
 import { useRouter } from "next/navigation";
-import { MenuLocationProps } from ".";
 import { useState } from "react";
-import { Category } from "../NavBar";
-
-interface Menu1CategoresProps extends MenuLocationProps {
-  categories: Category[];
-}
+import { Menu1CategoresProps } from "@/data/types";
 
 const Menu1Categores: React.FC<Menu1CategoresProps> = ({
   menuLocation,

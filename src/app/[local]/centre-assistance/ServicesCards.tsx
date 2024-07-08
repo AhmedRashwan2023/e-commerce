@@ -1,10 +1,10 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import { IconType } from "react-icons";
 import { LuTruck } from "react-icons/lu";
 import { FaBox } from "react-icons/fa6";
 import { RiRefund2Line } from "react-icons/ri";
 import { FaMoneyBills } from "react-icons/fa6";
+import { CardProps } from "@/data/types";
 
 const ServicesCards = () => {
   const t = useTranslations("helpCenter");
@@ -20,10 +20,6 @@ const ServicesCards = () => {
 
 export default ServicesCards;
 
-interface CardProps {
-  icon: IconType;
-  text: string;
-}
 const ServiceCard = ({ icon, text }: CardProps) => {
   const Icon = icon;
   return (

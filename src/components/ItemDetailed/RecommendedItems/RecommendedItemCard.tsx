@@ -1,4 +1,4 @@
-import { ItemProps } from "@/components/ShoppingItems/ItemCard";
+import { ItemProps } from "@/data/types";
 import PriceProvider from "@/components/ShoppingItems/PriceProvider";
 import { Card, Flex, Link, Image } from "@chakra-ui/react";
 import { useLocale } from "next-intl";

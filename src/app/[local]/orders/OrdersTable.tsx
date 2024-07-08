@@ -1,3 +1,4 @@
+import { OrdersTableProps } from "@/data/types";
 import {
   Image,
   Table,
@@ -10,19 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { CiViewTimeline } from "react-icons/ci";
-interface Props {
-  orders: {
-    id: number;
-    name: string;
-    date: string;
-    qty: number;
-    status: string;
-    price: number;
-    img: string;
-  }[];
-}
 
-const OrdersTable = ({ orders }: Props) => {
+const OrdersTable = ({ orders }: OrdersTableProps) => {
   const t = useTranslations("orders");
   return (
     <TableContainer>

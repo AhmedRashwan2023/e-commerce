@@ -5,10 +5,7 @@ import NextLink from "next/link";
 import InputPassword from "../FormControl/InputPassword";
 import { handleSignIn } from "./action";
 import { usePathname, useRouter } from "next/navigation";
-
-export interface SignInFormProps {
-  specialURL?: string;
-}
+import { SignInFormProps } from "@/data/types";
 
 const SignInForm = ({ specialURL }: SignInFormProps) => {
   const activeLocale = useLocale();

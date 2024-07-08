@@ -19,7 +19,7 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import SearchInput from "../../NavBar/SearchInput";
 import Menu from "..";
-import { Category } from "../../NavBar";
+import { Category } from "@/data/types";
 
 const SideMenuDrawer = ({
   session,

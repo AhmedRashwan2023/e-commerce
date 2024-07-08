@@ -16,27 +16,7 @@ import ItemEvaluationProvider from "./ItemEvaluationProvider";
 import PriceProvider from "./PriceProvider";
 import AddToCartButton from "./AddToCartButton";
 import AddToWishList from "./AddToWishList";
-
-export interface ItemProps {
-  id: number;
-  name: string;
-  category: number;
-  weight: number;
-  unites: number;
-  inStore: boolean;
-  isActive: boolean;
-  normalPrice: number;
-  sellingPrice: number;
-  descriptionProduct: string;
-  description: string;
-  metaTitle: string;
-  metaDescription: string;
-  codeProduct: string;
-  sku: string;
-  image: string;
-  categoryName: string;
-  evaluation: number;
-}
+import { ItemProps } from "@/data/types";
 
 const ItemCard = ({ item }: { item: ItemProps }) => {
   const t = useTranslations("shoppingItems");

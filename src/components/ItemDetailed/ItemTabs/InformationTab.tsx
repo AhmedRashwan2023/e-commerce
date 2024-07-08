@@ -1,4 +1,4 @@
-import { ItemProps } from "@/components/ShoppingItems/ItemCard";
+import { ItemProps } from "@/data/types";
 import {
   Stack,
   Table,

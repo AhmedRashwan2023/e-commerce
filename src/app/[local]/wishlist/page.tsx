@@ -20,9 +20,9 @@ import {
 import React from "react";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { ItemProps } from "@/components/ShoppingItems/ItemCard";
 import RemoveFromWishList from "./RemoveFromWishList";
 import RemoveAllFromWishList from "./RemoveAllFromWishList";
+import { ItemProps } from "@/data/types";
 
 const Wishlist = () => {
   const { wishlistItems } = useWishlistContext();

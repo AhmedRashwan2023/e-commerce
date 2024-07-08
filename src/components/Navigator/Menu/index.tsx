@@ -4,13 +4,9 @@ import Menu2MainPage from "./Menu2MainPage";
 import Menu3MoreCategories from "./Menu3MoreCategories";
 import Menu4Account from "./Menu4Account";
 import Menu5Help from "./Menu5Help";
-import { NavBarProps } from "../NavBar";
-import { postRequest } from "@/utils/db";
 
-export interface MenuLocationProps {
-  menuLocation?: string;
-  closeDrawer?: () => void;
-}
+import { postRequest } from "@/utils/db";
+import { NavBarProps } from "@/data/types";
 
 const Menu: React.FC<NavBarProps> = ({
   session,

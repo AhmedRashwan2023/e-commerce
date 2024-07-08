@@ -11,9 +11,9 @@ import {
   AlertIcon,
   Link,
 } from "@chakra-ui/react";
-import { AddressProps } from "../my-addresses/AddressCard";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { AddressProps } from "@/data/types";
 
 const AddressSelector = ({ addresses }: { addresses: AddressProps[] }) => {
   console.log("addresses", addresses.length);

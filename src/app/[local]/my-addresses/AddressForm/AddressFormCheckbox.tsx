@@ -1,13 +1,9 @@
 "use client";
+import { AddressFormCheckboxProps } from "@/data/types";
 import { Checkbox } from "@chakra-ui/react";
 import { useState } from "react";
 
-interface Props {
-  value: boolean;
-  text: string;
-}
-
-const AddressFormCheckbox = ({ value, text }: Props) => {
+const AddressFormCheckbox = ({ value, text }: AddressFormCheckboxProps) => {
   const [inputValue, setValue] = useState(value);
 
   return (

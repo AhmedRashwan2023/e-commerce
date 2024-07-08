@@ -9,7 +9,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import { MenuLocationProps } from "../Menu";
+import { MenuLocationProps } from "@/data/types";
 
 const SearchInput = ({ menuLocation }: MenuLocationProps) => {
   const localActive = useLocale();

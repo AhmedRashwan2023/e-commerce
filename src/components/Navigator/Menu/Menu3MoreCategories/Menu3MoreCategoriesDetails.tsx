@@ -1,7 +1,7 @@
 import { Box, Flex, HStack, Text, Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
-import { MenuLocationProps } from "..";
+import { MenuLocationProps } from "@/data/types";
 
 const Menu3MoreCategoriesDetails = ({ closeDrawer }: MenuLocationProps) => {
   const t = useTranslations("menuMoreCategories");
