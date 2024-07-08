@@ -1,20 +1,22 @@
 import { bodyPadding } from "@/assets/global";
 import Evaluation from "@/components/ShoppingItems/Evaluation";
 import PriceRangeSlider from "@/components/ShoppingItems/PriceRangeSlider";
-import { categories } from "@/data/categories";
 import { setSearchParams } from "@/services/shoppingItems";
 import { Flex, Link, Show, Stack, Text } from "@chakra-ui/react";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import NextLink from "next/link";
 import ItemsGrid from "./ItemsGrid";
+import { postRequest } from "@/utils/db";
+import { Category } from "@/data/types";
 
 const ShoppingItems = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const localeActive = await getLocale();
   const t = await getTranslations("shoppingItems");
+
+  const categories = await postRequest("/api/categories/getCats", {});
 
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,
@@ -22,9 +24,14 @@ const ShoppingItems = async ({
     maxPrice: (searchParams.maxPrice || 300) as number,
     evaluation: (searchParams.evaluation || 5) as number,
     name: (searchParams.name || "") as string,
-    display: (searchParams.display || 50) as number,
+    display: (searchParams.display || 10) as number,
     orderBy: (searchParams.orderBy || "featured") as string,
+    page: (searchParams.page || 1) as number,
   };
+
+  const selectedCat = categories.find(
+    (category: Category) => category.id === Number(initialSearchParams.catId)
+  );
 
   return (
     <Flex px={bodyPadding} gap={10} py={6}>
@@ -34,7 +41,7 @@ const ShoppingItems = async ({
             <Text fontSize={19} fontWeight={"semibold"}>
               {t("filterCategories")}
             </Text>
-            {categories.map((category, index) => (
+            {categories.map((category: Category, index: number) => (
               <Link
                 key={index}
                 as={NextLink}
@@ -49,7 +56,7 @@ const ShoppingItems = async ({
                 borderBottomWidth={1}
                 py={1}
               >
-                {localeActive === "fr" ? category.fr : category.ar}
+                {category.name}
               </Link>
             ))}
           </Stack>
@@ -67,7 +74,10 @@ const ShoppingItems = async ({
           </Stack>
         </Stack>
       </Show>
-      <ItemsGrid initialSearchParams={initialSearchParams} />
+      <ItemsGrid
+        initialSearchParams={initialSearchParams}
+        categoryName={selectedCat?.name}
+      />
     </Flex>
   );
 };

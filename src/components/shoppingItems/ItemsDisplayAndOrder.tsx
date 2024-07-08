@@ -17,11 +17,13 @@ const ItemsDisplayAndOrder = () => {
   const changeDisplay = (event: ChangeEvent<HTMLSelectElement>) => {
     const params = new URLSearchParams(searchParams);
     params.set("display", event.target.value);
+    params.set("page", "1");
     router.push(`?${params.toString()}`);
   };
   const changeOrder = (event: ChangeEvent<HTMLSelectElement>) => {
     const params = new URLSearchParams(searchParams);
     params.set("orderBy", event.target.value);
+    params.set("page", "1");
     router.push(`?${params.toString()}`);
   };
 
@@ -30,7 +32,7 @@ const ItemsDisplayAndOrder = () => {
       <select
         style={selectStyle}
         onChange={changeDisplay}
-        defaultValue={initialDisplay ?? 50}
+        defaultValue={initialDisplay ?? 10}
       >
         <option value={50}>{`${t("display")}: 50`}</option>
         <option value={30}>{`${t("display")}: 30`}</option>

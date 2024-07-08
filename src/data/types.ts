@@ -87,6 +87,7 @@ export interface ItemsGridProps {
     name: string;
     display: number;
     orderBy: string;
+    page: number;
   };
 }
 
