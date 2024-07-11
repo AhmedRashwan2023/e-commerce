@@ -8,9 +8,9 @@ import NextLink from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const CategoriesSwiper = () => {
+const CategoriesSwiper = ({ categories }: { categories: Category[] }) => {
   const t = useTranslations("menuCategores");
 
   return (
@@ -77,9 +77,9 @@ const CategorySlide = ({ category }: { category: Category }) => {
         m={2}
         gap={3}
       >
-        <Image src={category.img} boxSize={"200px"} />
+        <Image src={category.image!} boxSize={"200px"} />
         <Text fontSize={16} fontWeight={"semibold"}>
-          {localeActive === "ar" ? category.ar : category.fr}
+          {category.name}
         </Text>
       </Flex>
     </Link>
