@@ -125,3 +125,13 @@ export interface CardProps {
   icon: IconType;
   text: string;
 }
+
+export interface Review {
+  clientName: string;
+  clientAvatar: string;
+  reviewDate: string;
+  reviewScore: number;
+  reviewTitle: string;
+  reviewImage: string;
+  reviewDesc: string;
+}

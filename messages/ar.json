@@ -304,5 +304,15 @@
     "no": "لا",
     "confirmRemovingItemTitle": "تأكيد حذف المنتج من قائمة أصنافك المفضلة",
     "confirmRemovingAllTitle": "تأكيد حذف جميع الأصناف من فائمة أصنافك المفضلة"
+  },
+  "itemReviews": {
+    "customerRatingsTitle": "تقييمات العملاء",
+    "globalReviews": "إجمالي التقييمات",
+    "outOf": "من",
+    "customerRatingFooterHead": "قيّم هذا المنتج",
+    "customerRatingFooterTail": " شارك أفكارك مع عملاء آخرين.",
+    "reviews": "التقييمات",
+    "loadMore": "تحميل المزيد",
+    "loadLess": "تحميل أقل"
   }
 }

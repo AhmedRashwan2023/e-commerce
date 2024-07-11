@@ -304,5 +304,15 @@
     "no": "Non",
     "confirmRemovingItemTitle": "Confirmer la suppression de cet article de votre liste de souhaits",
     "confirmRemovingAllTitle": "Confirmer la suppression de tous les articles de votre liste de souhaits"
+  },
+  "itemReviews": {
+    "customerRatingsTitle": "Avis client",
+    "globalReviews": "Évaluations globales",
+    "outOf": "out of",
+    "customerRatingFooterHead": "Donnez votre avis sur ce produit",
+    "customerRatingFooterTail": " Partagez vos pensées avec d'autres clients.",
+    "reviews": "Avis",
+    "loadMore": "Charger plus",
+    "loadLess": "Charger moins"
   }
 }
