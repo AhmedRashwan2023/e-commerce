@@ -11,7 +11,7 @@ const ItemsDisplayAndOrder = () => {
   const searchParams = useSearchParams();
 
   const displayString = searchParams.get("display");
-  const initialDisplay = displayString ? parseInt(displayString) : 50;
+  const initialDisplay = displayString ? parseInt(displayString) : 10;
   const initialOrderBy = searchParams.get("orderBy") ?? "featured";
 
   const changeDisplay = (event: ChangeEvent<HTMLSelectElement>) => {

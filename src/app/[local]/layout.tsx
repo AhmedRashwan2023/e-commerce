@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description: "Entre Murs Galerie",
 };
 
+export async function generateStaticParams() {
+  return [{ local: "fr" }, { local: "ar" }];
+}
+
 export default async function LocaleLayout({
   children,
   params: { locale },

@@ -20,6 +20,50 @@ import TabsContainer from "@/components/ItemDetailed/ItemTabs/TabsContainer";
 import RelatedArticalsContainer from "@/components/ItemDetailed/RelatedArticles/RelatedArticalsContainer";
 import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/RecommendedContainer";
 
+export async function generateStaticParams() {
+  return [
+    { itemId: "1" },
+    { itemId: "2" },
+    { itemId: "3" },
+    { itemId: "4" },
+    { itemId: "5" },
+    { itemId: "6" },
+    { itemId: "7" },
+    { itemId: "8" },
+    { itemId: "9" },
+    { itemId: "10" },
+    { itemId: "11" },
+    { itemId: "12" },
+    { itemId: "13" },
+    { itemId: "14" },
+    { itemId: "15" },
+    { itemId: "16" },
+    { itemId: "17" },
+    { itemId: "18" },
+    { itemId: "19" },
+    { itemId: "20" },
+    { itemId: "21" },
+    { itemId: "22" },
+    { itemId: "23" },
+    { itemId: "24" },
+    { itemId: "25" },
+    { itemId: "26" },
+    { itemId: "27" },
+    { itemId: "28" },
+    { itemId: "29" },
+    { itemId: "30" },
+    { itemId: "31" },
+    { itemId: "32" },
+    { itemId: "33" },
+    { itemId: "34" },
+    { itemId: "35" },
+    { itemId: "36" },
+    { itemId: "37" },
+    { itemId: "38" },
+    { itemId: "39" },
+  ];
+}
+
 const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
   const product = products.find((prod) => prod.id === parseInt(params.itemId));
 
