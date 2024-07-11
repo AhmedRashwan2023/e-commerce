@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 
 const breakpoints = {
   base: "0em",
+  extra_sm: "370px",
   sm: "30em", //480px
   md: "48em", //768px
   md2: "820px",

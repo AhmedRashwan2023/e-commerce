@@ -27,6 +27,7 @@ const ItemsGrid = async ({
   categoryName,
 }: ItemsGridProps & { categoryName: string }) => {
   const t = await getTranslations("shoppingItems");
+  const localeActive = await getLocale();
 
   const validSearchParams = {
     catId: categories.some(
@@ -69,6 +70,13 @@ const ItemsGrid = async ({
     page: validSearchParams.page.toString(), // Convert number to string
   };
 
+  const isPrevPageDisabled = Number(validSearchParams.page) <= 1 ? true : false;
+  const isNextPageDisabled =
+    Number(validSearchParams.page) <
+    Math.ceil(products.length / initialSearchParams.display)
+      ? false
+      : true;
+
   return (
     <Stack gap={5} w={{ base: "100%", lg: "80%" }}>
       {validSearchParams.catId && validSearchParams.catId !== 0 && (
@@ -106,14 +114,24 @@ const ItemsGrid = async ({
             )
         )}
       </SimpleGrid>
+
       <HStack justifyContent={"flex-end"} gap={4}>
-        <Button
-          fontSize={35}
-          color={"#011973"}
-          variant={"outline"}
-          isDisabled={Number(validSearchParams.page) <= 1 ? true : false}
+        <Box
+          borderRadius={7}
+          borderColor={"#d9d9d9"}
+          borderWidth={1}
+          fontSize={24}
+          p={2}
+          backgroundColor={isPrevPageDisabled ? "#d9d9d9" : "white"}
+          color={isPrevPageDisabled ? "#999999" : "black"}
+          _hover={{
+            bg: !isPrevPageDisabled && "#ffd966",
+            color: !isPrevPageDisabled && "#ffffff",
+            transform: "scale(1.03)",
+            transition: "transform .15s ease-in",
+          }}
         >
-          {Number(validSearchParams.page) > 1 ? (
+          {!isPrevPageDisabled ? (
             <Link
               as={NextLink}
               href={`?${setSearchParams(
@@ -122,34 +140,39 @@ const ItemsGrid = async ({
                 (Number(validSearchParams.page) - 1).toString()
               )}`}
             >
-              <FaCaretLeft />
+              {localeActive === "fr" ? <FaCaretLeft /> : <FaCaretRight />}
             </Link>
           ) : (
-            <FaCaretLeft />
+            <>{localeActive === "fr" ? <FaCaretLeft /> : <FaCaretRight />}</>
           )}
-        </Button>
+        </Box>
         <Text
-          px={3}
-          py={1}
+          borderRadius={7}
+          borderColor={"#d9d9d9"}
           borderWidth={1}
-          borderColor={"#bcbcbc"}
-          fontSize={18}
+          py={2}
+          px={4}
+          fontSize={15}
+          fontWeight={"semibold"}
         >
           {validSearchParams.page}
         </Text>
-        <Button
-          fontSize={35}
-          color={"#011973"}
-          variant={"outline"}
-          isDisabled={
-            Number(validSearchParams.page) <
-            Math.ceil(products.length / initialSearchParams.display)
-              ? false
-              : true
-          }
+        <Box
+          borderRadius={7}
+          borderColor={"#d9d9d9"}
+          borderWidth={1}
+          p={2}
+          fontSize={24}
+          backgroundColor={isNextPageDisabled ? "#d9d9d9" : "white"}
+          color={isNextPageDisabled ? "#999999" : "black"}
+          _hover={{
+            bg: !isNextPageDisabled && "#ffd966",
+            color: !isNextPageDisabled && "#ffffff",
+            transform: "scale(1.03)",
+            transition: "transform .15s ease-in",
+          }}
         >
-          {Number(validSearchParams.page) <
-          Math.ceil(products.length / initialSearchParams.display) ? (
+          {!isNextPageDisabled ? (
             <Link
               as={NextLink}
               href={`?${setSearchParams(
@@ -158,12 +181,12 @@ const ItemsGrid = async ({
                 (Number(validSearchParams.page) + 1).toString()
               )}`}
             >
-              <FaCaretRight />
+              {localeActive === "fr" ? <FaCaretRight /> : <FaCaretLeft />}
             </Link>
           ) : (
-            <FaCaretRight />
+            <>{localeActive === "fr" ? <FaCaretRight /> : <FaCaretLeft />}</>
           )}
-        </Button>
+        </Box>
       </HStack>
     </Stack>
   );

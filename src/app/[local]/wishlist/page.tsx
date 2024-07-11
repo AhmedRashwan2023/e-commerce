@@ -16,6 +16,8 @@ import {
   Td,
   Heading,
   Flex,
+  HStack,
+  Divider,
 } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
@@ -52,37 +54,30 @@ const Wishlist = () => {
             <Heading as="h2" size="lg">
               {t("title")}
             </Heading>
-            <TableContainer>
-              <Table variant="simple">
-                <Tbody>
-                  {wishlistItems.map((item: ItemProps, index: number) => (
-                    <Tr key={index}>
-                      <Td>
-                        <Link
-                          href={`/${localeActive}/shopping-items/${item.id}`}
-                          as={NextLink}
-                        >
-                          <Image
-                            src={item.image}
-                            alt={`Image of ${item.name}`}
-                            boxSize={"70px"}
-                          />
-                        </Link>
-                      </Td>
-                      <Td>
-                        <Text>{item.categoryName}</Text>
-                      </Td>
-                      <Td>
-                        <Text>{item.name}</Text>
-                      </Td>
-                      <Td>
-                        <RemoveFromWishList item={item} />
-                      </Td>
-                    </Tr>
-                  ))}
-                </Tbody>
-              </Table>
-            </TableContainer>
+            {wishlistItems.map((item: ItemProps, index: number) => (
+              <Link
+                key={index}
+                href={`/${localeActive}/shopping-items/${item.id}`}
+                as={NextLink}
+              >
+                <HStack
+                  px={1}
+                  justifyContent={{ base: "flex-start", sm: "space-between" }}
+                  wrap={"wrap"}
+                  gap={5}
+                >
+                  <Image
+                    src={item.image}
+                    alt={`Image of ${item.name}`}
+                    boxSize={"70px"}
+                  />
+                  <Text>{item.categoryName}</Text>
+                  <Text>{item.name}</Text>
+                  <RemoveFromWishList item={item} />
+                </HStack>
+                <Divider />
+              </Link>
+            ))}
             <Flex justifyContent={"flex-end"}>
               <RemoveAllFromWishList />
             </Flex>

@@ -67,13 +67,6 @@ export interface MenuLocationProps {
   closeDrawer?: () => void;
 }
 
-export interface CategoryProps {
-  id: number;
-  fr: string;
-  ar: string;
-  img: string;
-}
-
 export interface SignInFormProps {
   specialURL?: string;
 }

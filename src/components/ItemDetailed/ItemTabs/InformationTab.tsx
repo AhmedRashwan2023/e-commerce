@@ -1,5 +1,6 @@
 import { ItemProps } from "@/data/types";
 import {
+  Show,
   Stack,
   Table,
   TableContainer,
@@ -18,20 +19,47 @@ const InformationTab = ({ product }: { product: ItemProps }) => {
       <Text fontWeight={"semibold"} fontSize={22} py={2}>
         {t("title")}
       </Text>
-      <TableContainer w={"50%"} fontSize={16}>
+      <TableContainer w={{ base: "100%", lg: "50%" }} fontSize={16}>
         <Table variant="striped" colorScheme="gray" color={"#5b5b5b"}>
           <Tbody>
             <Tr>
-              <Td fontWeight={"semibold"}>{t("weight")}</Td>
-              <Td textAlign={"center"}>{product.weight}</Td>
+              <Td>
+                <Text fontWeight={"semibold"}>{t("weight")}</Text>
+                <Show below="md">
+                  <Text px={10} pt={3}>
+                    {product.weight}
+                  </Text>
+                </Show>
+              </Td>
+              <Show above="md">
+                <Td textAlign={"center"}>{product.weight}</Td>
+              </Show>
             </Tr>
             <Tr>
-              <Td fontWeight={"semibold"}>{t("ingredient")}</Td>
-              <Td textAlign={"center"}>{product.categoryName}</Td>
+              <Td>
+                <Text fontWeight={"semibold"}>{t("ingredient")}</Text>
+                <Show below="md">
+                  <Text px={10} pt={3}>
+                    {product.categoryName}
+                  </Text>
+                </Show>
+              </Td>
+              <Show above="md">
+                <Td textAlign={"center"}>{product.categoryName}</Td>
+              </Show>
             </Tr>
             <Tr>
-              <Td fontWeight={"semibold"}>{t("units")}</Td>
-              <Td textAlign={"center"}>{product.unites}</Td>
+              <Td>
+                <Text fontWeight={"semibold"}>{t("units")}</Text>
+                <Show below="md">
+                  <Text px={10} pt={3}>
+                    {product.unites}
+                  </Text>
+                </Show>
+              </Td>
+              <Show above="md">
+                <Td textAlign={"center"}>{product.unites}</Td>
+              </Show>
             </Tr>
           </Tbody>
         </Table>

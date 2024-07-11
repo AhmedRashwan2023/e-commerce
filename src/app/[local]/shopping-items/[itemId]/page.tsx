@@ -40,9 +40,14 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
     <Box px={bodyPadding}>
       <Flex gap={6}>
         <Flex w={{ base: "100%", lg: "80%" }} py={7}>
-          <HStack alignItems={"flex-start"} w={"100%"}>
+          <HStack
+            alignItems={"flex-start"}
+            w={"100%"}
+            wrap={"wrap"}
+            justifyContent={{ base: "center", lg: "flex-start" }}
+          >
             <Image src={product?.image} boxSize={400} mx={1} />
-            <Stack w={"100%"}>
+            <Stack w={"fit-content"}>
               <Link
                 as={NextLink}
                 href={`/${localeActive}/shopping-items?catId=${product?.category}`}

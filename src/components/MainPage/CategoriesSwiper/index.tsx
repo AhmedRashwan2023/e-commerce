@@ -1,7 +1,7 @@
 "use client";
 import { bodyPadding } from "@/assets/global";
 import { categories } from "@/data/categories";
-import { CategoryProps } from "@/data/types";
+import { Category } from "@/data/types";
 import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
@@ -59,7 +59,7 @@ const swiperStyle = {
   height: "100%",
 };
 
-const CategorySlide = ({ category }: { category: CategoryProps }) => {
+const CategorySlide = ({ category }: { category: Category }) => {
   const localeActive = useLocale();
 
   return (
