@@ -16,7 +16,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { AddressProps } from "@/data/types";
 
 const AddressSelector = ({ addresses }: { addresses: AddressProps[] }) => {
-  console.log("addresses", addresses.length);
   const [value, setValue] = useState("1");
   const t = useTranslations("shoppingCart");
   const localeActive = useLocale();

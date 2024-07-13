@@ -52,8 +52,6 @@ const ItemsGrid = async ({
     page: 1,
   };
 
-  console.log("catId", validSearchParams.catId);
-  console.log(validSearchParams.maxPrice);
   const products = await getRequest(
     `/api/products/getProductsByParam?min_price=${
       validSearchParams.minPrice

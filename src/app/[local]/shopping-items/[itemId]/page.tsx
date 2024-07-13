@@ -19,6 +19,7 @@ import AddToWishList from "@/components/ShoppingItems/AddToWishList";
 import TabsContainer from "@/components/ItemDetailed/ItemTabs/TabsContainer";
 import RelatedArticalsContainer from "@/components/ItemDetailed/RelatedArticles/RelatedArticalsContainer";
 import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/RecommendedContainer";
+import { getRequest } from "@/utils/db";
 
 // export async function generateStaticParams() {
 //   return [
@@ -65,7 +66,10 @@ import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/Rec
 // }
 
 const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
-  const product = products.find((prod) => prod.id === parseInt(params.itemId));
+  const getProduct = await getRequest(
+    `/api/products/getProductsByParam?product_id=${params.itemId}`
+  );
+  const product = getProduct[0];
 
   const localeActive = await getLocale();
   const t = await getTranslations("itemDetailed");
