@@ -2,11 +2,19 @@ import { Stack, Heading, Flex, Text, Button } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
 import ShippoingOptions from "./ShippoingOptions";
 import AddressSelector from "./AddressSelector";
-import { addresses } from "@/data/addresses";
 import PaymentSelector from "./PaymentSelector";
+import { postRequest } from "@/utils/db";
+import { getSession } from "@/services/auth";
 
 const AddressAndPayment = async () => {
   const t = await getTranslations("shoppingCart");
+  const session = await getSession();
+  const addresses = await postRequest(
+    "/api/addresses/client/1",
+    {},
+    session.data.access_token
+  );
+
   const isDisabled = addresses.length === 0 ? true : false;
   return (
     <ShippoingOptions>

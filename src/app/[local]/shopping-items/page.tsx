@@ -20,8 +20,8 @@ const ShoppingItems = async ({
 
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,
-    mixPrice: (searchParams.mixPrice || 0) as number,
-    maxPrice: (searchParams.maxPrice || 300) as number,
+    minPrice: (searchParams.minPrice || 0) as number,
+    maxPrice: (searchParams.maxPrice || 15000) as number,
     evaluation: (searchParams.evaluation || 5) as number,
     name: (searchParams.name || "") as string,
     display: (searchParams.display || 10) as number,
@@ -41,6 +41,17 @@ const ShoppingItems = async ({
             <Text fontSize={19} fontWeight={"semibold"}>
               {t("filterCategories")}
             </Text>
+            <Link
+              as={NextLink}
+              href={`?${setSearchParams(searchParams, "catId", "all")}`}
+              _hover={{ color: "#048414", fontWeight: "semibold" }}
+              fontSize={14}
+              borderBottomColor={"#b0b0b0"}
+              borderBottomWidth={1}
+              py={1}
+            >
+              {t("allCategories")}
+            </Link>
             {categories.map((category: Category, index: number) => (
               <Link
                 key={index}

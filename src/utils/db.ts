@@ -1,10 +1,22 @@
 const backendUrl = process.env.BACKEND;
 
-export const postRequest = async (endpoint: string, params: any) => {
+export const postRequest = async (
+  endpoint: string,
+  params: any,
+  token?: string | null
+) => {
   try {
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+    };
+
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+
     const res = await fetch(`${backendUrl}/${endpoint}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: headers,
       body: JSON.stringify(params),
       cache: "no-store",
     });
@@ -22,11 +34,19 @@ export const postRequest = async (endpoint: string, params: any) => {
   }
 };
 
-export const getRequest = async (endpoint: string) => {
+export const getRequest = async (endpoint: string, token?: string | null) => {
   try {
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+    };
+
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+
     const res = await fetch(`${backendUrl}/${endpoint}`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: headers,
       cache: "no-store",
     });
 

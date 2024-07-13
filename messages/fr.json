@@ -169,8 +169,8 @@
     "modelDesc": "Ajoutez une nouvelle adresse de livraison pour la livraison de votre commande.",
     "firstName": "Prénom",
     "lastName": "Nom",
-    "address1": "Adresse 1",
-    "address2": "Adresse 2",
+    "firstAddress": "Adresse 1",
+    "secondAddress": "Adresse 2",
     "city": "Ville",
     "phone": "Numéro de téléphone",
     "postCode": "Code postal",
@@ -220,7 +220,8 @@
     "sortByPriceHigher": "Prix : du plus élevé au plus bas",
     "sortByDate": "Date de sortie",
     "onSale": "En solde",
-    "addToCard": "Ajouter"
+    "addToCard": "Ajouter",
+    "allCategories": "Toutes catégories"
   },
   "orders": {
     "title": "Vos commandes",

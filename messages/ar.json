@@ -169,8 +169,8 @@
     "modelDesc": "إضافة عنوان توصيل جديد خاص بك يمكن إختياره لتوصيل طلباتك.",
     "firstName": "الإسم الأول",
     "lastName": "الإسم الأخير",
-    "address1": "العنوان 1",
-    "address2": "العنوان 2",
+    "firstAddress": "العنوان 1",
+    "secondAddress": "العنوان 2",
     "city": "المدينة",
     "phone": "رقم الهاتف",
     "postCode": "الرقم البريدي",
@@ -220,7 +220,8 @@
     "sortByPriceHigher": "السعر: من الأعلى إلى الأدنى",
     "sortByDate": "تاريخ الإصدار",
     "onSale": "تخفيض",
-    "addToCard": "إضافة"
+    "addToCard": "إضافة",
+    "allCategories": "كل الفئات"
   },
   "orders": {
     "title": "طلباتك",

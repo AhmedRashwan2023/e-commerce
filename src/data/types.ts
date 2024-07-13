@@ -74,7 +74,7 @@ export interface SignInFormProps {
 export interface ItemsGridProps {
   initialSearchParams: {
     catId: number;
-    mixPrice: number;
+    minPrice: number;
     maxPrice: number;
     evaluation: number;
     name: string;
@@ -112,12 +112,12 @@ export interface AddressProps {
   id: number;
   firstName: string;
   lastName: string;
-  address1: string;
-  address2: string;
+  firstAddress: string;
+  secondAddress: string;
   city: string;
   phone: string;
-  postCode: string;
-  businessName: string;
+  postNum: string;
+  work: string;
   setAsDefault: boolean;
 }
 

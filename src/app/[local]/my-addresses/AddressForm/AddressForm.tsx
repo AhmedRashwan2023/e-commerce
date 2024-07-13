@@ -1,45 +1,92 @@
-import { Button, Checkbox, Flex, Input, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Checkbox,
+  Flex,
+  Input,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import AddressFormInput from "./AddressFormInput";
 import AddressFormCheckbox from "./AddressFormCheckbox";
+import { handleAddAddress, handleUpdateAddress } from "./action";
 
 const AddressForm = ({
   initialValues,
+  onClose,
 }: {
   initialValues?: {
     id?: number;
     firstName: string;
     lastName: string;
-    address1: string;
-    address2: string;
+    firstAddress: string;
+    secondAddress: string;
     city: string;
     phone: string;
-    postCode: string;
-    businessName: string;
+    postNum: string;
+    work: string;
     setAsDefault: boolean;
   };
+  onClose?: () => void;
 }) => {
   const t = useTranslations("myAddresses");
   const localeActive = useLocale();
+  const toast = useToast();
 
-  const handleAddAddress = async (formData: FormData) => {
-    "use server";
+  const handleFormAction = async (formData: FormData) => {
     const dataItem = {
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
-      address1: formData.get("address1"),
-      address2: formData.get("address2"),
+      firstAddress: formData.get("firstAddress"),
+      secondAddress: formData.get("secondAddress"),
       city: formData.get("city"),
       phone: formData.get("phone"),
-      postCode: formData.get("postCode"),
-      businessName: formData.get("businessName"),
+      postNum: formData.get("postNum"),
+      work: formData.get("work"),
       setAsDefault: formData.get("setAsDefault") === "on" ? true : false,
     };
-    console.log(dataItem);
+
+    if (
+      dataItem.firstName === "" ||
+      dataItem.lastName === "" ||
+      dataItem.firstAddress === "" ||
+      dataItem.secondAddress === "" ||
+      dataItem.phone === "" ||
+      dataItem.postNum === "" ||
+      dataItem.city === ""
+    ) {
+      toast({
+        description: `Please make sure that all fields are added`,
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+      return;
+    }
+    if (initialValues) {
+      console.log("handleUpdateAddress");
+      const data = await handleUpdateAddress(formData);
+      toast({
+        description: `Address Updated`,
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
+    } else {
+      console.log("handleAddAddress");
+      const data = await handleAddAddress(formData);
+      toast({
+        description: `Address Added`,
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
+    }
+    if (onClose) onClose();
   };
 
   return (
-    <form action={handleAddAddress} dir={localeActive === "ar" ? "rtl" : "ltr"}>
+    <form action={handleFormAction} dir={localeActive === "ar" ? "rtl" : "ltr"}>
       <Text fontSize={13} pb={3} fontWeight={"semibold"} color={"#797b7e"}>
         {t("modelDesc")}
       </Text>
@@ -54,14 +101,14 @@ const AddressForm = ({
         value={initialValues?.lastName ?? ""}
       />
       <AddressFormInput
-        name={"address1"}
-        placeholder={t("address1")}
-        value={initialValues?.address1 ?? ""}
+        name={"firstAddress"}
+        placeholder={t("firstAddress")}
+        value={initialValues?.firstAddress ?? ""}
       />
       <AddressFormInput
-        name={"address2"}
-        placeholder={t("address2")}
-        value={initialValues?.address2 ?? ""}
+        name={"secondAddress"}
+        placeholder={t("secondAddress")}
+        value={initialValues?.secondAddress ?? ""}
       />
       <AddressFormInput
         name={"city"}
@@ -74,14 +121,14 @@ const AddressForm = ({
         value={initialValues?.phone ?? ""}
       />
       <AddressFormInput
-        name={"postCode"}
+        name={"postNum"}
         placeholder={t("postCode")}
-        value={initialValues?.postCode ?? ""}
+        value={initialValues?.postNum ?? ""}
       />
       <AddressFormInput
-        name={"businessName"}
+        name={"work"}
         placeholder={t("businessName")}
-        value={initialValues?.businessName ?? ""}
+        value={initialValues?.work ?? ""}
       />
       <AddressFormCheckbox
         text={t("setAsDefault")}

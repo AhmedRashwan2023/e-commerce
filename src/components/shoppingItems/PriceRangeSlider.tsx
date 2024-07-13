@@ -16,29 +16,29 @@ const PriceRangeSlider = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const mixPriceString = searchParams.get("mixPrice");
+  const mixPriceString = searchParams.get("minPrice");
   const maxPriceString = searchParams.get("maxPrice");
 
   const initialmixPrice = mixPriceString
-    ? parseInt(mixPriceString) >= 6 &&
+    ? parseInt(mixPriceString) >= 0 &&
       parseInt(mixPriceString) < parseInt(maxPriceString!)
       ? parseInt(mixPriceString)
-      : 6
-    : 6;
+      : 0
+    : 0;
 
   const initialmaxPrice = maxPriceString
-    ? parseInt(maxPriceString) <= 300 &&
+    ? parseInt(maxPriceString) <= 15000 &&
       parseInt(maxPriceString) > parseInt(mixPriceString!)
       ? parseInt(maxPriceString)
-      : 300
-    : 300;
+      : 15000
+    : 15000;
 
   const [minPrice, setMin] = useState(initialmixPrice);
   const [maxPrice, setMax] = useState(initialmaxPrice);
 
-  const setSearchParams = (mixPrice: string, maxPrice: string) => {
+  const setSearchParams = (minPrice: string, maxPrice: string) => {
     const params = new URLSearchParams(searchParams);
-    params.set("mixPrice", mixPrice);
+    params.set("minPrice", minPrice);
     params.set("maxPrice", maxPrice);
     return params.toString();
   };
@@ -48,8 +48,8 @@ const PriceRangeSlider = () => {
       <RangeSlider
         // aria-label={["min", "max"]}
         defaultValue={[minPrice, maxPrice]}
-        min={6}
-        max={300}
+        min={0}
+        max={15000}
         onChangeEnd={(val) => {
           setMin(val[0]);
           setMax(val[1]);

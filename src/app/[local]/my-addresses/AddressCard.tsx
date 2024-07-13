@@ -32,8 +32,8 @@ const AddressCard = ({ data }: { data: AddressProps }) => {
         <Text>{data.firstName}</Text>
         <Box color={"#B0B0B0"}>
           <Text>{data.lastName}</Text>
-          <Text>{data.address1}</Text>
-          <Text>{data.address2}</Text>
+          <Text>{data.firstAddress}</Text>
+          <Text>{data.secondAddress}</Text>
           <Text>{data.phone}</Text>
         </Box>
         {data.setAsDefault ? (
@@ -46,9 +46,8 @@ const AddressCard = ({ data }: { data: AddressProps }) => {
           </form>
         )}
         <Flex justifyContent={"space-between"}>
-          <ModifyAddressModal>
-            <AddressForm initialValues={data} />
-          </ModifyAddressModal>
+          <ModifyAddressModal initialValues={data} />
+
           <form action={deleteAddress}>
             <Button type="submit" size="sm" colorScheme="red">
               {t("delete")}

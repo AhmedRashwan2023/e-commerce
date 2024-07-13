@@ -13,8 +13,24 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { ReactNode } from "react";
 import { IoMdClose } from "react-icons/io";
+import AddressForm from "./AddressForm/AddressForm";
 
-const ModifyAddressModal = ({ children }: { children: ReactNode }) => {
+const ModifyAddressModal = ({
+  initialValues,
+}: {
+  initialValues?: {
+    id?: number;
+    firstName: string;
+    lastName: string;
+    firstAddress: string;
+    secondAddress: string;
+    city: string;
+    phone: string;
+    postNum: string;
+    work: string;
+    setAsDefault: boolean;
+  };
+}) => {
   const t = useTranslations("myAddresses");
   const localeActive = useLocale();
 
@@ -36,7 +52,9 @@ const ModifyAddressModal = ({ children }: { children: ReactNode }) => {
               </Link>
             </Flex>
           </ModalHeader>
-          <ModalBody>{children}</ModalBody>
+          <ModalBody>
+            <AddressForm onClose={onClose} initialValues={initialValues} />
+          </ModalBody>
         </ModalContent>
       </Modal>
     </>

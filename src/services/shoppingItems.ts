@@ -5,8 +5,8 @@ export const setSearchParams = (
 ) => {
   let params = {};
   if (searchParams.catId) params = { ...params, catId: searchParams.catId };
-  if (searchParams.mixPrice)
-    params = { ...params, mixPrice: searchParams.mixPrice };
+  if (searchParams.minPrice)
+    params = { ...params, minPrice: searchParams.minPrice };
   if (searchParams.maxPrice)
     params = { ...params, maxPrice: searchParams.maxPrice };
   if (searchParams.evaluation)

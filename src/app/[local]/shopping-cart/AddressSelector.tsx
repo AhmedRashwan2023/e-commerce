@@ -31,7 +31,11 @@ const AddressSelector = ({ addresses }: { addresses: AddressProps[] }) => {
   return (
     <>
       {addresses.length > 0 ? (
-        <RadioGroup onChange={setValue} value={value} name="address">
+        <RadioGroup
+          onChange={setValue}
+          value={addresses[0].id.toString()}
+          name="address"
+        >
           <Stack>
             {addresses.map((address, index) => (
               <RadioWrapper
@@ -87,7 +91,7 @@ const RadioWrapper = ({
         <Stack px={5}>
           <Text>{address.firstName}</Text>
           <Box color={"#B0B0B0"}>
-            <Text>{address.address1}</Text>
+            <Text>{address.firstAddress}</Text>
             <Text>{address.phone}</Text>
           </Box>
         </Stack>
