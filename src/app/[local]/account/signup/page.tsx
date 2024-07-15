@@ -151,7 +151,7 @@ const SignUp = () => {
             >
               {t("signUpButton")}
             </Button>
-            <HStack fontWeight={"semibold"}>
+            <Flex gap={1}>
               <Text color={"#818181"}>{t("termsAndConditionText")}</Text>
               <Link
                 as={NextLink}
@@ -172,7 +172,7 @@ const SignUp = () => {
               >
                 {t("privacyPolicy")}
               </Link>
-            </HStack>
+            </Flex>
           </form>
         </Flex>
       </Flex>
