@@ -44,9 +44,9 @@ export interface Category {
   id: number;
   name: string;
   description: string;
-  status: boolean;
+  status: string;
   image: string | null;
-  parentCategoryId: number;
+  parentCategoryId: number | null;
   parentCategoryName: string | null;
   countProducts: number;
 }

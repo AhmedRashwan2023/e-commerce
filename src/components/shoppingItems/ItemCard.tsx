@@ -26,8 +26,7 @@ const ItemCard = ({ item }: { item: ItemProps }) => {
   const getCategoryName = (id: number) => {
     const categoryId = Number(id);
     const category = categories.find((cat) => cat.id === categoryId);
-    if (localeActive === "fr") return category ? category.fr : null;
-    else return category ? category.ar : null;
+    return category?.name;
   };
 
   return (

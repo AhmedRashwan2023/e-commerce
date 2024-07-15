@@ -19,6 +19,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { setSearchParams } from "@/services/shoppingItems";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
 import { getRequest } from "@/utils/db";
+import { products } from "@/data/products";
 
 const displayOptions = [50, 30, 20, 10];
 const orderOptions = ["featured", "priceLower", "priceHigher", "date"];
@@ -52,16 +53,16 @@ const ItemsGrid = async ({
     page: 1,
   };
 
-  const products = await getRequest(
-    `/api/products/getProductsByParam?min_price=${
-      validSearchParams.minPrice
-    }&max_price=${validSearchParams.maxPrice}${
-      validSearchParams.catId &&
-      validSearchParams.catId !== "all" &&
-      `&cat_id=${validSearchParams.catId}`
-    }`
-    // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=15000`
-  );
+  // const products = await getRequest(
+  //   `/api/products/getProductsByParam?min_price=${
+  //     validSearchParams.minPrice
+  //   }&max_price=${validSearchParams.maxPrice}${
+  //     validSearchParams.catId &&
+  //     validSearchParams.catId !== "all" &&
+  //     `&cat_id=${validSearchParams.catId}`
+  //   }`
+  //   // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=15000`
+  // );
 
   validSearchParams = {
     ...validSearchParams,

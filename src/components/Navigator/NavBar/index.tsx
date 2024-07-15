@@ -12,10 +12,11 @@ import WishListBadge from "./WishListBadge";
 import { getLocale } from "next-intl/server";
 import { postRequest } from "@/utils/db";
 import { NavBarProps } from "@/data/types";
+import { categories } from "@/data/categories";
 
 const NavBar: React.FC<NavBarProps> = async ({ session }) => {
   const localeActive = await getLocale();
-  const categories = await postRequest("/api/categories/getCats", {});
+  // const categories = await postRequest("/api/categories/getCats", {});
   console.log("categories", categories);
   return (
     <Navigarot>
