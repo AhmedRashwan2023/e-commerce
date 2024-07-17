@@ -12,11 +12,12 @@ import { postRequest } from "@/utils/db";
 
 const MyAddresses = async () => {
   const session = await getSession();
-
+  console.log(session.data.id);
   const addresses = await postRequest(
-    "/api/addresses/client/1",
+    `/api/addresses/client/${session.data.id}`,
     {},
-    session.data.access_token
+    // session.data.access_token
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdGV1ckBvcHRpbWdvdi5jb20iLCJpcC1hZGRyZXNzIjoiMTAuMC4wLjEiLCJleHAiOjE3MjEyNTExNzksImlhdCI6MTcyMTE2NDc3OSwidXNlci1hZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuNDAuMCJ9.TalBgipfHhwM7k_d_TdqR1iymnVkJY2zOFiAPsAp7vg"
   );
 
   const t = await getTranslations("myAddresses");

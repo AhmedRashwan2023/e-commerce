@@ -8,7 +8,7 @@ import NextLink from "next/link";
 import ItemsGrid from "./ItemsGrid";
 import { postRequest } from "@/utils/db";
 import { Category } from "@/data/types";
-import { categories } from "@/data/categories";
+// import { categories } from "@/data/categories";
 
 const ShoppingItems = async ({
   searchParams,
@@ -17,7 +17,7 @@ const ShoppingItems = async ({
 }) => {
   const t = await getTranslations("shoppingItems");
 
-  // const categories = await postRequest("/api/categories/getCats", {});
+  const categories = await postRequest("/api/categories/getCats", {});
 
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,

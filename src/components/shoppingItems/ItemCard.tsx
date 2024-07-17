@@ -1,4 +1,4 @@
-import { categories } from "@/data/categories";
+// import { categories } from "@/data/categories";
 import {
   Box,
   Button,
@@ -16,16 +16,18 @@ import ItemEvaluationProvider from "./ItemEvaluationProvider";
 import PriceProvider from "./PriceProvider";
 import AddToCartButton from "./AddToCartButton";
 import AddToWishList from "./AddToWishList";
-import { ItemProps } from "@/data/types";
+import { Category, ItemProps } from "@/data/types";
+import { postRequest } from "@/utils/db";
 
-const ItemCard = ({ item }: { item: ItemProps }) => {
+const ItemCard = async ({ item }: { item: ItemProps }) => {
   const t = useTranslations("shoppingItems");
   const localeActive = useLocale();
   const isSale = item?.sellingPrice < item?.normalPrice ? true : false;
+  const categories = await postRequest("/api/categories/getCats", {});
 
   const getCategoryName = (id: number) => {
     const categoryId = Number(id);
-    const category = categories.find((cat) => cat.id === categoryId);
+    const category = categories.find((cat: Category) => cat.id === categoryId);
     return category?.name;
   };
 

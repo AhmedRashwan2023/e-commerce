@@ -38,7 +38,7 @@ export async function signIn(formData: FormData) {
     password: formData.get("password"),
   };
 
-  const data = await db.postRequest("/api/clients/signin", user);
+  const data = await db.postRequest("/authenticate", user);
 
   if (!data?.error) {
     // const expires = new Date(Date.now() + 60 * 60 * 24 * 1000);

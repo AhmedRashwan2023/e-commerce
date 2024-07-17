@@ -36,14 +36,13 @@ const SignInForm = ({ specialURL }: SignInFormProps) => {
     <form action={handleFormAction}>
       <Input
         name="username"
-        type="email"
-        placeholder={t("email")}
+        type="username"
+        placeholder={t("username")}
         size="md"
         borderColor={"rgb(1,17,77)"}
         _hover={{ borderColor: "rgb(1,17,77)" }}
         borderWidth={1}
         mb={3}
-        // value={"administrateur@optimgov.com"}
       />
       <InputPassword isRequired />
       <HStack fontWeight={"semibold"}>

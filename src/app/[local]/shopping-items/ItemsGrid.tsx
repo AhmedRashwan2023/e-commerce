@@ -1,9 +1,8 @@
 import ItemCard from "@/components/ShoppingItems/ItemCard";
 import ItemCardContainer from "@/components/ShoppingItems/ItemCardContainer";
 import ItemsDisplayAndOrder from "@/components/ShoppingItems/ItemsDisplayAndOrder";
-import { categories } from "@/data/categories";
-// import { products } from "@/data/products";
-import { ItemProps, ItemsGridProps } from "@/data/types";
+// import { categories } from "@/data/categories";
+import { Category, ItemProps, ItemsGridProps } from "@/data/types";
 import {
   Box,
   Button,
@@ -18,8 +17,7 @@ import NextLink from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { setSearchParams } from "@/services/shoppingItems";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
-import { getRequest } from "@/utils/db";
-import { products } from "@/data/products";
+import { getRequest, postRequest } from "@/utils/db";
 
 const displayOptions = [50, 30, 20, 10];
 const orderOptions = ["featured", "priceLower", "priceHigher", "date"];
@@ -31,9 +29,11 @@ const ItemsGrid = async ({
   const t = await getTranslations("shoppingItems");
   const localeActive = await getLocale();
 
+  const categories = await postRequest("/api/categories/getCats", {});
+
   let validSearchParams = {
     catId: categories.some(
-      (cat) => cat.id === Number(initialSearchParams.catId)
+      (cat: Category) => cat.id === Number(initialSearchParams.catId)
     )
       ? initialSearchParams.catId
       : "",
@@ -53,16 +53,16 @@ const ItemsGrid = async ({
     page: 1,
   };
 
-  // const products = await getRequest(
-  //   `/api/products/getProductsByParam?min_price=${
-  //     validSearchParams.minPrice
-  //   }&max_price=${validSearchParams.maxPrice}${
-  //     validSearchParams.catId &&
-  //     validSearchParams.catId !== "all" &&
-  //     `&cat_id=${validSearchParams.catId}`
-  //   }`
-  //   // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=15000`
-  // );
+  const products = await getRequest(
+    `/api/products/getProductsByParam?min_price=${
+      validSearchParams.minPrice
+    }&max_price=${validSearchParams.maxPrice}${
+      validSearchParams.catId &&
+      validSearchParams.catId !== "all" &&
+      `&cat_id=${validSearchParams.catId}`
+    }`
+    // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=15000`
+  );
 
   validSearchParams = {
     ...validSearchParams,

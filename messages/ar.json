@@ -82,6 +82,7 @@
     "followUs": "تابعنا على"
   },
   "signInPage": {
+    "username": "إسم المستخدم",
     "dontHaveAcc": "ليس لديك حساب؟",
     "registerLink": "سجل معنا",
     "title": "تسجيل الدخول للمنصة",
@@ -94,6 +95,7 @@
     "signInError": "البريد الإلكتروني أو الكلمة المرور غير صحيحة، يرجى مراجعة بيانات الاعتماد الخاصة بك والمحاولة مرة أخرى."
   },
   "signUpPage": {
+    "username": "إسم المستخدم",
     "alreadyHaveAcc": "لديك حساب بالفعل؟",
     "signInLink": "تسجيل دخول",
     "title": "ابدأ بالتسوق",
@@ -109,7 +111,9 @@
     "signUpButton": "سجل معنا",
     "termsAndConditionText": "عند المتابعة ، يتم الموافقة على",
     "termsOfServicesLink": "الشروط والأحكام",
-    "privacyPolicy": "سياسة الخصوصية"
+    "privacyPolicy": "سياسة الخصوصية",
+    "signUpError": "إسم المستخدم غير متوفر ، برجاء إدخال إسم مستخدم آخر.",
+    "signUpDone": "تم تسجيل حسابك ، أهلاً بك في Entre Murs Galerie."
   },
   "resetPasswordPage": {
     "dontHaveAcc": "ليس لديك حساب؟",

@@ -66,11 +66,11 @@ import { getRequest } from "@/utils/db";
 // }
 
 const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
-  // const getProduct = await getRequest(
-  //   `/api/products/getProductsByParam?product_id=${params.itemId}`
-  // );
-  // const product = getProduct[0];
-  const product = products.find((prod) => prod.id === parseInt(params.itemId));
+  const getProduct = await getRequest(
+    `/api/products/getProductsByParam?product_id=${params.itemId}`
+  );
+  const product = getProduct[0];
+  // const product = products.find((prod) => prod.id === parseInt(params.itemId));
   const localeActive = await getLocale();
   const t = await getTranslations("itemDetailed");
 

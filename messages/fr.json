@@ -82,6 +82,7 @@
     "followUs": "Suivez-nous sur"
   },
   "signInPage": {
+    "username": "Nom d'utilisateur",
     "dontHaveAcc": "Vous n'avez pas de compte?",
     "registerLink": "S'inscrire",
     "title": "Connectez-vous à la plateforme",
@@ -94,6 +95,7 @@
     "signInError": "Invalide email ou mot de passe, veuillez vérifier vos identifiants et réessayer."
   },
   "signUpPage": {
+    "username": "Nom d'utilisateur",
     "alreadyHaveAcc": "Vous avez déjà de compte?",
     "signInLink": "Se connecter",
     "title": "Commencez vos achats",
@@ -109,7 +111,9 @@
     "signUpButton": "S'inscrire",
     "termsAndConditionText": "By continuing, you agree to our",
     "termsOfServicesLink": "Terms of Service",
-    "privacyPolicy": "Privacy Policy"
+    "privacyPolicy": "Privacy Policy",
+    "signUpError": "Le nom d'utilisateur existe déjà, veuillez saisir un autre nom d'utilisateur.",
+    "signUpDone": "Inscription terminée, bienvenue à Entre Murs Galerie."
   },
   "resetPasswordPage": {
     "dontHaveAcc": "Vous n'avez pas de compte?",
