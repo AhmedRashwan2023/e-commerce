@@ -1,10 +1,13 @@
+//BahaaTest
+//12345678
+
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import * as db from "../utils/db";
 
-const secretKey = process.env.SECRET_KEY;
-
+// const secretKey = process.env.SECRET_KEY;
+const secretKey = "asjdhajsdj278asosidm"
 const key = new TextEncoder().encode(secretKey);
 
 export async function encrypt(payload: any) {
@@ -38,11 +41,11 @@ export async function signIn(formData: FormData) {
     password: formData.get("password"),
   };
 
+  // const data = await db.postRequest("/authenticate", user);
   const data = await db.postRequest("/api/clients/signin", user);
-
   if (!data?.error) {
-    // const expires = new Date(Date.now() + 60 * 60 * 24 * 1000);
-    const expires = new Date(Date.now() + 60 * 10 * 1000);
+    const expires = new Date(Date.now() + 60 * 60 * 24 * 1000);
+    // const expires = new Date(Date.now() + 60 * 10 * 1000);
 
     const session = await encrypt({ data, expires });
     cookies().set("session", session, { expires, httpOnly: true });

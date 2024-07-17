@@ -1,6 +1,4 @@
 import { bodyPadding } from "@/assets/global";
-import Evaluation from "@/components/ShoppingItems/Evaluation";
-import PriceRangeSlider from "@/components/ShoppingItems/PriceRangeSlider";
 import { setSearchParams } from "@/services/shoppingItems";
 import { Flex, Link, Show, Stack, Text } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
@@ -8,6 +6,8 @@ import NextLink from "next/link";
 import ItemsGrid from "./ItemsGrid";
 import { postRequest } from "@/utils/db";
 import { Category } from "@/data/types";
+import PriceRangeSlider from "@/components/ShoppingItemsPage/PriceRangeSlider";
+import Evaluation from "@/components/ShoppingItemsPage/Evaluation";
 // import { categories } from "@/data/categories";
 
 const ShoppingItems = async ({
@@ -22,7 +22,7 @@ const ShoppingItems = async ({
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,
     minPrice: (searchParams.minPrice || 0) as number,
-    maxPrice: (searchParams.maxPrice || 15000) as number,
+    maxPrice: (searchParams.maxPrice || 1500) as number,
     evaluation: (searchParams.evaluation || 5) as number,
     name: (searchParams.name || "") as string,
     display: (searchParams.display || 10) as number,

@@ -1,4 +1,5 @@
 import { bodyPadding } from "@/assets/global";
+import { Category } from "@/data/types";
 import {
   Box,
   Button,
@@ -12,8 +13,10 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
 
-const MostVisitedCats = () => {
+const MostVisitedCats = ({ categories }: { categories: Category[] }) => {
   const t = useTranslations("mostVisitedCats");
+  const category_one = categories[0];
+  // const category_two = categories[1];
 
   return (
     <Box px={bodyPadding} pb={12}>
@@ -23,15 +26,25 @@ const MostVisitedCats = () => {
         </Text>
         <SimpleGrid columns={{ sm: 1, lg: 2 }} gap={4}>
           <GridItem
-            imgUrl="images/most-visited/1.jpg"
-            text={t("wood")}
-            id="1"
+            imgUrl={
+              category_one.image
+                ? category_one.image!.replaceAll(
+                    "/var/www/html/images",
+                    "https://srv14.optimgov.com/images/"
+                  )
+                : ""
+            }
+            text={category_one.name}
+            id={category_one.id.toString()}
           />
-          <GridItem
-            imgUrl="images/most-visited/2.jpg"
-            text={t("leather")}
-            id="4"
-          />
+          {/* <GridItem
+            imgUrl={category_two.image!.replaceAll(
+              "./",
+              "https://srv14.optimgov.com/"
+            )}
+            text={category_two.name}
+            id={category_two.id.toString()}
+          /> */}
         </SimpleGrid>
       </Stack>
     </Box>

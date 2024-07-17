@@ -234,7 +234,8 @@
     "date": "التاريخ",
     "qty": "الكمية",
     "status": "الحالة",
-    "price": "المبلغ"
+    "price": "المبلغ",
+    "address": "العنوان"
   },
   "shoppingCart": {
     "drawerTitle": "عربة التسوق",

@@ -1,9 +1,9 @@
-import { products } from "@/data/products";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import RecommendedItemCard from "./RecommendedItemCard";
+import { ItemProps } from "@/data/types";
 
-const RecommendedContainer = () => {
+const RecommendedContainer = ({products}: {products: ItemProps[]}) => {
   const t = useTranslations("recommendedItems");
 
   return (

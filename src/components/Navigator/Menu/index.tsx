@@ -5,7 +5,6 @@ import Menu3MoreCategories from "./Menu3MoreCategories";
 import Menu4Account from "./Menu4Account";
 import Menu5Help from "./Menu5Help";
 
-import { postRequest } from "@/utils/db";
 import { NavBarProps } from "@/data/types";
 
 const Menu: React.FC<NavBarProps> = ({
@@ -23,6 +22,7 @@ const Menu: React.FC<NavBarProps> = ({
       />
       <Menu2MainPage menuLocation={menuLocation} closeDrawer={closeDrawer} />
       <Menu3MoreCategories
+        categoreis={categories!}
         menuLocation={menuLocation}
         closeDrawer={closeDrawer}
       />

@@ -3,19 +3,16 @@ import { useTranslations } from "next-intl";
 import ModifyAddressModal from "./ModifyAddressModal";
 import AddressForm from "./AddressForm/AddressForm";
 import { AddressProps } from "@/data/types";
+import { handleDeleteAddress } from "./AddressForm/action";
+import DeleteAddressForm from "./AddressForm/DeleteAddressForm";
 
 const AddressCard = ({ data }: { data: AddressProps }) => {
   const t = useTranslations("myAddresses");
 
-  const setAddressAsDefault = async () => {
-    "use server";
-    console.log(`Set ${data.id}`);
-  };
-
-  const deleteAddress = async () => {
-    "use server";
-    console.log(`Deleted ${data.id}`);
-  };
+  // const setAddressAsDefault = async () => {
+  //   "use server";
+  //   console.log(`Set ${data.id}`);
+  // };
 
   return (
     <Card overflow="hidden" variant="outline">
@@ -36,7 +33,7 @@ const AddressCard = ({ data }: { data: AddressProps }) => {
           <Text>{data.secondAddress}</Text>
           <Text>{data.phone}</Text>
         </Box>
-        {data.setAsDefault ? (
+        {/* {data.setAsDefault ? (
           <Text color={"#f1c232"}>{t("defaultAddress")}</Text>
         ) : (
           <form action={setAddressAsDefault}>
@@ -44,15 +41,11 @@ const AddressCard = ({ data }: { data: AddressProps }) => {
               {t("setAsDefault")}
             </Button>
           </form>
-        )}
+        )} */}
         <Flex justifyContent={"space-between"}>
           <ModifyAddressModal initialValues={data} />
-
-          <form action={deleteAddress}>
-            <Button type="submit" size="sm" colorScheme="red">
-              {t("delete")}
-            </Button>
-          </form>
+          <DeleteAddressForm id={data.id}/>
+          
         </Flex>
       </Stack>
     </Card>

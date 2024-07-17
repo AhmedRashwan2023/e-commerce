@@ -17,10 +17,10 @@ const DescriptionTab = ({ product }: { product: ItemProps }) => {
         {t("unitTitle")}
       </Text>
       <Text color={"#5b5b5b"}>{product.unites}</Text>
-      <Text fontWeight={"semibold"} fontSize={18} pt={2}>
+      {/* <Text fontWeight={"semibold"} fontSize={18} pt={2}>
         {t("sellerTitle")}
       </Text>
-      <Text color={"#5b5b5b"}>{`{sellerName}`}</Text>
+      <Text color={"#5b5b5b"}>{`{sellerName}`}</Text> */}
     </Stack>
   );
 };

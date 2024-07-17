@@ -10,7 +10,7 @@ const AddressAndPayment = async () => {
   const t = await getTranslations("shoppingCart");
   const session = await getSession();
   const addresses = await postRequest(
-    "/api/addresses/client/1",
+    `/api/addresses/client/${session.data.id}`,
     {},
     session.data.access_token
   );

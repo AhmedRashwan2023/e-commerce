@@ -234,7 +234,8 @@
     "date": "Date",
     "qty": "Articles",
     "status": "Statut",
-    "price": "Montant"
+    "price": "Montant",
+    "address": "orders"
   },
   "shoppingCart": {
     "drawerTitle": "Chariot De Courses",

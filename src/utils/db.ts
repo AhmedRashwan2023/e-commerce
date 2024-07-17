@@ -1,4 +1,5 @@
-const backendUrl = process.env.BACKEND;
+// const backendUrl = process.env.BACKEND;
+const backendUrl = "https://srv14.optimgov.com"
 
 export const postRequest = async (
   endpoint: string,

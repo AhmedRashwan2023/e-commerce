@@ -77,7 +77,17 @@ const CategorySlide = ({ category }: { category: Category }) => {
         m={2}
         gap={3}
       >
-        <Image src={category.image!} boxSize={"200px"} />
+        <Image
+          src={
+            category.image
+              ? category.image!.replaceAll(
+                  "/var/www/html/images",
+                  "https://srv14.optimgov.com/images/"
+                )
+              : ""
+          }
+          boxSize={"200px"}
+        />
         <Text fontSize={16} fontWeight={"semibold"}>
           {category.name}
         </Text>

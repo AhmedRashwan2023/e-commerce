@@ -10,6 +10,7 @@ import { useLocale, useTranslations } from "next-intl";
 import AddressFormInput from "./AddressFormInput";
 import AddressFormCheckbox from "./AddressFormCheckbox";
 import { handleAddAddress, handleUpdateAddress } from "./action";
+import { useRouter } from "next/navigation";
 
 const AddressForm = ({
   initialValues,
@@ -32,7 +33,7 @@ const AddressForm = ({
   const t = useTranslations("myAddresses");
   const localeActive = useLocale();
   const toast = useToast();
-
+  const router = useRouter()
   const handleFormAction = async (formData: FormData) => {
     const dataItem = {
       firstName: formData.get("firstName"),
@@ -43,7 +44,7 @@ const AddressForm = ({
       phone: formData.get("phone"),
       postNum: formData.get("postNum"),
       work: formData.get("work"),
-      setAsDefault: formData.get("setAsDefault") === "on" ? true : false,
+      // setAsDefault: formData.get("setAsDefault") === "on" ? true : false,
     };
 
     if (
@@ -64,23 +65,44 @@ const AddressForm = ({
       return;
     }
     if (initialValues) {
-      console.log("handleUpdateAddress");
-      const data = await handleUpdateAddress(formData);
-      toast({
-        description: `Address Updated`,
-        status: "success",
-        duration: 4000,
-        isClosable: true,
-      });
+      const data = await handleUpdateAddress(formData, initialValues.id!);
+      if(data!.error){
+        toast({
+          description: `error in updating`,
+          status: "error",
+          duration: 4000,
+          isClosable: true,
+        });
+      }
+      else{
+        toast({
+          description: `Address Updated`,
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
+        router.refresh()
+      }
     } else {
-      console.log("handleAddAddress");
       const data = await handleAddAddress(formData);
-      toast({
-        description: `Address Added`,
-        status: "success",
-        duration: 4000,
-        isClosable: true,
-      });
+      console.log(data)
+      if(data!.error){
+        toast({
+          description: `error`,
+          status: "error",
+          duration: 4000,
+          isClosable: true,
+        });
+      }
+      else{
+        toast({
+          description: `Address Added`,
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
+        router.refresh()
+      }
     }
     if (onClose) onClose();
   };
@@ -130,10 +152,10 @@ const AddressForm = ({
         placeholder={t("businessName")}
         value={initialValues?.work ?? ""}
       />
-      <AddressFormCheckbox
+      {/* <AddressFormCheckbox
         text={t("setAsDefault")}
         value={initialValues?.setAsDefault ?? false}
-      />
+      /> */}
       <Flex justifyContent={"flex-end"} p={3}>
         <Button
           type="submit"

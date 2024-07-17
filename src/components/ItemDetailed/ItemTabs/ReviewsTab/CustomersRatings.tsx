@@ -1,8 +1,8 @@
-import ItemEvaluationProvider from "@/components/ShoppingItems/ItemEvaluationProvider";
 import { HStack, Stack, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { MdOutlineStar } from "react-icons/md";
 import RatingBar from "./RatingBar";
+import ItemEvaluationProvider from "@/components/ShoppingItemsPage/ItemEvaluationProvider";
 
 const ratings = [
   3, 1, 2, 5, 4, 3, 1, 2, 4, 5, 3, 2, 1, 5, 4, 2, 3, 1, 5, 4, 2, 3, 1, 5, 4, 2,

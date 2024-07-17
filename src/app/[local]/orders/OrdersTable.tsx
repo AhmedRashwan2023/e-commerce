@@ -1,4 +1,4 @@
-import { OrdersTableProps } from "@/data/types";
+import { OrderItems, OrdersTableProps, ProductsOrders } from "@/data/types";
 import {
   Image,
   Table,
@@ -12,14 +12,33 @@ import {
 import { useTranslations } from "next-intl";
 import { CiViewTimeline } from "react-icons/ci";
 
-const OrdersTable = ({ orders }: OrdersTableProps) => {
+const OrdersTable = ({ orders }: { orders: OrdersTableProps[] }) => {
   const t = useTranslations("orders");
+  console.log("orders", orders);
+
+  const OrderedProds: ProductsOrders[] = [];
+
+  orders.forEach((order) => {
+    const prodsInOrder = order.orderItems;
+    prodsInOrder.forEach((prod) => {
+      const orderData = {
+        product: prod.product,
+        orderId: order.orderId,
+        date: order.dateTime,
+        price: prod.price,
+        qty: prod.quantity,
+        status: order.status,
+        address: order.address,
+      };
+      OrderedProds.push(orderData);
+    });
+  });
+
   return (
     <TableContainer>
       <Table variant="simple">
         <Thead>
           <Tr backgroundColor={"#eeeeee"}>
-            <Th></Th>
             <Th>{t("products")}</Th>
             <Th>{t("orderId")}</Th>
             <Th>{t("date")}</Th>
@@ -30,17 +49,14 @@ const OrdersTable = ({ orders }: OrdersTableProps) => {
           </Tr>
         </Thead>
         <Tbody>
-          {orders.map((order, index) => (
+          {OrderedProds.map((prod, index) => (
             <Tr key={index} fontWeight={"semibold"}>
-              <Td>
-                <Image src={order.img} alt="Order Image" boxSize={"60px"} />
-              </Td>
-              <Td>{order.name}</Td>
-              <Td>{order.id}</Td>
-              <Td>{order.date}</Td>
-              <Td>{order.qty}</Td>
-              <Td>{order.status}</Td>
-              <Td>{order.price}</Td>
+              <Td>{prod.product}</Td>
+              <Td>{prod.orderId}</Td>
+              <Td>{prod.date}</Td>
+              <Td>{prod.qty}</Td>
+              <Td>{prod.status}</Td>
+              <Td>{prod.price}</Td>
               <Td>
                 <CiViewTimeline />
               </Td>

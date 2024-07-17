@@ -1,11 +1,35 @@
 import { Box, Flex, HStack, Text, Link } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import NextLink from "next/link";
-import { MenuLocationProps } from "@/data/types";
+import { Category, MenuLocationProps } from "@/data/types";
+import { useState } from "react";
 
-const Menu3MoreCategoriesDetails = ({ closeDrawer }: MenuLocationProps) => {
+const Menu3MoreCategoriesDetails = ({
+  closeDrawer,
+  categoreis,
+}: MenuLocationProps & { categoreis: Category[] }) => {
   const t = useTranslations("menuMoreCategories");
   const localActive = useLocale();
+  console.log("categoreis from menu", categoreis);
+
+  const parentCategories = categoreis.filter(
+    (cat) => cat.parentCategoryId === 0
+  );
+
+  const getChildCategories = (parentCatId: number) => {
+    const childCats = categoreis.filter(
+      (cat) => cat.parentCategoryId === parentCatId
+    );
+    console.log("childCats", childCats);
+    return childCats.map((item) => (
+      <LinkItem
+        key={item.id}
+        href={`/${localActive}/shopping-items?catId=${item.id}`}
+      >
+        {item.name}
+      </LinkItem>
+    ));
+  };
 
   return (
     <HStack
@@ -17,7 +41,15 @@ const Menu3MoreCategoriesDetails = ({ closeDrawer }: MenuLocationProps) => {
         if (closeDrawer) closeDrawer();
       }}
     >
-      <Flex flexDir={"column"} w={250} alignSelf={"flex-start"}>
+      {parentCategories.map((cat, index) => (
+        <Flex key={index} flexDir={"column"} w={250} alignSelf={"flex-start"}>
+          <Text color={"#eac102"} fontWeight={"bolder"}>
+            {cat.name}
+          </Text>
+          {getChildCategories(cat.id)}
+        </Flex>
+      ))}
+      {/* <Flex flexDir={"column"} w={250} alignSelf={"flex-start"}>
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item1")}
         </Text>
@@ -91,7 +123,7 @@ const Menu3MoreCategoriesDetails = ({ closeDrawer }: MenuLocationProps) => {
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item6")}
         </Text>
-      </Flex>
+      </Flex> */}
     </HStack>
   );
 };

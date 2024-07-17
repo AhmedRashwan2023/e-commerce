@@ -9,12 +9,11 @@ import { Box } from "@chakra-ui/react";
 
 export default async function Index() {
   const categories = await postRequest("/api/categories/getCats", {});
-
   return (
     <Box>
       <PageSwiper />
       <CategoriesSwiper categories={categories} />
-      <MostVisitedCats />
+      <MostVisitedCats categories={categories} />
       <PopularProducts />
       <MainPageFooter />
     </Box>

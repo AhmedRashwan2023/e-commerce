@@ -1,5 +1,5 @@
 import { ItemProps } from "@/data/types";
-import PriceProvider from "@/components/ShoppingItems/PriceProvider";
+import PriceProvider from "@/components/ShoppingItemsPage/PriceProvider";
 import { Card, Flex, Link, Image } from "@chakra-ui/react";
 import { useLocale } from "next-intl";
 import NextLink from "next/link";
@@ -16,7 +16,18 @@ const RecommendedItemCard = ({ item }: { item: ItemProps }) => {
       borderColor={"#eeeeee"}
     >
       <Link as={NextLink} href={`/${localeActive}/shopping-items/${item.id}`}>
-        <Image src={item.image} boxSize={200} mx={5} />
+        <Image
+          src={
+            item.image
+              ? item.image.replaceAll(
+                  "/var/www/html/images",
+                  "https://srv14.optimgov.com/images/"
+                )
+              : ""
+          }
+          boxSize={200}
+          mx={5}
+        />
       </Link>
       <PriceProvider
         normalPrice={item.normalPrice}

@@ -1,6 +1,5 @@
 import { bodyPadding } from "@/assets/global";
-import PriceProvider from "@/components/ShoppingItems/PriceProvider";
-import { products } from "@/data/products";
+// import { products } from "@/data/products";
 import {
   Box,
   Flex,
@@ -15,61 +14,20 @@ import {
 import { getLocale, getTranslations } from "next-intl/server";
 import NextLink from "next/link";
 import AddToCartWithQty from "./AddToCartWithQty";
-import AddToWishList from "@/components/ShoppingItems/AddToWishList";
 import TabsContainer from "@/components/ItemDetailed/ItemTabs/TabsContainer";
 import RelatedArticalsContainer from "@/components/ItemDetailed/RelatedArticles/RelatedArticalsContainer";
 import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/RecommendedContainer";
 import { getRequest } from "@/utils/db";
-
-// export async function generateStaticParams() {
-//   return [
-//     { itemId: "1" },
-//     { itemId: "2" },
-//     { itemId: "3" },
-//     { itemId: "4" },
-//     { itemId: "5" },
-//     { itemId: "6" },
-//     { itemId: "7" },
-//     { itemId: "8" },
-//     { itemId: "9" },
-//     { itemId: "10" },
-//     { itemId: "11" },
-//     { itemId: "12" },
-//     { itemId: "13" },
-//     { itemId: "14" },
-//     { itemId: "15" },
-//     { itemId: "16" },
-//     { itemId: "17" },
-//     { itemId: "18" },
-//     { itemId: "19" },
-//     { itemId: "20" },
-//     { itemId: "21" },
-//     { itemId: "22" },
-//     { itemId: "23" },
-//     { itemId: "24" },
-//     { itemId: "25" },
-//     { itemId: "26" },
-//     { itemId: "27" },
-//     { itemId: "28" },
-//     { itemId: "29" },
-//     { itemId: "30" },
-//     { itemId: "31" },
-//     { itemId: "32" },
-//     { itemId: "33" },
-//     { itemId: "34" },
-//     { itemId: "35" },
-//     { itemId: "36" },
-//     { itemId: "37" },
-//     { itemId: "38" },
-//     { itemId: "39" },
-//   ];
-// }
+import PriceProvider from "@/components/ShoppingItemsPage/PriceProvider";
+import AddToWishList from "@/components/ShoppingItemsPage/AddToWishList";
 
 const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
   const getProduct = await getRequest(
     `/api/products/getProductsByParam?product_id=${params.itemId}`
   );
   const product = getProduct[0];
+  const allProds = await getRequest("/api/products/getProductsByParam");
+  console.log(product);
   // const product = products.find((prod) => prod.id === parseInt(params.itemId));
   const localeActive = await getLocale();
   const t = await getTranslations("itemDetailed");
@@ -94,7 +52,18 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
             wrap={"wrap"}
             justifyContent={{ base: "center", lg: "flex-start" }}
           >
-            <Image src={product?.image} boxSize={400} mx={1} />
+            <Image
+              src={
+                product?.image
+                  ? product?.image.replaceAll(
+                      "/var/www/html/images",
+                      "https://srv14.optimgov.com/images/"
+                    )
+                  : ""
+              }
+              boxSize={400}
+              mx={1}
+            />
             <Stack w={"fit-content"}>
               <Link
                 as={NextLink}
@@ -134,22 +103,18 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
                   <Text fontWeight={"semibold"}>{t("type")}</Text>
                   <Text>{product?.categoryName}</Text>
                 </HStack>
-                {/* <HStack>
-                  <Text fontWeight={"semibold"}>{t("shipping")}</Text>
-                  <Text>{`{shippingDetailsAndTiming}`}</Text>
-                </HStack> */}
               </Stack>
             </Stack>
           </HStack>
         </Flex>
         <Show above={"lg"}>
           <Flex w={"20%"} py={7}>
-            <RecommendedContainer />
+            <RecommendedContainer products={allProds} />
           </Flex>
         </Show>
       </Flex>
       <TabsContainer product={product!} />
-      <RelatedArticalsContainer />
+      <RelatedArticalsContainer catId={product.category} />
     </Box>
   );
 };

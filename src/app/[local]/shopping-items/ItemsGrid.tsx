@@ -1,6 +1,3 @@
-import ItemCard from "@/components/ShoppingItems/ItemCard";
-import ItemCardContainer from "@/components/ShoppingItems/ItemCardContainer";
-import ItemsDisplayAndOrder from "@/components/ShoppingItems/ItemsDisplayAndOrder";
 // import { categories } from "@/data/categories";
 import { Category, ItemProps, ItemsGridProps } from "@/data/types";
 import {
@@ -18,6 +15,9 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { setSearchParams } from "@/services/shoppingItems";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
 import { getRequest, postRequest } from "@/utils/db";
+import ItemsDisplayAndOrder from "@/components/ShoppingItemsPage/ItemsDisplayAndOrder";
+import ItemCardContainer from "@/components/ShoppingItemsPage/ItemCardContainer";
+import ItemCard from "@/components/ShoppingItemsPage/ItemCard";
 
 const displayOptions = [50, 30, 20, 10];
 const orderOptions = ["featured", "priceLower", "priceHigher", "date"];
@@ -40,9 +40,7 @@ const ItemsGrid = async ({
     minPrice:
       initialSearchParams.minPrice < 0 ? 0 : initialSearchParams.minPrice,
     maxPrice:
-      initialSearchParams.maxPrice > 15000
-        ? 15000
-        : initialSearchParams.maxPrice,
+      initialSearchParams.maxPrice > 1500 ? 1500 : initialSearchParams.maxPrice,
     evaluation:
       initialSearchParams.evaluation < 1 && initialSearchParams.evaluation > 5
         ? initialSearchParams.evaluation
@@ -61,7 +59,7 @@ const ItemsGrid = async ({
       validSearchParams.catId !== "all" &&
       `&cat_id=${validSearchParams.catId}`
     }`
-    // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=15000`
+    // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=1500`
   );
 
   validSearchParams = {

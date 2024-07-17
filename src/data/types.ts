@@ -85,15 +85,34 @@ export interface ItemsGridProps {
 }
 
 export interface OrdersTableProps {
-  orders: {
-    id: number;
-    name: string;
-    date: string;
-    qty: number;
-    status: string;
-    price: number;
-    img: string;
-  }[];
+  orderId: number;
+  clientName: string;
+  email: string;
+  phone: null;
+  address: string;
+  city: string;
+  dateTime: string;
+  paymentMethod: string;
+  status: string;
+  totalPrice: number;
+  orderItems: OrderItems[];
+}
+
+export interface OrderItems {
+  id: number;
+  product: string;
+  price: number;
+  quantity: number;
+}
+
+export interface ProductsOrders {
+  product: string;
+  orderId: number;
+  date: string;
+  price: number;
+  qty: number;
+  status: string;
+  address: string;
 }
 
 export interface AddressFormInputProps {

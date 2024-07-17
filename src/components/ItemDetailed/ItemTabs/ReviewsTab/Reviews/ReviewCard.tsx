@@ -1,7 +1,7 @@
-import ItemEvaluationProvider from "@/components/ShoppingItems/ItemEvaluationProvider";
 import { Review } from "@/data/types";
 import { Avatar, Text, HStack, Stack, Image, Divider } from "@chakra-ui/react";
 import ImageViewer from "./ImageViewer";
+import ItemEvaluationProvider from "@/components/ShoppingItemsPage/ItemEvaluationProvider";
 
 const ReviewCard = ({ review }: { review: Review }) => {
   return (

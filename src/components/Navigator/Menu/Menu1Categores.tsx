@@ -14,8 +14,6 @@ import {
 import { TbCategory } from "react-icons/tb";
 import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-// import { categories } from "@/data/categories";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Menu1CategoresProps } from "@/data/types";
 
@@ -26,7 +24,7 @@ const Menu1Categores: React.FC<Menu1CategoresProps> = ({
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("menuCategores");
-  const router = useRouter();
+  const t2 = useTranslations("shoppingItems");
   const localActive = useLocale();
   const [showLinks, setShowLinks] = useState(false);
   return (
@@ -59,6 +57,16 @@ const Menu1Categores: React.FC<Menu1CategoresProps> = ({
           onMouseLeave={onClose}
           zIndex={1000}
         >
+          <Link
+            as={NextLink}
+            href={`/${localActive}/shopping-items?catId=all`}
+            onClick={onClose}
+          >
+            <MenuItem>
+              {/* {localActive === "fr" ? category.fr : category.ar} */}
+              {t2("allCategories")}
+            </MenuItem>
+          </Link>
           {categories.map((category, index) => (
             <Link
               key={index}

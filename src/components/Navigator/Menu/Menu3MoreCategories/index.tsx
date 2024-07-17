@@ -12,13 +12,14 @@ import {
 import { FaCaretDown } from "react-icons/fa";
 import Menu3MoreCategoriesDetails from "./Menu3MoreCategoriesDetails";
 import { useTranslations } from "next-intl";
-import { MenuLocationProps } from "@/data/types";
+import { Category, MenuLocationProps } from "@/data/types";
 import { useState } from "react";
 
 const Menu3MoreCategories = ({
+  categoreis,
   menuLocation,
   closeDrawer,
-}: MenuLocationProps) => {
+}: MenuLocationProps & { categoreis: Category[] }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const t = useTranslations("menuMoreCategories");
   const [showLinks, setShowLinks] = useState(false);
@@ -51,11 +52,16 @@ const Menu3MoreCategories = ({
           w={"fit-content"}
         >
           <PopoverBody>
-            <Menu3MoreCategoriesDetails />
+            <Menu3MoreCategoriesDetails categoreis={categoreis} />
           </PopoverBody>
         </PopoverContent>
       </Popover>
-      {showLinks && <Menu3MoreCategoriesDetails closeDrawer={closeDrawer} />}
+      {showLinks && (
+        <Menu3MoreCategoriesDetails
+          closeDrawer={closeDrawer}
+          categoreis={categoreis}
+        />
+      )}
     </>
   );
 };

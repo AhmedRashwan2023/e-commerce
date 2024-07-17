@@ -298,6 +298,7 @@ export const CartWrapper = ({ children }: { children: ReactNode }) => {
     <CartContext.Provider
       value={{
         cartItems,
+        setCartItems,
         addToCart,
         addToCartWithQty,
         removeFromCart,
