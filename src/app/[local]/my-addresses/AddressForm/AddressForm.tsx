@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import AddressFormInput from "./AddressFormInput";
-import AddressFormCheckbox from "./AddressFormCheckbox";
+// import AddressFormCheckbox from "./AddressFormCheckbox";
 import { handleAddAddress, handleUpdateAddress } from "./action";
 import { useRouter } from "next/navigation";
 
@@ -33,7 +33,8 @@ const AddressForm = ({
   const t = useTranslations("myAddresses");
   const localeActive = useLocale();
   const toast = useToast();
-  const router = useRouter()
+  const router = useRouter();
+
   const handleFormAction = async (formData: FormData) => {
     const dataItem = {
       firstName: formData.get("firstName"),
@@ -66,42 +67,40 @@ const AddressForm = ({
     }
     if (initialValues) {
       const data = await handleUpdateAddress(formData, initialValues.id!);
-      if(data!.error){
+      if (data!.error) {
         toast({
-          description: `error in updating`,
+          description: `${t("errorUpdating")}`,
           status: "error",
           duration: 4000,
           isClosable: true,
         });
-      }
-      else{
+      } else {
         toast({
-          description: `Address Updated`,
+          description: `${t("successUpdating")}`,
           status: "success",
           duration: 4000,
           isClosable: true,
         });
-        router.refresh()
+        router.refresh();
       }
     } else {
       const data = await handleAddAddress(formData);
-      console.log(data)
-      if(data!.error){
+      console.log(data);
+      if (data!.error) {
         toast({
-          description: `error`,
+          description: `${t("errorAdding")}`,
           status: "error",
           duration: 4000,
           isClosable: true,
         });
-      }
-      else{
+      } else {
         toast({
-          description: `Address Added`,
+          description: `${t("successAdding")}`,
           status: "success",
           duration: 4000,
           isClosable: true,
         });
-        router.refresh()
+        router.refresh();
       }
     }
     if (onClose) onClose();

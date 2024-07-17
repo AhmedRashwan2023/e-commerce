@@ -47,11 +47,11 @@ const MyAccountLayout = async ({ children }: { children: ReactNode }) => {
             text={t("address")}
             icon={"MdLocationPin"}
           />
-          <SideLink
+          {/* <SideLink
             href="notification-settings"
             text={t("notifications")}
             icon={"FaRegBell"}
-          />
+          /> */}
           <Divider my={3} />
           <form action={handleSignOut}>
             <button type="submit">

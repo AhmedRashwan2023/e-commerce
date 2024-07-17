@@ -1,5 +1,4 @@
 import { bodyPadding } from "@/assets/global";
-// import { products } from "@/data/products";
 import TabsContainer from "@/components/ItemDetailed/ItemTabs/TabsContainer";
 import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/RecommendedContainer";
 import RelatedArticalsContainer from "@/components/ItemDetailed/RelatedArticles/RelatedArticalsContainer";
