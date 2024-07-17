@@ -67,7 +67,7 @@ const Wishlist = () => {
                   gap={5}
                 >
                   <Image
-                    src={item.image}
+                    src={`https://srv14.optimgov.com/images/${item.image}`}
                     alt={`Image of ${item.name}`}
                     boxSize={"70px"}
                   />

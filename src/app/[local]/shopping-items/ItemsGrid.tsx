@@ -1,8 +1,12 @@
 // import { categories } from "@/data/categories";
+import ItemCard from "@/components/ShoppingItemsPage/ItemCard";
+import ItemCardContainer from "@/components/ShoppingItemsPage/ItemCardContainer";
+import ItemsDisplayAndOrder from "@/components/ShoppingItemsPage/ItemsDisplayAndOrder";
 import { Category, ItemProps, ItemsGridProps } from "@/data/types";
+import { setSearchParams } from "@/services/shoppingItems";
+import { postRequest } from "@/utils/db";
 import {
   Box,
-  Button,
   Flex,
   HStack,
   Link,
@@ -10,14 +14,9 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
-import { setSearchParams } from "@/services/shoppingItems";
+import NextLink from "next/link";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
-import { getRequest, postRequest } from "@/utils/db";
-import ItemsDisplayAndOrder from "@/components/ShoppingItemsPage/ItemsDisplayAndOrder";
-import ItemCardContainer from "@/components/ShoppingItemsPage/ItemCardContainer";
-import ItemCard from "@/components/ShoppingItemsPage/ItemCard";
 
 const displayOptions = [50, 30, 20, 10];
 const orderOptions = ["featured", "priceLower", "priceHigher", "date"];
@@ -51,14 +50,15 @@ const ItemsGrid = async ({
     page: 1,
   };
 
-  const products = await getRequest(
-    `/api/products/getProductsByParam?min_price=${
+  const products = await postRequest(
+    `/api/products/getActiveProds?min_price=${
       validSearchParams.minPrice
     }&max_price=${validSearchParams.maxPrice}${
       validSearchParams.catId &&
       validSearchParams.catId !== "all" &&
       `&cat_id=${validSearchParams.catId}`
-    }`
+    }`,
+    {}
     // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=1500`
   );
 

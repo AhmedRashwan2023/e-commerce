@@ -1,15 +1,16 @@
 import { bodyPadding } from "@/assets/global";
+import { ItemProps } from "@/data/types";
+import { postRequest } from "@/utils/db";
 import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
-import ItemCardContainer from "../ShoppingItemsPage/ItemCardContainer";
 import ItemCard from "../ShoppingItemsPage/ItemCard";
-import { getRequest } from "@/utils/db";
-import { ItemProps } from "@/data/types";
+import ItemCardContainer from "../ShoppingItemsPage/ItemCardContainer";
 
 const PopularProducts = async () => {
   const t = await getTranslations("popularProducts");
   const userWishList = [1, 4, 5];
-  const products = await getRequest("/api/products/getProductsByParam");
+  const products = await postRequest("/api/products/getActiveProds", {});
+  console.log("products", products);
   return (
     <Box px={bodyPadding}>
       <Stack>

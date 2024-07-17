@@ -39,7 +39,11 @@ const CartItem = ({
               if (onClose) onClose();
             }}
           >
-            <Image src={item.image} alt="cart-item-image" boxSize={"80px"} />
+            <Image
+              src={`https://srv14.optimgov.com/images/${item.image}`}
+              alt="cart-item-image"
+              boxSize={"80px"}
+            />
           </Link>
           <Stack gap={0}>
             <Text fontWeight={"semibold"} fontSize={14}>

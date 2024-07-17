@@ -1,32 +1,33 @@
 import { bodyPadding } from "@/assets/global";
 // import { products } from "@/data/products";
+import TabsContainer from "@/components/ItemDetailed/ItemTabs/TabsContainer";
+import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/RecommendedContainer";
+import RelatedArticalsContainer from "@/components/ItemDetailed/RelatedArticles/RelatedArticalsContainer";
+import AddToWishList from "@/components/ShoppingItemsPage/AddToWishList";
+import PriceProvider from "@/components/ShoppingItemsPage/PriceProvider";
+import { postRequest } from "@/utils/db";
 import {
   Box,
+  Divider,
   Flex,
-  Text,
   HStack,
   Image,
   Link,
   Show,
   Stack,
-  Divider,
+  Text,
 } from "@chakra-ui/react";
 import { getLocale, getTranslations } from "next-intl/server";
 import NextLink from "next/link";
 import AddToCartWithQty from "./AddToCartWithQty";
-import TabsContainer from "@/components/ItemDetailed/ItemTabs/TabsContainer";
-import RelatedArticalsContainer from "@/components/ItemDetailed/RelatedArticles/RelatedArticalsContainer";
-import RecommendedContainer from "@/components/ItemDetailed/RecommendedItems/RecommendedContainer";
-import { getRequest } from "@/utils/db";
-import PriceProvider from "@/components/ShoppingItemsPage/PriceProvider";
-import AddToWishList from "@/components/ShoppingItemsPage/AddToWishList";
 
 const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
-  const getProduct = await getRequest(
-    `/api/products/getProductsByParam?product_id=${params.itemId}`
+  const getProduct = await postRequest(
+    `/api/products/getActiveProds?product_id=${params.itemId}`,
+    {}
   );
   const product = getProduct[0];
-  const allProds = await getRequest("/api/products/getProductsByParam");
+  const allProds = await postRequest("/api/products/getActiveProds", {});
   console.log(product);
   // const product = products.find((prod) => prod.id === parseInt(params.itemId));
   const localeActive = await getLocale();
@@ -55,10 +56,7 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
             <Image
               src={
                 product?.image
-                  ? product?.image.replaceAll(
-                      "/var/www/html/images",
-                      "https://srv14.optimgov.com/images/"
-                    )
+                  ? `https://srv14.optimgov.com/images/${product.image}`
                   : ""
               }
               boxSize={400}

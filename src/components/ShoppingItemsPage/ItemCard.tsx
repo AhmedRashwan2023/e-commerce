@@ -24,7 +24,7 @@ const ItemCard = async ({ item }: { item: ItemProps }) => {
   const localeActive = useLocale();
   const isSale = item?.sellingPrice < item?.normalPrice ? true : false;
   const categories = await postRequest("/api/categories/getCats", {});
-
+  console.log("categories", categories);
   const getCategoryName = (id: number) => {
     const categoryId = Number(id);
     const category = categories.find((cat: Category) => cat.id === categoryId);
@@ -53,10 +53,7 @@ const ItemCard = async ({ item }: { item: ItemProps }) => {
           <Image
             src={
               item.image
-                ? item.image.replaceAll(
-                    "/var/www/html/images",
-                    "https://srv14.optimgov.com/images/"
-                  )
+                ? `https://srv14.optimgov.com/images/${item.image}`
                 : ""
             }
             boxSize={150}

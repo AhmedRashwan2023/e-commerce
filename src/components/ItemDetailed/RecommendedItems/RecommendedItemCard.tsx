@@ -18,12 +18,7 @@ const RecommendedItemCard = ({ item }: { item: ItemProps }) => {
       <Link as={NextLink} href={`/${localeActive}/shopping-items/${item.id}`}>
         <Image
           src={
-            item.image
-              ? item.image.replaceAll(
-                  "/var/www/html/images",
-                  "https://srv14.optimgov.com/images/"
-                )
-              : ""
+            item.image ? `https://srv14.optimgov.com/images/${item.image}` : ""
           }
           boxSize={200}
           mx={5}
