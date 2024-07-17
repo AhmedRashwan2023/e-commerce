@@ -164,7 +164,8 @@
     "deleteAccQuestion": "Souhaitez-vous supprimer votre compte ?",
     "deleteAccNote1": "Ce compte contient",
     "deleteAccNote2": "commande/s. La suppression de votre compte supprimera tous les détails de la commande qui lui sont associés.",
-    "deleteAccAction": "Je veux supprimer mon compte"
+    "deleteAccAction": "Je veux supprimer mon compte",
+    "changePassSuccess": "Votre mot de passe a été modifié."
   },
   "myAddresses": {
     "title": "Adresse",

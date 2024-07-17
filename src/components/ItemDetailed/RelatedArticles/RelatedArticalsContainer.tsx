@@ -5,7 +5,6 @@ import { postRequest } from "@/utils/db";
 import { SimpleGrid } from "@chakra-ui/react";
 
 const RelatedArticalsContainer = async ({ catId }: { catId: number }) => {
-  console.log(catId);
   const userWishList = [1, 4, 5];
   const products = await postRequest(
     `/api/products/getActiveProds?cat_Id=${catId}`,

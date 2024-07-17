@@ -27,7 +27,6 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
   );
   const product = getProduct[0];
   const allProds = await postRequest("/api/products/getActiveProds", {});
-  console.log(product);
   // const product = products.find((prod) => prod.id === parseInt(params.itemId));
   const localeActive = await getLocale();
   const t = await getTranslations("itemDetailed");

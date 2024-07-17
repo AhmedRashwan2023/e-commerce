@@ -17,12 +17,11 @@ export const executeCart = async (formData: FormData, cartItems: any) => {
     paymentMethod: formData.get("payment"),
     userId: session?.data?.id,
   };
-  console.log(order)
   const data = await postRequest(
     "/api/orders",
     order,
     session.data.access_token
   );
-  
+
   return data;
 };

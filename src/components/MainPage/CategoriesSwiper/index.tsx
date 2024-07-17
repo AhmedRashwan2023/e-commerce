@@ -1,6 +1,5 @@
 "use client";
 import { bodyPadding } from "@/assets/global";
-import { categories } from "@/data/categories";
 import { Category } from "@/data/types";
 import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";

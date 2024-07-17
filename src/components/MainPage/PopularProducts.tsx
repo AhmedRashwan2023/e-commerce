@@ -10,7 +10,6 @@ const PopularProducts = async () => {
   const t = await getTranslations("popularProducts");
   const userWishList = [1, 4, 5];
   const products = await postRequest("/api/products/getActiveProds", {});
-  console.log("products", products);
   return (
     <Box px={bodyPadding}>
       <Stack>

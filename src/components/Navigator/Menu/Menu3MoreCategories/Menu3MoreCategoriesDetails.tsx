@@ -10,7 +10,6 @@ const Menu3MoreCategoriesDetails = ({
 }: MenuLocationProps & { categoreis: Category[] }) => {
   const t = useTranslations("menuMoreCategories");
   const localActive = useLocale();
-  console.log("categoreis from menu", categoreis);
 
   const parentCategories = categoreis.filter(
     (cat) => cat.parentCategoryId === 0
@@ -20,7 +19,6 @@ const Menu3MoreCategoriesDetails = ({
     const childCats = categoreis.filter(
       (cat) => cat.parentCategoryId === parentCatId
     );
-    console.log("childCats", childCats);
     return childCats.map((item) => (
       <LinkItem
         key={item.id}
