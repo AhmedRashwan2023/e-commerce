@@ -1,6 +1,6 @@
 "use server";
 
-import { getSession } from "@/services/auth";
+import { getSession, signOut } from "@/services/auth";
 import { postRequest } from "@/utils/db";
 
 export const handleChangePassword = async (formData: FormData) => {
@@ -11,5 +11,29 @@ export const handleChangePassword = async (formData: FormData) => {
   };
 
   const data = await postRequest("/api/clients/reset", body);
+  return data;
+};
+
+export const handleUpdateData = async (formData: FormData) => {
+  const session = await getSession();
+
+  const body = {
+    id: session.data.id,
+    username: formData.get("username"),
+    email: formData.get("email"),
+    // password: formData.get("password"),
+    phone: formData.get("phone"),
+  };
+
+  const data = await postRequest("/api/clients/edit", body);
+  return data;
+};
+
+export const handleDeleteAccount = async () => {
+  const session = await getSession();
+  const data = await postRequest("/api/clients/edit", {});
+  if (!data?.error) {
+    await signOut();
+  }
   return data;
 };

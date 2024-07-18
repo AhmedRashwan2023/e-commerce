@@ -18,9 +18,23 @@ const ResetPasswordForm = () => {
   const t = useTranslations("accountSettings");
   const activeLocale = useLocale();
   const toast = useToast();
+
   const resetPassword = async (formData: FormData) => {
     const data = await handleChangePassword(formData);
     if (!data?.error) {
+      toast({
+        description: `${t("changePassError")}`,
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        description: `${t("changePassSuccess")}`,
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
     }
   };
 

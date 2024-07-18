@@ -163,8 +163,14 @@
     "deleteAccountTitle": "حذف الحساب",
     "deleteAccQuestion": "هل تريد حقاً حذف حسابك؟",
     "deleteAccNote1": "يحتوي هذا الحساب على ",
-    "deleteAccNote2": "طلبًا/طلبات. سيؤدي حذف حسابك إلى حذف جميع تفاصيل الطلبات المرتبطة به.",
-    "deleteAccAction": "أريد حذف حسابي"
+    "deleteAccNote2": "سيؤدي حذف حسابك إلى حذف جميع تفاصيل الطلبات المرتبطة به.",
+    "deleteAccAction": "أريد حذف حسابي",
+    "changePassSuccess": "تم تغيير كلمة المرور بنجاح.",
+    "changePassError": "خطأ في تغيير كلمة المرور ، برجاء المحاولة مرة آخرى!",
+    "updateProfileSuccess": "تم تعديل بيانات حسابك بنجاح.",
+    "updateProfileError": "خطأ في تعديل بياناتك ، برجاء المحاولة مرة آخرى!",
+    "deleteAccountSuccess": "تم حذف حسابك.",
+    "deleteAccountError": "خطأ في حذف حسابك برجاء المحاولة مرة آخرى!"
   },
   "myAddresses": {
     "title": "العناوين",

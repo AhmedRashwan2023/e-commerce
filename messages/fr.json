@@ -163,9 +163,14 @@
     "deleteAccountTitle": "Supprimer le compte",
     "deleteAccQuestion": "Souhaitez-vous supprimer votre compte ?",
     "deleteAccNote1": "Ce compte contient",
-    "deleteAccNote2": "commande/s. La suppression de votre compte supprimera tous les détails de la commande qui lui sont associés.",
+    "deleteAccNote2": "La suppression de votre compte supprimera tous les détails de la commande qui lui sont associés.",
     "deleteAccAction": "Je veux supprimer mon compte",
-    "changePassSuccess": "Votre mot de passe a été modifié."
+    "changePassSuccess": "Votre mot de passe a été modifié.",
+    "changePassError": "Erreur lors du changement de votre mot de passe, veuillez réessayer!",
+    "updateProfileSuccess": "Votre profil a été mis à jour.",
+    "updateProfileError": "Erreur lors de la mise à jour de votre profil, veuillez réessayer !",
+    "deleteAccountSuccess": "Votre compte a été supprimé.",
+    "deleteAccountError": "Erreur lors de la suppression de votre compte, veuillez réessayer !"
   },
   "myAddresses": {
     "title": "Adresse",

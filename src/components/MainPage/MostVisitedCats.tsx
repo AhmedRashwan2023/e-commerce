@@ -16,7 +16,7 @@ import NextLink from "next/link";
 const MostVisitedCats = ({ categories }: { categories: Category[] }) => {
   const t = useTranslations("mostVisitedCats");
   const category_one = categories[0];
-  // const category_two = categories[1];
+  const category_two = categories[1];
 
   return (
     <Box px={bodyPadding} pb={12}>
@@ -28,23 +28,23 @@ const MostVisitedCats = ({ categories }: { categories: Category[] }) => {
           <GridItem
             imgUrl={
               category_one.image
-                ? category_one.image!.replaceAll(
-                    "/var/www/html/images",
-                    "https://srv14.optimgov.com/images/"
-                  )
+                ? `https://srv14.optimgov.com/images/${category_one.image}`
                 : ""
             }
             text={category_one.name}
             id={category_one.id.toString()}
           />
-          {/* <GridItem
-            imgUrl={category_two.image!.replaceAll(
-              "./",
-              "https://srv14.optimgov.com/"
-            )}
-            text={category_two.name}
-            id={category_two.id.toString()}
-          /> */}
+          {category_two && (
+            <GridItem
+              imgUrl={
+                category_one.image
+                  ? `https://srv14.optimgov.com/images/${category_two.image}`
+                  : ""
+              }
+              text={category_two.name}
+              id={category_two.id.toString()}
+            />
+          )}
         </SimpleGrid>
       </Stack>
     </Box>
