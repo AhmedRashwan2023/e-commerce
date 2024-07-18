@@ -19,7 +19,7 @@ export const handleUpdateData = async (formData: FormData) => {
 
   const body = {
     id: session.data.id,
-    username: formData.get("username"),
+    username: formData.get("name"),
     email: formData.get("email"),
     // password: formData.get("password"),
     phone: formData.get("phone"),
