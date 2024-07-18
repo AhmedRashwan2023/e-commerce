@@ -31,7 +31,11 @@ export const handleUpdateData = async (formData: FormData) => {
 
 export const handleDeleteAccount = async () => {
   const session = await getSession();
-  const data = await postRequest("/api/clients/edit", {});
+  const data = await postRequest(
+    `/api/clients/delete/${session.data.id}`,
+    {},
+    session.data.access_token
+  );
   if (!data?.error) {
     await signOut();
   }

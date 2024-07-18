@@ -17,7 +17,7 @@ const ShoppingItems = async ({
 }) => {
   const t = await getTranslations("shoppingItems");
 
-  const categories = await postRequest("/api/categories/getCats", {});
+  const categories = await postRequest("/api/categories/getActiveCats", {});
 
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,

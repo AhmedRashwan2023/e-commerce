@@ -8,7 +8,7 @@ import { postRequest } from "@/utils/db";
 import { Box } from "@chakra-ui/react";
 
 export default async function Index() {
-  const categories = await postRequest("/api/categories/getCats", {});
+  const categories = await postRequest("/api/categories/getActiveCats", {});
   return (
     <Box>
       <PageSwiper />
