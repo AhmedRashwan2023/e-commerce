@@ -17,7 +17,6 @@ const MostVisitedCats = ({ categories }: { categories: Category[] }) => {
   const t = useTranslations("mostVisitedCats");
   const category_one = categories[0];
   const category_two = categories[1];
-
   return (
     <Box px={bodyPadding} pb={12}>
       <Stack>

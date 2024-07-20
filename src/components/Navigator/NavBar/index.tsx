@@ -16,7 +16,7 @@ import { NavBarProps } from "@/data/types";
 
 const NavBar: React.FC<NavBarProps> = async ({ session }) => {
   const localeActive = await getLocale();
-  const categories = await postRequest("/api/categories/getActiveCats", {});
+  const categories = await postRequest("/api/categories/getCats", {});
   return (
     <Navigarot>
       <Box backgroundColor={"#01114d"} px={bodyPadding}>

@@ -28,7 +28,7 @@ const ItemsGrid = async ({
   const t = await getTranslations("shoppingItems");
   const localeActive = await getLocale();
 
-  const categories = await postRequest("/api/categories/getActiveCats", {});
+  const categories = await postRequest("/api/categories/getCats", {});
 
   let validSearchParams = {
     catId: categories.some(

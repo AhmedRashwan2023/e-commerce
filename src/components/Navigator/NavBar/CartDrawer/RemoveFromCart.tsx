@@ -1,25 +1,24 @@
+import { useCartContext } from "@/contexts/shoppingCart";
+import { CartItemProps } from "@/data/types";
 import {
-  HStack,
-  Icon,
-  useDisclosure,
-  Text,
   AlertDialog,
   AlertDialogBody,
-  AlertDialogCloseButton,
   AlertDialogContent,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogOverlay,
   Button,
   Flex,
+  HStack,
+  Icon,
   Link,
+  Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MdDeleteForever } from "react-icons/md";
-import { CartItemProps } from "@/data/types";
-import { useCartContext } from "@/contexts/shoppingCart";
 
 const RemoveFromCart = ({ item }: { item: CartItemProps }) => {
   const t = useTranslations("shoppingCart");

@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 import * as db from "../utils/db";
 
 // const secretKey = process.env.SECRET_KEY;
-const secretKey = "asjdhajsdj278asosidm"
+const secretKey = "asjdhajsdj278asosidm";
 const key = new TextEncoder().encode(secretKey);
 
 export async function encrypt(payload: any) {
@@ -30,7 +30,7 @@ export async function decrypt(input: string): Promise<any> {
     if (error instanceof Error && error.message.includes("exp")) {
       return null;
     }
-    // Handle other errors if needed
+
     throw error;
   }
 }
