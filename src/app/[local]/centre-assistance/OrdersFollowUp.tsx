@@ -1,4 +1,4 @@
-import { Flex, HStack, Heading, Input, Stack, Text } from "@chakra-ui/react";
+import { Flex, Heading, Input, Stack, Text } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
 import { FaQuestionCircle } from "react-icons/fa";
 import { MdOutlineHeadsetMic } from "react-icons/md";
@@ -6,6 +6,7 @@ import { MdOutlineHeadsetMic } from "react-icons/md";
 const OrdersFollowUp = () => {
   const t = useTranslations("helpCenter");
   const localeActive = useLocale();
+
   const handleFAQ = async (formData: FormData) => {
     "use server";
     const question = formData.get("question");

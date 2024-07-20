@@ -24,15 +24,17 @@ const MostVisitedCats = ({ categories }: { categories: Category[] }) => {
           {t("title")}
         </Text>
         <SimpleGrid columns={{ sm: 1, lg: 2 }} gap={4}>
-          <GridItem
-            imgUrl={
-              category_one.image
-                ? `https://srv14.optimgov.com/images/${category_one.image}`
-                : ""
-            }
-            text={category_one.name}
-            id={category_one.id.toString()}
-          />
+          {category_one && (
+            <GridItem
+              imgUrl={
+                category_one.image
+                  ? `https://srv14.optimgov.com/images/${category_one.image}`
+                  : ""
+              }
+              text={category_one.name}
+              id={category_one.id.toString()}
+            />
+          )}
           {category_two && (
             <GridItem
               imgUrl={

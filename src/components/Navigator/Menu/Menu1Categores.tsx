@@ -1,21 +1,20 @@
 "use client";
+import { Menu1CategoresProps } from "@/data/types";
 import {
   HStack,
+  Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Stack,
   Text,
   useDisclosure,
-  Link,
-  Box,
-  Stack,
 } from "@chakra-ui/react";
-import { TbCategory } from "react-icons/tb";
-import NextLink from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import NextLink from "next/link";
 import { useState } from "react";
-import { Menu1CategoresProps } from "@/data/types";
+import { TbCategory } from "react-icons/tb";
 
 const Menu1Categores: React.FC<Menu1CategoresProps> = ({
   menuLocation,

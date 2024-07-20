@@ -1,5 +1,6 @@
 "use client";
 
+import { Category } from "@/data/types";
 import {
   Box,
   Drawer,
@@ -8,18 +9,16 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  useDisclosure,
-  Text,
   Link,
   Stack,
+  Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useLocale, useTranslations } from "next-intl";
-import { ReactNode } from "react";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
-import SearchInput from "../../NavBar/SearchInput";
 import Menu from "..";
-import { Category } from "@/data/types";
+import SearchInput from "../../NavBar/SearchInput";
 
 const SideMenuDrawer = ({
   session,

@@ -15,7 +15,6 @@ const SignUpForm = () => {
 
   const handleFormAction = async (formData: FormData) => {
     const data = await handleSignUp(formData);
-    console.log(data);
     if (data?.error) {
       toast({
         description: t("signUpError"),
