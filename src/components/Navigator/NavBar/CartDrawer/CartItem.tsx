@@ -33,8 +33,8 @@ const CartItem = ({
       <HStack w={"100%"} justifyContent={"space-between"}>
         <HStack>
           <Link
-            as={NextLink}
-            href={`/${localeActive}/shopping-items/${item.id}`}
+            // as={NextLink}
+            href={`/front_office/${localeActive}/shopping-items/${item.id}`}
             onClick={() => {
               if (onClose) onClose();
             }}

@@ -31,7 +31,7 @@ const SlideOne = () => {
       </Stack>
       <Image
         alt={""}
-        src="/images/slider/slideOne.png"
+        src="/front_office/images/slider/slideOne.png"
         boxSize={{ base: 300, md: 350, "2xl": 570 }}
       />
     </Flex>

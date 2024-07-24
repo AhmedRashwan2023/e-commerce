@@ -63,8 +63,8 @@ const CategorySlide = ({ category }: { category: Category }) => {
 
   return (
     <Link
-      as={NextLink}
-      href={`/${localeActive}/shopping-items?catId=${category.id}`}
+      // as={NextLink}
+      href={`/front_office/${localeActive}/shopping-items?catId=${category.id}`}
     >
       <Flex
         h={"80%"}
@@ -77,12 +77,10 @@ const CategorySlide = ({ category }: { category: Category }) => {
         gap={3}
       >
         <Image
+        alt=""
           src={
             category.image
-              ? category.image!.replaceAll(
-                  "/var/www/html/images",
-                  "https://srv14.optimgov.com/images/"
-                )
+              ? `https://srv14.optimgov.com/images/${category.image}`
               : ""
           }
           boxSize={"200px"}

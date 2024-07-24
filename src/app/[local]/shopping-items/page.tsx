@@ -4,7 +4,7 @@ import { Flex, Link, Show, Stack, Text } from "@chakra-ui/react";
 import { getTranslations } from "next-intl/server";
 import NextLink from "next/link";
 import ItemsGrid from "./ItemsGrid";
-import { postRequest } from "@/utils/db";
+import { getRequest, postRequest } from "@/utils/db";
 import { Category } from "@/data/types";
 import PriceRangeSlider from "@/components/ShoppingItemsPage/PriceRangeSlider";
 import Evaluation from "@/components/ShoppingItemsPage/Evaluation";
@@ -18,7 +18,7 @@ const ShoppingItems = async ({
   const t = await getTranslations("shoppingItems");
 
   const categories = await postRequest("/api/categories/getCats", {});
-
+  
   const initialSearchParams = {
     catId: (searchParams.catId || 0) as number,
     minPrice: (searchParams.minPrice || 0) as number,
@@ -43,7 +43,7 @@ const ShoppingItems = async ({
               {t("filterCategories")}
             </Text>
             <Link
-              as={NextLink}
+              // as={NextLink}
               href={`?${setSearchParams(searchParams, "catId", "all")}`}
               _hover={{ color: "#048414", fontWeight: "semibold" }}
               fontSize={14}
@@ -56,7 +56,7 @@ const ShoppingItems = async ({
             {categories.map((category: Category, index: number) => (
               <Link
                 key={index}
-                as={NextLink}
+                // as={NextLink}
                 href={`?${setSearchParams(
                   searchParams,
                   "catId",
@@ -91,6 +91,7 @@ const ShoppingItems = async ({
         categoryName={selectedCat?.name!}
       />
     </Flex>
+    
   );
 };
 

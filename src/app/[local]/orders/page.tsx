@@ -9,7 +9,6 @@ import { getSession } from "@/services/auth";
 const MyOrders = async () => {
   const t = await getTranslations("orders");
   const session = await getSession();
-  console.log("session", session.data.id);
   const orders = await postRequest(
     `/api/orders/client/getOrders/${session.data.id}`,
     {},

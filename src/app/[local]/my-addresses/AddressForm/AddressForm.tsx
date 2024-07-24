@@ -85,7 +85,6 @@ const AddressForm = ({
       }
     } else {
       const data = await handleAddAddress(formData);
-      console.log(data);
       if (data!.error) {
         toast({
           description: `${t("errorAdding")}`,

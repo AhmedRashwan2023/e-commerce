@@ -124,8 +124,8 @@ const SignUpForm = () => {
       <Flex gap={1}>
         <Text color={"#818181"}>{t("termsAndConditionText")}</Text>
         <Link
-          as={NextLink}
-          href={`/${activeLocale}/account/signup`}
+          // as={NextLink}
+          href={`/front_office/${activeLocale}/account/signup`}
           color={"#cdad00"}
           textDecoration={"none"}
           _hover={{ color: "#01a915" }}
@@ -134,8 +134,8 @@ const SignUpForm = () => {
         </Link>
         <Text color={"#818181"}>&</Text>
         <Link
-          as={NextLink}
-          href={`/${activeLocale}/account/signup`}
+          // as={NextLink}
+          href={`/front_office/${activeLocale}/account/signup`}
           color={"#cdad00"}
           textDecoration={"none"}
           _hover={{ color: "#01a915" }}

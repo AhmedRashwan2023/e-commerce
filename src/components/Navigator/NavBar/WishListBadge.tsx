@@ -13,7 +13,8 @@ const WishListBadge = () => {
   const { wishlistItems } = useWishlistContext();
   return (
     <CountBadge count={wishlistItems.length}>
-      <Link fontSize={20} as={NextLink} href={`/${localeActive}/wishlist`}>
+      <Link fontSize={20} // as={NextLink}
+       href={`/front_office/${localeActive}/wishlist`}>
         <GoHeart />
       </Link>
     </CountBadge>

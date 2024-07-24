@@ -14,7 +14,6 @@ import { CiViewTimeline } from "react-icons/ci";
 
 const OrdersTable = ({ orders }: { orders: OrdersTableProps[] }) => {
   const t = useTranslations("orders");
-  console.log("orders", orders);
 
   const OrderedProds: ProductsOrders[] = [];
 

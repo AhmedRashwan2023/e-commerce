@@ -73,8 +73,8 @@ const ResetPasswordForm = () => {
       <Text fontWeight={"semibold"} maxW={350} color={"#818181"} py={4}>
         {t("resetPassText")}
         <Link
-          as={NextLink}
-          href={`/${activeLocale}/account/signup`}
+          // as={NextLink}
+          href={`/front_office/${activeLocale}/account/signup`}
           color={"#01a915"}
           textDecoration={"none"}
           _hover={{ color: "#048414" }}

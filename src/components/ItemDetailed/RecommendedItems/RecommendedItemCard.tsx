@@ -15,8 +15,11 @@ const RecommendedItemCard = ({ item }: { item: ItemProps }) => {
       borderRadius={10}
       borderColor={"#eeeeee"}
     >
-      <Link as={NextLink} href={`/${localeActive}/shopping-items/${item.id}`}>
+      <Link
+       // as={NextLink}
+        href={`/front_office/${localeActive}/shopping-items/${item.id}`}>
         <Image
+        alt=""
           src={
             item.image ? `https://srv14.optimgov.com/images/${item.image}` : ""
           }

@@ -8,7 +8,7 @@ const ShopNowButton = ({ children }: { children: ReactNode }) => {
   const ButtonIcon =
     localeActive === "ar" ? FaLongArrowAltLeft : FaLongArrowAltRight;
   return (
-    <Link href={`/${localeActive}/shopping-items`}>
+    <Link href={`/front_office/${localeActive}/shopping-items`}>
       <Button
         rightIcon={<ButtonIcon />}
         color={"#ffffff"}

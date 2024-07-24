@@ -9,8 +9,8 @@ const Menu2MainPage = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
   const localActive = useLocale();
   return (
     <Link
-      as={NextLink}
-      href={`/${localActive}`}
+      // as={NextLink}
+      href={`/front_office/${localActive}`}
       w={menuLocation === "side" ? "100%" : "inherit"}
       onClick={() => {
         if (closeDrawer) closeDrawer();

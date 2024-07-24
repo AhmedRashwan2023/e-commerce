@@ -9,10 +9,13 @@ const AccountPagesHeader = ({ children }: { children: ReactNode }) => {
   return (
     <Flex gap={3} py={4} flexDir={"column"}>
       <Flex px={bodyPadding} justifyContent={"space-between"}>
-        <Link as={NextLink} href={`/${localeActive}`}>
+        <Link 
+        // as={NextLink} 
+        
+        href={`/front_office/${localeActive}`}>
           <HStack minW={100} w={100}>
-            <Image alt="logo" src={"/images/header/RM.png"} boxSize={50} />
-            <Image alt="logo" src={"/images/header/dgapr.png"} boxSize={50} />
+            <Image alt="logo" src={"/front_office/images/header/RM.png"} boxSize={50} />
+            <Image alt="logo" src={"/front_office/images/header/dgapr.png"} boxSize={50} />
           </HStack>
         </Link>
         {children}

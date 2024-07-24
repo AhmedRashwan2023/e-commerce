@@ -61,22 +61,22 @@ const Menu4Account: React.FC<NavBarProps> = ({
           {!session && (
             <>
               <Link
-                as={NextLink}
-                href={`/${activeLocale}/account/signin`}
+                // as={NextLink}
+                href={`/front_office/${activeLocale}/account/signin`}
                 onClick={onClose}
               >
                 <MenuItem>{t("menu4Item1")}</MenuItem>
               </Link>
               <Link
-                as={NextLink}
-                href={`/${activeLocale}/account/signup`}
+                // as={NextLink}
+                href={`/front_office/${activeLocale}/account/signup`}
                 onClick={onClose}
               >
                 <MenuItem>{t("menu4Item2")}</MenuItem>
               </Link>
               <Link
-                as={NextLink}
-                href={`/${activeLocale}/account/reset-password`}
+                // as={NextLink}
+                href={`/front_office/${activeLocale}/account/reset-password`}
                 onClick={onClose}
               >
                 <MenuItem>{t("menu4Item3")}</MenuItem>
@@ -101,8 +101,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
           borderColor={"#bcbcbc"}
         >
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/account/signin`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/account/signin`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -114,8 +114,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
             {t("menu4Item1")}
           </Link>
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/account/signup`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/account/signup`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -127,8 +127,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
             {t("menu4Item2")}
           </Link>
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/account/reset-password`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/account/reset-password`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -152,8 +152,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
           borderColor={"#bcbcbc"}
         >
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/shopping-cart`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/shopping-cart`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -165,8 +165,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
             {t("shoppingCart")}
           </Link>
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/orders`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/orders`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -178,8 +178,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
             {t("menu4Item4Nested1")}
           </Link>
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/account-settings`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/account-settings`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -191,8 +191,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
             {t("menu4Item4Nested2")}
           </Link>
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/my-addresses`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/my-addresses`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -204,8 +204,8 @@ const Menu4Account: React.FC<NavBarProps> = ({
             {t("menu4Item4Nested3")}
           </Link>
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/notification-settings`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/notification-settings`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}

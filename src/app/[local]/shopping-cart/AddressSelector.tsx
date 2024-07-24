@@ -52,8 +52,8 @@ const AddressSelector = ({ addresses }: { addresses: AddressProps[] }) => {
           <Text fontSize={15}>
             {t("addAddressText")}&nbsp;
             <Link
-              as={NextLink}
-              href={`/${localeActive}/my-addresses`}
+              // as={NextLink}
+              href={`/front_office/${localeActive}/my-addresses`}
               textDecoration={"underline !important"}
             >
               {t("addAddressLink")}

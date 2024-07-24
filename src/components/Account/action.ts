@@ -5,7 +5,6 @@ import { postRequest } from "@/utils/db";
 
 export const handleSignIn = async (formData: FormData) => {
   const data = await signIn(formData);
-  console.log(data);
   return data;
 };
 

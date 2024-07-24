@@ -34,8 +34,8 @@ const MainPageFooter = () => {
         <Card icon={FiRefreshCcw} title={t("card3Title")}>
           {t("card4Text")}&nbsp;
           <Link
-            as={NextLink}
-            href={`/${activeLocale}/shopping-items`}
+            // as={NextLink}
+            href={`/front_office/${activeLocale}/shopping-items`}
             color={"#01a915"}
             textDecoration={"none"}
             _hover={{ color: "#048414" }}

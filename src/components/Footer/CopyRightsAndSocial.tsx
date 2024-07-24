@@ -16,7 +16,7 @@ const CopyRightsAndSocial = () => {
         </Text>
         <LiaCopyrightSolid />
         <Link
-          as={NextLink}
+          // as={NextLink}
           color={linkColor}
           target="_blank"
           href="https://www.optimgov.com/"
@@ -24,7 +24,7 @@ const CopyRightsAndSocial = () => {
           OptimGov
         </Link>
         <Link
-          as={NextLink}
+          // as={NextLink}
           color={linkColor}
           target="_blank"
           href="https://codescandy.com/"
@@ -35,7 +35,7 @@ const CopyRightsAndSocial = () => {
       <HStack>
         <Text>{t("followUs")}</Text>
         <Link
-          as={NextLink}
+          // as={NextLink}
           href="#"
           _hover={{ color: linkColor }}
           fontSize={20}
@@ -43,7 +43,7 @@ const CopyRightsAndSocial = () => {
           <FaFacebook />
         </Link>
         <Link
-          as={NextLink}
+          // as={NextLink}
           href="#"
           _hover={{ color: linkColor }}
           fontSize={20}
@@ -51,7 +51,7 @@ const CopyRightsAndSocial = () => {
           <FaXTwitter />
         </Link>
         <Link
-          as={NextLink}
+          // as={NextLink}
           href="#"
           _hover={{ color: linkColor }}
           fontSize={20}

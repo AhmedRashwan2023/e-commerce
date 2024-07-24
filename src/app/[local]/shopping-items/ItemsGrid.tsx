@@ -4,7 +4,7 @@ import ItemCardContainer from "@/components/ShoppingItemsPage/ItemCardContainer"
 import ItemsDisplayAndOrder from "@/components/ShoppingItemsPage/ItemsDisplayAndOrder";
 import { Category, ItemProps, ItemsGridProps } from "@/data/types";
 import { setSearchParams } from "@/services/shoppingItems";
-import { postRequest } from "@/utils/db";
+import { getRequest, postRequest } from "@/utils/db";
 import {
   Box,
   Flex,
@@ -29,6 +29,7 @@ const ItemsGrid = async ({
   const localeActive = await getLocale();
 
   const categories = await postRequest("/api/categories/getCats", {});
+  // const products = await getRequest(`/api/products/getProductsByParam?cat_id=&min_price=0&max_price=1500`)
 
   let validSearchParams = {
     catId: categories.some(
@@ -62,6 +63,7 @@ const ItemsGrid = async ({
     // `/api/products/getProductsByParam?cat_id=&min_price=0&max_price=1500`
   );
 
+  // const products:any[] = []
   validSearchParams = {
     ...validSearchParams,
     display: !displayOptions.includes(Number(initialSearchParams.display))
@@ -154,7 +156,7 @@ const ItemsGrid = async ({
         >
           {!isPrevPageDisabled ? (
             <Link
-              as={NextLink}
+              // as={NextLink}
               href={`?${setSearchParams(
                 convertedSearchParams,
                 "page",
@@ -195,7 +197,7 @@ const ItemsGrid = async ({
         >
           {!isNextPageDisabled ? (
             <Link
-              as={NextLink}
+              // as={NextLink}
               href={`?${setSearchParams(
                 convertedSearchParams,
                 "page",
