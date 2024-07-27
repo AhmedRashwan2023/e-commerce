@@ -15,9 +15,11 @@ const ProfileBadge: React.FC<NavBarProps> = ({ session }) => {
         <LoginModel icon={"IoPerson"} specialURL={`/${localeActive}/orders`} />
       )}
       {session && (
-        <Link fontSize={20} 
-        // as={NextLink} 
-        href={`/front_office/${localeActive}/orders`}>
+        <Link
+          fontSize={20}
+          // as={NextLink}
+          href={`/${localeActive}/orders`}
+        >
           <IoPerson />
         </Link>
       )}

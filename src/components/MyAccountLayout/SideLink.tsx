@@ -31,9 +31,10 @@ const SideLink = ({
   const pathname = usePathname();
   const localeActive = useLocale();
   return (
-    <Link 
-    // as={NextLink} 
-    href={`/front_office/${localeActive}/${href}`}>
+    <Link
+      // as={NextLink}
+      href={`/${localeActive}/${href}`}
+    >
       <HStack
         fontSize={15}
         fontWeight={pathname.includes(href) ? "semibold" : "inherit"}

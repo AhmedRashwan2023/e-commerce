@@ -17,7 +17,7 @@ import { FaCaretDown } from "react-icons/fa";
 
 const LocalSwitcher = () => {
   const t = useTranslations("LocalSwitcher");
-  const {setLang} = useLangContext()
+  const { setLang } = useLangContext();
   return (
     <Flex
       backgroundColor={"white"}
@@ -39,19 +39,19 @@ export default LocalSwitcher;
 const LangMenu = () => {
   const t = useTranslations("LocalSwitcher");
   const localActive = useLocale();
-  
+
   const router = useRouter();
   const pathame = usePathname();
   const params = useSearchParams();
   const menuButton = {
     flag:
-      localActive === "ar" ? "/front_office/images/flags/ma.svg" : "/front_office/images/flags/fr.svg",
+      localActive === "ar" ? "/images/flags/ma.svg" : "/images/flags/fr.svg",
     text: localActive === "ar" ? t("arabic") : t("france"),
   };
 
   const menuItem = {
     flag:
-      localActive === "ar" ? "/front_office/images/flags/fr.svg" : "/front_office/images/flags/ma.svg",
+      localActive === "ar" ? "/images/flags/fr.svg" : "/images/flags/ma.svg",
     text: localActive === "ar" ? t("france") : t("arabic"),
   };
 

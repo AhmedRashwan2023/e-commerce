@@ -22,7 +22,7 @@ const Menu3MoreCategoriesDetails = ({
     return childCats.map((item) => (
       <LinkItem
         key={item.id}
-        href={`/front_office/${localActive}/shopping-items?catId=${item.id}`}
+        href={`/${localActive}/shopping-items?catId=${item.id}`}
       >
         {item.name}
       </LinkItem>
@@ -51,13 +51,13 @@ const Menu3MoreCategoriesDetails = ({
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item1")}
         </Text>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex1Link1")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex1Link2")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex1Link3")}
         </LinkItem>
       </Flex>
@@ -65,13 +65,13 @@ const Menu3MoreCategoriesDetails = ({
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item2")}
         </Text>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex2Link1")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex2Link2")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex2Link3")}
         </LinkItem>
       </Flex>
@@ -79,13 +79,13 @@ const Menu3MoreCategoriesDetails = ({
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item3")}
         </Text>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex3Link1")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex3Link2")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex3Link3")}
         </LinkItem>
       </Flex>
@@ -93,13 +93,13 @@ const Menu3MoreCategoriesDetails = ({
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item4")}
         </Text>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex4Link1")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex4Link2")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex4Link3")}
         </LinkItem>
       </Flex>
@@ -107,13 +107,13 @@ const Menu3MoreCategoriesDetails = ({
         <Text color={"#eac102"} fontWeight={"bolder"}>
           {t("menu1Item5")}
         </Text>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex5Link1")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex5Link2")}
         </LinkItem>
-        <LinkItem href={`/front_office/${localActive}/shopping-items`}>
+        <LinkItem href={`/${localActive}/shopping-items`}>
           {t("menu3Flex5Link3")}
         </LinkItem>
       </Flex>
@@ -138,9 +138,11 @@ const LinkItem = ({
   onClick?: () => void;
 }) => {
   return (
-    <Link 
-    // as={NextLink} 
-    href={href} onClick={onClick}>
+    <Link
+      // as={NextLink}
+      href={href}
+      onClick={onClick}
+    >
       <Box _hover={{ bg: "#EDF2F7" }} p={2} borderRadius={10} w={"100%"}>
         {children}
       </Box>

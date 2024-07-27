@@ -58,7 +58,7 @@ const Menu1Categores: React.FC<Menu1CategoresProps> = ({
         >
           <Link
             // as={NextLink}
-            href={`/front_office/${localActive}/shopping-items?catId=all`}
+            href={`/${localActive}/shopping-items?catId=all`}
             onClick={onClose}
           >
             <MenuItem>
@@ -66,19 +66,22 @@ const Menu1Categores: React.FC<Menu1CategoresProps> = ({
               {t2("allCategories")}
             </MenuItem>
           </Link>
-          {categories.map((category, index) => category.parentCategoryId === 0 && (
-            <Link
-              key={index}
-              // as={NextLink}
-              href={`/front_office/${localActive}/shopping-items?catId=${category.id}`}
-              onClick={onClose}
-            >
-              <MenuItem>
-                {/* {localActive === "fr" ? category.fr : category.ar} */}
-                {category.name}
-              </MenuItem>
-            </Link>
-          ))}
+          {categories.map(
+            (category, index) =>
+              category.parentCategoryId === 0 && (
+                <Link
+                  key={index}
+                  // as={NextLink}
+                  href={`/${localActive}/shopping-items?catId=${category.id}`}
+                  onClick={onClose}
+                >
+                  <MenuItem>
+                    {/* {localActive === "fr" ? category.fr : category.ar} */}
+                    {category.name}
+                  </MenuItem>
+                </Link>
+              )
+          )}
         </MenuList>
       </Menu>
       {showLinks && (
@@ -98,7 +101,7 @@ const Menu1Categores: React.FC<Menu1CategoresProps> = ({
               borderRadius={5}
               key={index}
               // as={NextLink}
-              href={`/front_office/${localActive}/shopping-items?catId=${category.id}`}
+              href={`/${localActive}/shopping-items?catId=${category.id}`}
               onClick={() => {
                 if (closeDrawer) closeDrawer();
               }}

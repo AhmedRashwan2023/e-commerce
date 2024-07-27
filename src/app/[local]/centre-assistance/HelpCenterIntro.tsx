@@ -12,7 +12,7 @@ const HelpCenterIntro = () => {
       flexDir={"row-reverse"}
       gap={10}
     >
-      <Image alt={""} src="/front_office/images/assistance.png" boxSize={200} />
+      <Image alt={""} src="/images/assistance.png" boxSize={200} />
       <Stack>
         <Heading as="h2" size="xl">
           {t("h1Title")}

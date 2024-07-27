@@ -3,7 +3,6 @@ import MainPageFooter from "@/components/MainPage/MainPageFooter";
 import MostVisitedCats from "@/components/MainPage/MostVisitedCats";
 import PageSwiper from "@/components/MainPage/PageSwiper";
 import PopularProducts from "@/components/MainPage/PopularProducts";
-// import { categories } from "@/data/categories";
 import { postRequest } from "@/utils/db";
 import { Box } from "@chakra-ui/react";
 

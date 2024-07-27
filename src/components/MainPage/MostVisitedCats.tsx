@@ -101,7 +101,7 @@ const GridItem = ({
           px={2}
           w={"fit-content"}
           // as={NextLink}
-          href={`/front_office/${localeActive}/shopping-items?catId=${id}`}
+          href={`/${localeActive}/shopping-items?catId=${id}`}
         >
           <Button
             size="md"

@@ -22,7 +22,7 @@ const CartViewer = ({ onClose }: { onClose?: () => void }) => {
             {t("emptyCartText")}&nbsp;
             <Link
               // as={NextLink}
-              href={`/front_office/${localeActive}/shopping-items`}
+              href={`/${localeActive}/shopping-items`}
               textDecoration={"underline !important"}
               onClick={() => {
                 if (onClose) onClose();

@@ -52,7 +52,7 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
             justifyContent={{ base: "center", lg: "flex-start" }}
           >
             <Image
-            alt=""
+              alt=""
               src={
                 product?.image
                   ? `https://srv14.optimgov.com/images/${product.image}`
@@ -64,7 +64,7 @@ const ItemDetailsPage = async ({ params }: { params: { itemId: string } }) => {
             <Stack w={"fit-content"}>
               <Link
                 // as={NextLink}
-                href={`/front_office/${localeActive}/shopping-items?catId=${product?.category}`}
+                href={`/${localeActive}/shopping-items?catId=${product?.category}`}
                 fontSize={14}
                 fontWeight={"semibold"}
                 color={"#eac102"}

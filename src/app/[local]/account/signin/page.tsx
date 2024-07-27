@@ -23,9 +23,10 @@ const SignIn = () => {
       <AccountPagesHeader>
         <HStack fontWeight={"semibold"}>
           <Text>{t("dontHaveAcc")}</Text>
-          <Link 
-          // as={NextLink} 
-          href={`/front_office/${activeLocale}/account/signup`}>
+          <Link
+            // as={NextLink}
+            href={`/${activeLocale}/account/signup`}
+          >
             {t("registerLink")}
           </Link>
         </HStack>
@@ -36,7 +37,7 @@ const SignIn = () => {
         py={"5.6rem"}
         wrap={"wrap"}
       >
-        <Image alt={""} src="/front_office/images/account/signin.svg" boxSize={250} />
+        <Image alt={""} src="/images/account/signin.svg" boxSize={250} />
         <Flex flexDir={"column"} gap={8}>
           <Flex flexDir={"column"}>
             <Text fontSize={30} fontWeight={"semibold"} color={"rgb(1,17,77)"}>

@@ -35,7 +35,7 @@ const MainPageFooter = () => {
           {t("card4Text")}&nbsp;
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/shopping-items`}
+            href={`/${activeLocale}/shopping-items`}
             color={"#01a915"}
             textDecoration={"none"}
             _hover={{ color: "#048414" }}

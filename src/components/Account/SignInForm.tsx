@@ -49,7 +49,7 @@ const SignInForm = ({ specialURL }: SignInFormProps) => {
         <Text color={"#818181"}>{t("forgotPassword")}</Text>
         <Link
           // as={NextLink}
-          href={`/front_office/${activeLocale}/account/reset-password`}
+          href={`/${activeLocale}/account/reset-password`}
           color={"rgb(1,17,77)"}
         >
           {t("forgotPasswordLink")}
@@ -74,7 +74,7 @@ const SignInForm = ({ specialURL }: SignInFormProps) => {
         <Text color={"#818181"}>{t("dontHaveAcc")}</Text>
         <Link
           // as={NextLink}
-          href={`/front_office/${activeLocale}/account/signup`}
+          href={`/${activeLocale}/account/signup`}
           color={"rgb(1,17,77)"}
         >
           {t("registerLink")}

@@ -4,9 +4,8 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/front_office",
-    assetPrefix: "/front_office",
-   
+  // basePath: "",
+  // assetPrefix: "",
 };
 
 export default withNextIntl(nextConfig);

@@ -22,14 +22,15 @@ const NavBar: React.FC<NavBarProps> = async ({ session }) => {
       <Box backgroundColor={"#01114d"} px={bodyPadding}>
         <Flex justifyContent={"space-between"} alignItems={"center"}>
           <HStack gap={16} py={5}>
-            <Link 
-            // as={NextLink}
-             href={`/front_office/${localeActive}`}>
+            <Link
+              // as={NextLink}
+              href={`/${localeActive}`}
+            >
               <HStack minW={100} w={100}>
-                <Image alt="logo" src={"/front_office/images/header/RM.png"} boxSize={50} />
+                <Image alt="logo" src={"/images/header/RM.png"} boxSize={50} />
                 <Image
                   alt="logo"
-                  src={"/front_office/images/header/dgapr.png"}
+                  src={"/images/header/dgapr.png"}
                   boxSize={50}
                 />
               </HStack>

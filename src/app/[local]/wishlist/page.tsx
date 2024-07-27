@@ -41,7 +41,7 @@ const Wishlist = () => {
               {t("emptyListText")}&nbsp;
               <Link
                 // as={NextLink}
-                href={`/front_office/${localeActive}/shopping-items`}
+                href={`/${localeActive}/shopping-items`}
                 textDecoration={"underline !important"}
               >
                 {t("emptyListLink")}
@@ -57,7 +57,7 @@ const Wishlist = () => {
             {wishlistItems.map((item: ItemProps, index: number) => (
               <Link
                 key={index}
-                href={`/front_office/${localeActive}/shopping-items/${item.id}`}
+                href={`/${localeActive}/shopping-items/${item.id}`}
                 // as={NextLink}
               >
                 <HStack

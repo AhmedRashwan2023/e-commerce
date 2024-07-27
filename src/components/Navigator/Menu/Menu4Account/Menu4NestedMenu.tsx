@@ -40,23 +40,23 @@ const Menu4NestedMenu = () => {
       >
         <PopoverBody>
           <Flex flexDir={"column"}>
-            <LinkItem href={`/front_office/${localActive}/shopping-cart`} onClick={onClose}>
+            <LinkItem href={`/${localActive}/shopping-cart`} onClick={onClose}>
               {t("shoppingCart")}
             </LinkItem>
-            <LinkItem href={`/front_office/${localActive}/orders`} onClick={onClose}>
+            <LinkItem href={`/${localActive}/orders`} onClick={onClose}>
               {t("menu4Item4Nested1")}
             </LinkItem>
             <LinkItem
-              href={`/front_office/${localActive}/account-settings`}
+              href={`/${localActive}/account-settings`}
               onClick={onClose}
             >
               {t("menu4Item4Nested2")}
             </LinkItem>
-            <LinkItem href={`/front_office/${localActive}/my-addresses`} onClick={onClose}>
+            <LinkItem href={`/${localActive}/my-addresses`} onClick={onClose}>
               {t("menu4Item4Nested3")}
             </LinkItem>
             <LinkItem
-              href={`/front_office/${localActive}/notification-settings`}
+              href={`/${localActive}/notification-settings`}
               onClick={onClose}
             >
               {t("menu4Item4Nested5")}
@@ -80,9 +80,12 @@ const LinkItem = ({
   onClick?: () => void;
 }) => {
   return (
-    <Link 
-    // as={NextLink}
-     href={href} onClick={onClick} textDecoration={"none"}>
+    <Link
+      // as={NextLink}
+      href={href}
+      onClick={onClick}
+      textDecoration={"none"}
+    >
       <Box _hover={{ bg: "#EDF2F7" }} p={2}>
         {children}
       </Box>

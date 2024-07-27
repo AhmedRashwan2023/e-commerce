@@ -74,7 +74,7 @@ const ResetPasswordForm = () => {
         {t("resetPassText")}
         <Link
           // as={NextLink}
-          href={`/front_office/${activeLocale}/account/signup`}
+          href={`/${activeLocale}/account/signup`}
           color={"#01a915"}
           textDecoration={"none"}
           _hover={{ color: "#048414" }}

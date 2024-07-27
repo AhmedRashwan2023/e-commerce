@@ -64,7 +64,7 @@ const CategorySlide = ({ category }: { category: Category }) => {
   return (
     <Link
       // as={NextLink}
-      href={`/front_office/${localeActive}/shopping-items?catId=${category.id}`}
+      href={`/${localeActive}/shopping-items?catId=${category.id}`}
     >
       <Flex
         h={"80%"}
@@ -77,7 +77,7 @@ const CategorySlide = ({ category }: { category: Category }) => {
         gap={3}
       >
         <Image
-        alt=""
+          alt=""
           src={
             category.image
               ? `https://srv14.optimgov.com/images/${category.image}`

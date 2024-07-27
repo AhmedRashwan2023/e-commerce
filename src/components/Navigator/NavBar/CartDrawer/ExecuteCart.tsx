@@ -40,9 +40,10 @@ const ExecuteCart = ({
       <RemoveAllItemsBtn />
       {!session && <ExecuteCartLoginModal closeDrawer={onClose} />}
       {session && (
-        <Link 
-        // as={NextLink}
-         href={`/front_office/${localeActive}/shopping-cart`}>
+        <Link
+          // as={NextLink}
+          href={`/${localeActive}/shopping-cart`}
+        >
           <Button
             colorScheme="green"
             size="sm"
@@ -131,7 +132,7 @@ const ExecuteCartLoginModal = ({
                 <Text color={"#818181"}>{t2("forgotPassword")}</Text>
                 <Link
                   // as={NextLink}
-                  href={`/front_office/${localeActive}/account/reset-password`}
+                  href={`/${localeActive}/account/reset-password`}
                   color={"rgb(1,17,77)"}
                 >
                   {t2("forgotPasswordLink")}
@@ -156,7 +157,7 @@ const ExecuteCartLoginModal = ({
                 <Text color={"#818181"}>{t2("dontHaveAcc")}</Text>
                 <Link
                   // as={NextLink}
-                  href={`/front_office/${localeActive}/account/signup`}
+                  href={`/${localeActive}/account/signup`}
                   color={"rgb(1,17,77)"}
                 >
                   {t2("registerLink")}

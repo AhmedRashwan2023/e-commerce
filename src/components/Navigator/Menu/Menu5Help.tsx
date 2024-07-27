@@ -10,7 +10,7 @@ const Menu5Help = ({ menuLocation, closeDrawer }: MenuLocationProps) => {
   return (
     <Link
       // as={NextLink}
-      href={`/front_office/${localeActive}/centre-assistance`}
+      href={`/${localeActive}/centre-assistance`}
       w={menuLocation === "side" ? "100%" : "inherit"}
       onClick={() => {
         if (closeDrawer) closeDrawer();

@@ -27,9 +27,10 @@ const ResetPassword = () => {
       <AccountPagesHeader>
         <HStack fontWeight={"semibold"}>
           <Text>{t("dontHaveAcc")}</Text>
-          <Link 
-          // as={NextLink}
-           href={`/front_office/${activeLocale}/account/signup`}>
+          <Link
+            // as={NextLink}
+            href={`/${activeLocale}/account/signup`}
+          >
             {t("registerLink")}
           </Link>
         </HStack>
@@ -40,7 +41,7 @@ const ResetPassword = () => {
         py={"5.6rem"}
         wrap={"wrap"}
       >
-        <Image alt={""} src="/front_office/images/account/fp.svg" boxSize={250} />
+        <Image alt={""} src="/images/account/fp.svg" boxSize={250} />
         <Flex flexDir={"column"} gap={8} maxW={450}>
           <Flex flexDir={"column"}>
             <Text fontSize={30} fontWeight={"semibold"} color={"rgb(1,17,77)"}>
@@ -77,7 +78,8 @@ const ResetPassword = () => {
               {t("resetPasswordButton")}
             </Button>
             <Link // as={NextLink}
-             href={`/front_office/${activeLocale}/account/signup`}>
+              href={`/${activeLocale}/account/signup`}
+            >
               <Button color={"rgb(1,17,77)"} w={"100%"}>
                 {t("goBack")}
               </Button>

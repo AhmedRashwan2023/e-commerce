@@ -48,9 +48,10 @@ const ItemCard = async ({ item }: { item: ItemProps }) => {
         </Box>
       )}
       <Flex flexDir={"column"} alignItems={"center"}>
-        <Link 
-        // as={NextLink}
-         href={`/front_office/${localeActive}/shopping-items/${item.id}`}>
+        <Link
+          // as={NextLink}
+          href={`/${localeActive}/shopping-items/${item.id}`}
+        >
           <Image
             src={
               item.image

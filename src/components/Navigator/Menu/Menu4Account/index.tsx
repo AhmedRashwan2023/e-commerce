@@ -62,21 +62,21 @@ const Menu4Account: React.FC<NavBarProps> = ({
             <>
               <Link
                 // as={NextLink}
-                href={`/front_office/${activeLocale}/account/signin`}
+                href={`/${activeLocale}/account/signin`}
                 onClick={onClose}
               >
                 <MenuItem>{t("menu4Item1")}</MenuItem>
               </Link>
               <Link
                 // as={NextLink}
-                href={`/front_office/${activeLocale}/account/signup`}
+                href={`/${activeLocale}/account/signup`}
                 onClick={onClose}
               >
                 <MenuItem>{t("menu4Item2")}</MenuItem>
               </Link>
               <Link
                 // as={NextLink}
-                href={`/front_office/${activeLocale}/account/reset-password`}
+                href={`/${activeLocale}/account/reset-password`}
                 onClick={onClose}
               >
                 <MenuItem>{t("menu4Item3")}</MenuItem>
@@ -102,7 +102,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
         >
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/account/signin`}
+            href={`/${activeLocale}/account/signin`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -115,7 +115,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
           </Link>
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/account/signup`}
+            href={`/${activeLocale}/account/signup`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -128,7 +128,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
           </Link>
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/account/reset-password`}
+            href={`/${activeLocale}/account/reset-password`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -153,7 +153,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
         >
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/shopping-cart`}
+            href={`/${activeLocale}/shopping-cart`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -166,7 +166,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
           </Link>
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/orders`}
+            href={`/${activeLocale}/orders`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -179,7 +179,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
           </Link>
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/account-settings`}
+            href={`/${activeLocale}/account-settings`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -192,7 +192,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
           </Link>
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/my-addresses`}
+            href={`/${activeLocale}/my-addresses`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}
@@ -205,7 +205,7 @@ const Menu4Account: React.FC<NavBarProps> = ({
           </Link>
           <Link
             // as={NextLink}
-            href={`/front_office/${activeLocale}/notification-settings`}
+            href={`/${activeLocale}/notification-settings`}
             onClick={() => {
               if (closeDrawer) closeDrawer();
             }}

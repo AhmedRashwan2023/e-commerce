@@ -34,7 +34,7 @@ const CartItem = ({
         <HStack>
           <Link
             // as={NextLink}
-            href={`/front_office/${localeActive}/shopping-items/${item.id}`}
+            href={`/${localeActive}/shopping-items/${item.id}`}
             onClick={() => {
               if (onClose) onClose();
             }}
